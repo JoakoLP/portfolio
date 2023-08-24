@@ -51,6 +51,11 @@ i18n.use(initReactI18next).init({
         "pr-numenSubTitleBE": "Proyecto individual Back-End realizado en el curso de Academia Numen.",
         "pr-numenDescBE":
           "Servidor CRUD conectado con API externa. Cuenta con rutas de cuenta (login, register, logout, unregister, bookmarks, info (change name, email o password)) y rutas de comunicación con la API (search, bookmarks, etc.) ",
+        // fullstack project
+        "pr-fullstackTitle": "Proyecto FullStack",
+        "pr-fullstackSubTitle": "Proyecto E-Commerce FullStack conectado a MongoDB.",
+        "pr-fullstackDesc":
+          "A diferencia del creado anteriormente para el curso, este cuenta con un mejor motor de búsqueda, cuentas de usuario y panel de administración donde se pueden crear categorías, subcategorías o ver el listado de usuarios. Además, se puede agregar o editar productos asignandole etiquetas para una mejor busqueda.",
       },
     },
   },
