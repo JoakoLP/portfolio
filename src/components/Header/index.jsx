@@ -19,18 +19,16 @@ const Header = () => {
     setTimeout(() => {
       navigate(path);
       setIsShowing(true);
-    }, 200);
+    }, 300);
   };
 
   const isSelected = (path, children) => {
     if (current === path) {
-      return <li className="italic font-semibold text-purple-500 list-disc">{children}</li>;
+      return <li className="italic font-bold dark:font-semibold text-purple-900 dark:text-purple-500 list-disc">{children}</li>;
     } else {
       return (
         <li>
           <button
-            // href={`${path}`}
-            // onClick={() => setIsShowing((isShowing) => !isShowing)}
             onClick={() => {
               onChange(path);
             }}
@@ -70,13 +68,13 @@ const Header = () => {
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
         <Transition
           id="transition"
-          className="w-3/4 h-full max-h-full p-3 overflow-hidden bg-purple-700 border border-opacity-50 dark:border border-fuchsia-950 dark:border-purple-700 bg-opacity-70 dark:bg-opacity-20 dark:bg-purple-950"
+          className="w-3/4 h-full max-h-full p-3 overflow-hidden bg-white border border-opacity-50 dark:border border-fuchsia-950 dark:border-purple-700 bg-opacity-70 dark:bg-opacity-20 dark:bg-purple-950"
           show={isShowing}
           appear={true}
           enter="transition ease-in-out duration-[500ms] delay-200 transform"
           enterFrom="opacity-0 -translate-x-full"
           enterTo="opacity-100 translate-x-0"
-          leave="transition ease-in-out duration-[150ms]"
+          leave="transition ease-in-out duration-[100ms]"
           leaveFrom="opacity-100 translate-x-0"
           leaveTo="opacity-0 translate-x-full"
         >

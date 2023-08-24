@@ -3,7 +3,7 @@ import Particles from "react-particles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
-const ParticlesBG = () => {
+const ParticlesBGlight = () => {
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -14,7 +14,7 @@ const ParticlesBG = () => {
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
-    //   await console.log(container);
+    // await console.log(container);
   }, []);
 
   return (
@@ -26,7 +26,7 @@ const ParticlesBG = () => {
       options={{
         background: {
           color: {
-            value: "#10021C",
+            value: "#99999",
           },
         },
         fullScreen: false,
@@ -100,4 +100,4 @@ const ParticlesBG = () => {
   );
 };
 
-export default ParticlesBG;
+export default ParticlesBGlight;

@@ -7,12 +7,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainComps from "./components/Main/MainComps";
 import "./i18n.ts";
 import ParticlesBG from "./components/Frame/particlesBG";
+import ParticlesBGlight from "./components/Frame/particlesBGlight";
 
 function App() {
+  const renderBG = () => {
+    const html = document.getElementsByTagName("html");
+    if (html[0].className === "dark") {
+      return <ParticlesBG className="hidden dark:visible" />;
+    } else {
+      return <ParticlesBGlight className="visible dark:hidden" />;
+    }
+  };
   return (
     <div className="min-h-screen relative abg-white dark:bg-black dark:text-white transition-colors duration-400">
       <div className="">
-        <ParticlesBG />
+        {renderBG()}
         <BrowserRouter>
           <Routes>
             <Route element={<Frame />}>

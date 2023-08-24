@@ -5,7 +5,7 @@ const About = () => {
   const { i18n, t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center">
-      <p className="self-start text-lg">{t("navAbout")}</p>
+      <p className="self-start font-semibold text-lg">{t("navAbout")}</p>
       <div className="w-2/3">
         <p className="indent-2">{t("about1")}</p>
         <p className="indent-2">{t("about2")}</p>

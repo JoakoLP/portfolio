@@ -25,8 +25,8 @@ const Theme = () => {
   // localStorage.removeItem("theme");
 
   const onChangeTheme = () => {
-    console.log(localStorage.theme);
-    console.log(window.matchMedia("(prefers-color-scheme: light)").matches);
+    // console.log(localStorage.theme);
+    // console.log(window.matchMedia("(prefers-color-scheme: light)").matches);
     if (currentTheme === "dark") {
       document.documentElement.classList.remove("dark");
       localStorage.theme = "light";
