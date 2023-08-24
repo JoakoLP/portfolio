@@ -5,14 +5,12 @@ import Theme from "./theme";
 
 const Frame = () => {
   return (
-    <div className=" absolute w-screen left-0 top-0 h-screen p-10 ">
-      {/* <div className="bg-black h-screen p-6 "> */}
+    <div className="absolute top-0 left-0 w-screen h-screen p-8 ">
       <Language />
       <Theme />
-      <div className="border-4 p-6 border-purple-900 border-double w-full h-full">
+      <div className="w-full h-full p-6 border-4 border-purple-900 border-double">
         <Outlet />
       </div>
-      {/* </div> */}
     </div>
   );
 };

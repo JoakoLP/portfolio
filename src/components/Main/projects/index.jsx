@@ -23,20 +23,26 @@ const Projects = () => {
     });
     return (
       <>
-        <div id={project.id} className="max-h-full px-1 bg-slate-500a group">
-          <hr className="sticky top-0 z-10 -mx-1 border-purple-900 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" />
+        <div id={project.id} className="max-h-full p-1 overflow-hidden border border-purple-700 rounded bg-slate-100 dark:border-gray-800 dark:bg-black group">
+          {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
-          <a href={project.url} target="_blank" className="lg:hover:text-purple-500">
-            {t(project.name)}
-          </a>
           <div className="relative flex items-center space-x-2">
-            {/* media(first photo) */}
-            <img src={project.media[0]} alt="" className="w-[500px]" />
+            <div className="flex min-w-fit h-fit">
+              {/* media(first photo) */}
+              <img
+                src={project.media[0]}
+                alt=""
+                className="w-[400px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 dark:lg:hover:shadow-none dark:lg:hover:outline dark:lg:hover:outline-1 dark:lg:hover:outline-purple-700  lg:hover:scale-105 transition-transform duration-250 ease-in-out"
+              />
+            </div>
             {/* {project.media.map((media) => {
               return <img src={media} alt="" className="w-96" />;
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
-            <div className="flex flex-col h-full ">
+            <div className="flex flex-col h-full">
+              <a href={project.url} target="_blank" className="absolute text-lg font-semibold top-2 lg:hover:text-purple-500">
+                {t(project.name)}
+              </a>
               {/* description */}
               <p className="text-center">{t(project.desc)}</p>
             </div>
@@ -44,18 +50,18 @@ const Projects = () => {
               {/* technologies */}
               <div>
                 <Tooltip content="React" trigger="hover" animation="duration-500" style="auto">
-                  <FaReact className={techOnProject.react ? "visible lg:hover:text-purple-900 lg:hover:dark:text-purple-500" : "hidden"} size={22} />
+                  <FaReact className={techOnProject.react ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
                 </Tooltip>
               </div>
               <div>
                 <Tooltip content="TailwindCSS" trigger="hover" animation="duration-500" style="auto">
-                  <SiTailwindcss className={techOnProject.tailwind ? "visible lg:hover:text-purple-900 lg:hover:dark:text-purple-500" : "hidden"} size={22} />
+                  <SiTailwindcss className={techOnProject.tailwind ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
                 </Tooltip>
               </div>
             </div>
             <a className={project?.github ? "visible absolute top-0 right-0" : "hidden"} href={project?.github} target="_blank">
               <Tooltip content="GitHub" trigger="hover" animation="duration-500" style="auto">
-                <AiFillGithub className={project?.github ? "visible lg:hover:text-purple-900 lg:hover:dark:text-purple-500" : "hidden"} size={22} />
+                <AiFillGithub className={project?.github ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
               </Tooltip>
             </a>
           </div>
@@ -66,8 +72,8 @@ const Projects = () => {
   };
 
   return (
-    <div className="h-full max-h-full p-3 overflow-hidden border border-purple-900 border-opacity-50">
-      <p className="text-lg">{t("navProjects")}</p>
+    <div className="h-full max-h-full overflow-hidden">
+      <p className="text-lg text-white">{t("navProjects")}</p>
       <div className="h-[95%] max-h-full space-y-2 overflow-auto">
         {projects.map((project) => {
           return renderProject(project);

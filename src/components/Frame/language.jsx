@@ -25,12 +25,12 @@ const Language = () => {
     }
   };
   return (
-    <div className="top-0 right-10 absolute ">
-      <div className="flex items-end w-min h-10">
+    <div className="absolute top-0 right-8 ">
+      <div className="flex items-center h-8 w-min">
         {/* language selector (es/en) */}
-        <button className="z-10 flex w-14 justify-center items-center p-0.5 space-x-1" onClick={onChangeLang}>
-          <GlobeAltIcon className="h-5 aspect-square text-purple-600" />
-          <p className="leading-none">{currentLang}</p>
+        <button className="z-10 flex w-14 justify-center items-center p-0.5 space-x-1a" onClick={onChangeLang}>
+          <GlobeAltIcon className="h-5 text-purple-600 aspect-square" />
+          <p className="text-center">{currentLang}</p>
         </button>
       </div>
     </div>
