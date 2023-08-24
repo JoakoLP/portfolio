@@ -3,7 +3,7 @@ import { projects } from "../../../data/projects";
 import { useTranslation } from "react-i18next";
 import { FaReact } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import { Tooltip } from "flowbite-react";
 
 const Projects = () => {
@@ -27,12 +27,12 @@ const Projects = () => {
           {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
           <div className="relative flex items-center space-x-2">
-            <div className="flex min-w-fit h-fit">
+            <div className="flex min-w-[420px] justify-center items-center h-fit">
               {/* media(first photo) */}
               <img
                 src={project.media[0]}
                 alt=""
-                className="w-[400px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 dark:lg:hover:shadow-none dark:lg:hover:outline dark:lg:hover:outline-1 dark:lg:hover:outline-purple-700  lg:hover:scale-105 transition-transform duration-250 ease-in-out"
+                className="h-[250px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 dark:lg:hover:shadow-none dark:lg:hover:outline dark:lg:hover:outline-1 dark:lg:hover:outline-purple-700  lg:hover:scale-105 transition-transform duration-250 ease-in-out"
               />
             </div>
             {/* {project.media.map((media) => {
@@ -40,9 +40,15 @@ const Projects = () => {
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
             <div className="flex flex-col h-full">
-              <a href={project.url} target="_blank" className="absolute text-lg font-semibold top-2 lg:hover:text-purple-500">
-                {t(project.name)}
-              </a>
+              <div className="absolute top-2">
+                <div className="flex items-center space-x-1 group/link">
+                  <a href={project.url} target="_blank" className="cursor-pointer text-lg font-semibold lg:hover:text-purple-500 ">
+                    {t(project.name)}
+                  </a>
+                  {project.url ? <AiOutlineLink className="hidden text-purple-500 group-hover/link:inline" /> : null}
+                </div>
+                <p className={project.subTitle ? "visible italic text-sm" : "hidden"}>{t(project.subTitle)}</p>
+              </div>
               {/* description */}
               <p className="text-center">{t(project.desc)}</p>
             </div>

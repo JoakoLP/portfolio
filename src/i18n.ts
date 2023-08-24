@@ -19,8 +19,15 @@ i18n.use(initReactI18next).init({
         navProjects: "Projects",
         navAbout: "About me",
         navContact: "Contact",
-        "pr-numenTitle": "Project Numen - E-Commerce",
-        "pr-numenDesc": "Group project made during the course in Academia Numen. We exceed the requirements requested to approve.",
+        // front end project numen
+        "pr-numenTitleFE": "Gaming Store - Numen Project",
+        "pr-numenSubTitleFE": "Front-End group project made during the course in Academia Numen.",
+        "pr-numenDescFE": "E-Commerce of computer supplies. It has a search engine, filtering by category and shopping cart.",
+        // back end project numen
+        "pr-numenTitleBE": "CRUD Server - Numen Project",
+        "pr-numenSubTitleBE": "Back-End individual project made during the course in Academia Numen.",
+        "pr-numenDescBE":
+          "CRUD Server connected with an external API. It has account routes (login, register, logout, unregister, bookmarks, info (change name, email or password)) and communication routes with the API (search, bookmarks, etc.)",
       },
     },
     es: {
@@ -35,8 +42,15 @@ i18n.use(initReactI18next).init({
         navProjects: "Proyectos",
         navAbout: "Acerca de mí",
         navContact: "Contacto",
-        "pr-numenTitle": "Proyecto Numen - E-Commerce",
-        "pr-numenDesc": "Trabajo grupal realizado en el curso de Academia Numen. Superamos las consignas solicitadas para aprobar.",
+        // front end project numen
+        "pr-numenTitleFE": "Gaming Store - Proyecto Numen",
+        "pr-numenSubTitleFE": "Proyecto grupal Front-End realizado en el curso de Academia Numen.",
+        "pr-numenDescFE": "E-Commerce de insumos de informática. Cuenta con buscador, filtrado por categoría y carrito de compras.",
+        // back end project numen
+        "pr-numenTitleBE": "Servidor CRUD - Proyecto Numen",
+        "pr-numenSubTitleBE": "Proyecto individual Back-End realizado en el curso de Academia Numen.",
+        "pr-numenDescBE":
+          "Servidor CRUD conectado con API externa. Cuenta con rutas de cuenta (login, register, logout, unregister, bookmarks, info (change name, email o password)) y rutas de comunicación con la API (search, bookmarks, etc.) ",
       },
     },
   },
