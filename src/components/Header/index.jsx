@@ -66,14 +66,14 @@ const Header = () => {
         </ul>
       </header>
 
-      <div className="flex justify-end w-full max-h-full p-2 overflow-hidden h-2/3">
+      <div className="flex justify-end w-full max-h-full p-2 overflow-hidden h-3/4">
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
         <Transition
           id="transition"
-          className="w-2/3 h-full max-h-full p-3 overflow-hidden bg-purple-700 border border-opacity-50 dark:border border-fuchsia-950 dark:border-purple-700 bg-opacity-70 dark:bg-opacity-20 dark:bg-purple-950"
+          className="w-3/4 h-full max-h-full p-3 overflow-hidden bg-purple-700 border border-opacity-50 dark:border border-fuchsia-950 dark:border-purple-700 bg-opacity-70 dark:bg-opacity-20 dark:bg-purple-950"
           show={isShowing}
           appear={true}
-          enter="transition ease-in-out duration-[700ms] delay-200 transform"
+          enter="transition ease-in-out duration-[500ms] delay-200 transform"
           enterFrom="opacity-0 -translate-x-full"
           enterTo="opacity-100 translate-x-0"
           leave="transition ease-in-out duration-[150ms]"
