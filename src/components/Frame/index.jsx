@@ -8,7 +8,7 @@ const Frame = () => {
     <div className="absolute top-0 left-0 w-screen h-screen p-8 ">
       <Language />
       <Theme />
-      <div className="w-full h-full p-6 border-4 border-purple-900 border-double">
+      <div className="w-full h-full p-6 border border-purple-900">
         <Outlet />
       </div>
     </div>
