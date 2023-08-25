@@ -39,6 +39,10 @@ const OnLoadAnimation = () => {
 
       // itemLoad.className = moveX;
       // itemLoad.className = moveX + "relative text-purple-400 relative transform transition-all duration-[1000ms]";
+      if (itemLoad.innerHTML == "T") {
+        console.log(itemLoad.innerHTML.toLowerCase());
+        itemLoad.innerHTML = itemLoad.innerHTML.toLowerCase();
+      }
       itemLoad.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
       // itemLoad.className = `text-purple-400 relative translate-y-[${moveY}px] translate-x-[${moveX}px] transform transition-all duration-[1000ms]`;
       setTimeout(() => {
@@ -47,15 +51,17 @@ const OnLoadAnimation = () => {
     };
 
     setTimeout(() => {
-      loading.className = "fixed w-full h-full z-50 bg-black flex justify-center items-center text-2xl flex-col text-black transition-colors duration-[750ms]";
-      setTimeout(() => {
-        singleMove(tLoad, tHead);
-        singleMove(kLoad, kHead);
-        singleMove(rLoad, rHead);
+      if (loading) {
+        loading.className = "fixed w-full h-full z-50 bg-black flex justify-center items-center text-2xl flex-col text-black transition-colors duration-[750ms]";
         setTimeout(() => {
-          loading.className = "fixed w-full h-full z-50 bg-black text-black flex justify-center items-center text-2xl flex-col opacity-0 transition duration-[750ms]";
-        }, 500);
-      }, 300);
+          singleMove(tLoad, tHead);
+          singleMove(kLoad, kHead);
+          singleMove(rLoad, rHead);
+          setTimeout(() => {
+            loading.className = "fixed w-full h-full z-50 bg-black text-black flex justify-center items-center text-2xl flex-col opacity-0 transition duration-[750ms]";
+          }, 500);
+        }, 300);
+      }
     }, 1000);
 
     // setInterval(() => {

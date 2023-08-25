@@ -21,6 +21,7 @@ const Header = () => {
       setIsShowing(true);
     }, 300);
   };
+  document.title = t("title");
 
   const isSelected = (path, children) => {
     if (current === path) {
@@ -51,7 +52,7 @@ const Header = () => {
           </div>
           {/* <img src="" alt="logo" className="h-10 aspect-square" /> */}
           <p className="text-2xl tracking-widest">
-            <span id="tHead">T</span>
+            <span id="tHead">t</span>
             <span id="kHead">k</span>
             <span id="rHead">r</span>
           </p>
