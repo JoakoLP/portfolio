@@ -30,7 +30,7 @@ const ParticlesBG = () => {
           },
         },
         fullScreen: false,
-        fpsLimit: 120,
+        fpsLimit: 30,
         interactivity: {
           events: {
             onClick: {
