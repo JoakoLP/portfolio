@@ -34,7 +34,7 @@ const ParticlesBGlight = () => {
         interactivity: {
           events: {
             onClick: {
-              enable: true,
+              enable: false,
               mode: "push",
             },
             onHover: {
@@ -60,6 +60,11 @@ const ParticlesBGlight = () => {
           color: {
             value: "#ef00ff",
           },
+          life: {
+            duration: {
+              value: 100,
+            },
+          },
           links: {
             color: "#ff00c3",
             distance: 150,
@@ -71,9 +76,9 @@ const ParticlesBGlight = () => {
             direction: "none",
             enable: true,
             outModes: {
-              default: "bounce",
+              default: "out",
             },
-            random: false,
+            random: true,
             speed: 1,
             straight: false,
           },
