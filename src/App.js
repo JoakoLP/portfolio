@@ -8,6 +8,7 @@ import MainComps from "./components/Main/MainComps";
 import "./i18n.ts";
 import ParticlesBG from "./components/Frame/particlesBG";
 import ParticlesBGlight from "./components/Frame/particlesBGlight";
+import OnLoadAnimation from "./components/Frame/onLoadAnimation";
 
 function App() {
   const renderBG = () => {
@@ -34,6 +35,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+        <OnLoadAnimation />
       </div>
     </div>
   );

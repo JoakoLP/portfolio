@@ -24,10 +24,10 @@ const Header = () => {
 
   const isSelected = (path, children) => {
     if (current === path) {
-      return <li className="italic font-bold dark:font-semibold text-purple-900 dark:text-purple-500 list-disc">{children}</li>;
+      return <li className="italic font-bold text-purple-900 dark:text-purple-500 list-disc">{children}</li>;
     } else {
       return (
-        <li>
+        <li className="font-semibold">
           <button
             onClick={() => {
               onChange(path);
@@ -50,7 +50,11 @@ const Header = () => {
             <p className="leading-none">{t("subtitle")}</p>
           </div>
           {/* <img src="" alt="logo" className="h-10 aspect-square" /> */}
-          <p className="text-2xl tracking-widest ">tkr</p>
+          <p className="text-2xl tracking-widest">
+            <span id="tHead">T</span>
+            <span id="kHead">k</span>
+            <span id="rHead">r</span>
+          </p>
         </div>
         <ul className="flex flex-col items-start space-y-1 select-none">
           {/* home button */}
@@ -68,7 +72,7 @@ const Header = () => {
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
         <Transition
           id="transition"
-          className="w-3/4 h-full max-h-full p-3 overflow-hidden bg-white border border-opacity-50 dark:border border-fuchsia-950 dark:border-purple-700 bg-opacity-70 dark:bg-opacity-20 dark:bg-purple-950"
+          className="w-3/4 h-full max-h-full p-3 overflow-hidden  bg-white border border-opacity-50 dark:border border-fuchsia-950 dark:border-purple-700 bg-opacity-70 dark:bg-opacity-20 dark:bg-purple-950"
           show={isShowing}
           appear={true}
           enter="transition ease-in-out duration-[500ms] delay-200 transform"
