@@ -1,8 +1,9 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+let localLanguage = localStorage.getItem("lang") || "en";
 i18n.use(initReactI18next).init({
-  lng: "en", // default language
+  lng: localLanguage, // default language
   fallbackLng: "en", // language that will be loaded in case the translations the user is looking for are not available.
   interpolation: {
     escapeValue: false, // used to escape the values and avoid XSS attacks, we will set it to false, because React already does it by default.
@@ -12,6 +13,7 @@ i18n.use(initReactI18next).init({
       translation: {
         title: "Joaquin Takara - Portfolio",
         subtitle: "Web Developer",
+        portfolio: "Portfolio",
         about1: "My name is Joaquin Takara, I'm a Full Stack Developer. My current goal is to enter a company in the IT world to continue evolving my knowledge in the software development field.",
         about2:
           "I am willing to bring my skills and knowledge to contribute to the development and success of a company. I hope to be able to work on various projects to continue learning and improving in my career as a developer.",
@@ -32,8 +34,9 @@ i18n.use(initReactI18next).init({
     },
     es: {
       translation: {
-        title: "Joaquin Takara - Portfolio",
+        title: "Joaquin Takara - Portafolio",
         subtitle: "Desarrollador Web",
+        portfolio: "Portafolio",
         about1:
           "Mi nombre es Joaquin Takara, soy desarrollador Full Stack. Mi objetivo actual es ingresar a una empresa del mundo IT para seguir profundizando mis conocimientos en el campo del desarrollo de software.",
         about2:

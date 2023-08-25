@@ -6,11 +6,11 @@ const Language = () => {
   let localLanguage = localStorage.getItem("lang") || "en";
   const [currentLang, setCurrentLang] = useState(localLanguage);
 
-  useEffect(() => {
-    // console.log(localLanguage);
-    setCurrentLang(localLanguage);
-    i18n.changeLanguage(localLanguage);
-  }, []);
+  // useEffect(() => {
+  //   // console.log(localLanguage);
+  //   setCurrentLang(localLanguage);
+  //   i18n.changeLanguage(localLanguage);
+  // }, []);
 
   const onChangeLang = () => {
     // console.log(currentLang);

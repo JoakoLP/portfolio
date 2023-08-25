@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const OnLoadAnimation = () => {
   const [done, setDone] = useState(undefined);
+  const { i18n, t } = useTranslation();
 
   const letterMotion = () => {
     const loading = document.getElementById("loading");
-    const words = document.getElementById("words");
     const tLoad = document.getElementById("tLoad");
     const kLoad = document.getElementById("kLoad");
     const rLoad = document.getElementById("rLoad");
@@ -93,7 +94,7 @@ const OnLoadAnimation = () => {
                 a
               </span>
             </p>
-            <p className="font-thin">Portfolio</p>
+            <p className="font-thin">{t("portfolio")}</p>
           </div>
         </div>
       ) : (
