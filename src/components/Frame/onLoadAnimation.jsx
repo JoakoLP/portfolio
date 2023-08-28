@@ -24,31 +24,32 @@ const OnLoadAnimation = () => {
       const HeadOffTop = itemHead.getBoundingClientRect().y;
       // const LoadOffTop = itemLoad.offsetTop;
       const LoadOffTop = itemLoad.getBoundingClientRect().y;
-      // console.log(HeadOffTop);
-      // console.log(LoadOffTop);
+      console.log({ HeadOffTop });
+      console.log({ LoadOffTop });
       const moveY = LoadOffTop - HeadOffTop;
-      // console.log(moveY);
+      console.log(moveY);
 
       // get X px to move
       // const HeadOffLeft = itemHead.offsetLeft;
       const HeadOffLeft = itemHead.getBoundingClientRect().x;
       // const LoadOffLeft = itemLoad.offsetLeft;
       const LoadOffLeft = itemLoad.getBoundingClientRect().x;
-      // console.log(HeadOffLeft);
-      // console.log(LoadOffLeft);
+      console.log({ HeadOffLeft });
+      console.log({ LoadOffLeft });
       let moveX = LoadOffLeft - HeadOffLeft;
-      // console.log(moveX);
+      console.log({ moveX });
 
       if (itemLoad.innerHTML === "T") {
         const tLoadWidth = itemLoad.getBoundingClientRect().width;
-        console.log(tLoadWidth);
+        console.log({ tLoadWidth });
         // console.log(itemLoad.getBoundingClientRect().x);
         // console.log(LoadOffLeft);
         const tHeadWidth = itemHead.getBoundingClientRect().width;
-        console.log(tHeadWidth);
+        console.log({ tHeadWidth });
         const diffWidth = tLoadWidth - tHeadWidth;
-        console.log(diffWidth);
-        // moveX += diffWidth;
+        console.log({ diffWidth });
+        moveX += diffWidth;
+        console.log({ moveX });
         console.log(itemLoad.innerHTML.toLowerCase());
         itemLoad.innerHTML = itemLoad.innerHTML.toLowerCase();
       }
