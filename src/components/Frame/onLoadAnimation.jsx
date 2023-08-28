@@ -46,7 +46,7 @@ const OnLoadAnimation = () => {
         // console.log(LoadOffLeft);
         const tHeadWidth = itemHead.getBoundingClientRect().width;
         console.log({ tHeadWidth });
-        const diffWidth = tLoadWidth - tHeadWidth;
+        const diffWidth = (tLoadWidth - tHeadWidth) / 2;
         console.log({ diffWidth });
         moveX += diffWidth;
         console.log({ moveX });
