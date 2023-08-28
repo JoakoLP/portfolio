@@ -48,7 +48,7 @@ const OnLoadAnimation = () => {
         console.log(tHeadWidth);
         const diffWidth = tLoadWidth - tHeadWidth;
         console.log(diffWidth);
-        moveX += diffWidth;
+        // moveX += diffWidth;
         console.log(itemLoad.innerHTML.toLowerCase());
         itemLoad.innerHTML = itemLoad.innerHTML.toLowerCase();
       }
