@@ -37,7 +37,7 @@ const OnLoadAnimation = () => {
 
       if (itemLoad.innerHTML === "T") {
         const tLoadWidth = itemLoad.offsetWidth;
-        moveX -= tLoadWidth;
+        moveX += tLoadWidth;
         console.log(itemLoad.innerHTML.toLowerCase());
         itemLoad.innerHTML = itemLoad.innerHTML.toLowerCase();
       }
