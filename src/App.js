@@ -20,7 +20,7 @@ function App() {
     }
   };
   return (
-    <div className="min-h-screen relative abg-white dark:bg-black dark:text-white transition-colors duration-400">
+    <div className="relative min-h-screen transition-colors dark:bg-black dark:text-white duration-400 font-['Roboto_Condensed']">
       <div className="">
         {renderBG()}
         <BrowserRouter>

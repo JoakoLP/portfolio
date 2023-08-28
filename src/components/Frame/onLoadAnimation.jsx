@@ -39,7 +39,7 @@ const OnLoadAnimation = () => {
 
       // itemLoad.className = moveX;
       // itemLoad.className = moveX + "relative text-purple-400 relative transform transition-all duration-[1000ms]";
-      if (itemLoad.innerHTML == "T") {
+      if (itemLoad.innerHTML === "T") {
         console.log(itemLoad.innerHTML.toLowerCase());
         itemLoad.innerHTML = itemLoad.innerHTML.toLowerCase();
       }
@@ -70,9 +70,7 @@ const OnLoadAnimation = () => {
   };
 
   useEffect(() => {
-    // setInterval(() => {
     letterMotion();
-    // }, 1500);
     setTimeout(() => {
       setDone(true);
     }, 3000);
@@ -80,21 +78,21 @@ const OnLoadAnimation = () => {
   return (
     <>
       {!done ? (
-        <div className="fixed w-full h-full z-50 bg-black text-white flex justify-center items-center text-2xl flex-col " id="loading">
-          <div className="pb-10 flex justify-center items-center space-x-3">
-            <p className="flex whitespace-nowrap text-semibold">
-              Joaquin
-              <span className="opacity-0">"</span>
+        <div className="fixed z-50 flex flex-col items-center justify-center w-full h-full text-2xl text-white bg-black " id="loading">
+          <div className="flex items-center justify-center pb-10 space-x-1 font-['Oswald']">
+            <p className="flex space-x-1 whitespace-nowrap text-semibold">
+              <span>Joaquin</span>
+              {/* <span className="opacity-0">"</span> */}
               <span className="flex w-full ">
                 <span id="tLoad" className="!opacity-100 relative transform transition-all duration-[750ms] !text-white">
                   T
                 </span>
                 a
-                <span id="kLoad" className="!opacity-100 relative transform transition-all duration-[750ms] !text-white">
+                <span id="kLoad" className="!opacity-100 relative transform transition-all duration-[750ms] inline !text-white">
                   k
                 </span>
                 a
-                <span id="rLoad" className="!opacity-100 relative transform transition-all duration-[750ms] !text-white">
+                <span id="rLoad" className="!opacity-100 relative transform transition-all duration-[750ms] inline !text-white">
                   r
                 </span>
                 a
