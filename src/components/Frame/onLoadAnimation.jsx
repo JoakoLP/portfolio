@@ -32,10 +32,12 @@ const OnLoadAnimation = () => {
       const LoadOffLeft = itemLoad.offsetLeft;
       // console.log(HeadOffLeft);
       // console.log(LoadOffLeft);
-      const moveX = LoadOffLeft - HeadOffLeft;
+      let moveX = LoadOffLeft - HeadOffLeft;
       // console.log(moveX);
 
       if (itemLoad.innerHTML === "T") {
+        const tLoadWidth = itemLoad.offsetWidth;
+        moveX -= tLoadWidth;
         console.log(itemLoad.innerHTML.toLowerCase());
         itemLoad.innerHTML = itemLoad.innerHTML.toLowerCase();
       }
@@ -77,7 +79,7 @@ const OnLoadAnimation = () => {
               <span>Joaquin</span>
               {/* <span className="opacity-0">"</span> */}
               <span className="flex w-full ">
-                <span id="tLoad" className="!opacity-100 relative transform transition-all duration-[750ms] inline !text-white ">
+                <span id="tLoad" className="!opacity-100 relative transform transition-all duration-[750ms] inline !text-white">
                   T
                 </span>
                 a
