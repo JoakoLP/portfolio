@@ -15,8 +15,8 @@ const OnLoadAnimation = () => {
     const kHead = document.getElementById("kHead");
     const rHead = document.getElementById("rHead");
 
-    console.log(tLoad, kLoad, rLoad);
-    console.log(tHead, kHead, rHead);
+    // console.log(tLoad, kLoad, rLoad);
+    // console.log(tHead, kHead, rHead);
 
     const singleMove = (itemLoad, itemHead) => {
       // get Y px to move
@@ -24,33 +24,32 @@ const OnLoadAnimation = () => {
       const HeadOffTop = itemHead.getBoundingClientRect().y;
       // const LoadOffTop = itemLoad.offsetTop;
       const LoadOffTop = itemLoad.getBoundingClientRect().y;
-      console.log({ HeadOffTop });
-      console.log({ LoadOffTop });
+      // console.log({ HeadOffTop });
+      // console.log({ LoadOffTop });
       const moveY = LoadOffTop - HeadOffTop;
-      console.log(moveY);
+      // console.log({ moveY });
 
       // get X px to move
       // const HeadOffLeft = itemHead.offsetLeft;
       const HeadOffLeft = itemHead.getBoundingClientRect().x;
       // const LoadOffLeft = itemLoad.offsetLeft;
       const LoadOffLeft = itemLoad.getBoundingClientRect().x;
-      console.log({ HeadOffLeft });
-      console.log({ LoadOffLeft });
+      // console.log({ HeadOffLeft });
+      // console.log({ LoadOffLeft });
       let moveX = LoadOffLeft - HeadOffLeft;
-      console.log({ moveX });
+      // console.log({ moveX });
 
       if (itemLoad.innerHTML === "T") {
         const tLoadWidth = itemLoad.getBoundingClientRect().width;
-        console.log({ tLoadWidth });
-        // console.log(itemLoad.getBoundingClientRect().x);
+        // console.log({ tLoadWidth });
         // console.log(LoadOffLeft);
         const tHeadWidth = itemHead.getBoundingClientRect().width;
-        console.log({ tHeadWidth });
+        // console.log({ tHeadWidth });
         const diffWidth = (tLoadWidth - tHeadWidth) / 2;
-        console.log({ diffWidth });
+        // console.log({ diffWidth });
         moveX += diffWidth;
-        console.log({ moveX });
-        console.log(itemLoad.innerHTML.toLowerCase());
+        // console.log({ moveX });
+        // console.log(itemLoad.innerHTML.toLowerCase());
         itemLoad.innerHTML = itemLoad.innerHTML.toLowerCase();
       }
       itemLoad.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
