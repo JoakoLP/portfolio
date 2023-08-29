@@ -14,6 +14,11 @@ const Projects = () => {
     let techOnProject = {
       react: false,
       tailwind: false,
+      html: false,
+      express: false,
+      js: false,
+      node: false,
+      mongo: false,
     };
     project.technologies.forEach((tech) => {
       if (tech === "react") {
@@ -53,7 +58,7 @@ const Projects = () => {
             <div className="flex flex-col h-full">
               <div className="absolute top-2">
                 <div className="flex items-center space-x-1 group/link">
-                  <a href={project.url} target="_blank" className="cursor-pointer text-lg font-semibold lg:hover:text-purple-500 ">
+                  <a href={project.url} target="_blank" className="text-lg font-semibold cursor-pointer lg:hover:text-purple-500 ">
                     {t(project.name)}
                   </a>
                   {project.url ? <AiOutlineLink className="hidden text-purple-500 group-hover/link:inline" /> : null}
@@ -116,8 +121,8 @@ const Projects = () => {
 
   return (
     <div className="h-full max-h-full overflow-hidden">
-      <p className="text-lg text-black font-semibold dark:text-white">{t("navProjects")}</p>
-      <div className="h-[95%] max-h-full space-y-2 overflow-auto">
+      <p className="text-lg font-semibold text-black dark:text-white">{t("navProjects")}</p>
+      <div className="h-[95%] max-h-full space-y-2 overflow-auto" id="projectsCont">
         {projects.map((project) => {
           return renderProject(project);
         })}

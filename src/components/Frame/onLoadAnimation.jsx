@@ -42,7 +42,6 @@ const OnLoadAnimation = () => {
       if (itemLoad.innerHTML === "T") {
         const tLoadWidth = itemLoad.getBoundingClientRect().width;
         // console.log({ tLoadWidth });
-        // console.log(LoadOffLeft);
         const tHeadWidth = itemHead.getBoundingClientRect().width;
         // console.log({ tHeadWidth });
         const diffWidth = (tLoadWidth - tHeadWidth) / 2;
