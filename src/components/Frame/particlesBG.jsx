@@ -71,7 +71,6 @@ const ParticlesBG = () => {
       projectsCont.addEventListener("scroll", (event) => {
         // scrollStart();
 
-        // particles.classList.add("blur");
         console.log("scroll");
       });
 
