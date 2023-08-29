@@ -25,32 +25,40 @@ const Theme = () => {
   // localStorage.removeItem("theme");
 
   const onChangeTheme = () => {
-    // console.log(localStorage.theme);
-    // console.log(window.matchMedia("(prefers-color-scheme: light)").matches);
-    if (currentTheme === "dark") {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-      setCurrentTheme("light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-      setCurrentTheme("dark");
-    }
+    const blurScreen = document.getElementById("blur");
+    blurScreen.classList.remove("hidden");
+    blurScreen.classList.add("visible");
+    blurScreen.classList.remove("opacity-0");
+    blurScreen.classList.add("opacity-100");
+    setTimeout(() => {
+      setTimeout(() => {
+        blurScreen.classList.remove("backdrop-blur");
+        blurScreen.classList.remove("backdrop-grayscale-sm");
+        blurScreen.classList.remove("opacity-100");
+        blurScreen.classList.add("opacity-0");
+        setTimeout(() => {
+          blurScreen.classList.add("hidden");
+          blurScreen.classList.add("backdrop-grayscale-sm");
+          blurScreen.classList.add("backdrop-blur");
+        }, 500);
+      }, 500);
+
+      if (currentTheme === "dark") {
+        document.documentElement.classList.remove("dark");
+        localStorage.theme = "light";
+        setCurrentTheme("light");
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+        setCurrentTheme("dark");
+      }
+    }, 100);
   };
 
   const [enabled, setEnabled] = useState(false);
 
   return (
     <>
-      {/* <div className="bottom-10 left-0 absolute [writing-mode:vertical-rl] -rotate-180  "> */}
-      {/* <div className="flex items-end w-10 h-min"> */}
-      {/* color theme switch */}
-      {/* <button className="z-10 flex justify-center items-center p-0.5 space-x-1" onClick={onChangeTheme}> */}
-      {/* {currentTheme === "dark" ? <MoonIcon className="w-6 h-6 text-purple-600" /> : <SunIcon className="w-6 h-6 text-gray-500" />} */}
-      {/* </button> */}
-      {/* </div> */}
-      {/* </div> */}
-      {/* <Switch.Label className="mr-4">Enable notifications</Switch.Label> */}
       <div className="absolute left-0 z-10 flex justify-center w-8 p-0.5 bottom-8 ">
         <Switch
           checked={enabled}
@@ -64,6 +72,7 @@ const Theme = () => {
           </span>
         </Switch>
       </div>
+      <div id="blur" className="fixed top-0 left-0 z-50 hidden w-full h-full transition-all duration-500 opacity-0 backdrop-grayscale backdrop-blur-sm"></div>
     </>
   );
 };
