@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import Particles from "react-particles";
+import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
@@ -22,7 +22,7 @@ const ParticlesBGlight = () => {
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
-      className="z-0 h-full p-8 w-full fixed"
+      className="fixed z-0 w-full h-full p-8"
       options={{
         background: {
           color: {
