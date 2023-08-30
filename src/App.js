@@ -10,6 +10,7 @@ import ParticlesBG from "./components/Frame/particlesBG";
 import ParticlesBGlight from "./components/Frame/particlesBGlight";
 import OnLoadAnimation from "./components/Frame/onLoadAnimation";
 import "pathseg";
+import Background from "./components/Frame/background";
 
 function App() {
   const renderBG = () => {
@@ -24,7 +25,8 @@ function App() {
     <div className="relative min-h-screen transition-colors text-black dark:bg-black dark:text-white duration-400 font-['Roboto_Condensed']">
       <div className="">
         {/* {renderBG()} */}
-        <ParticlesBG />
+        {/* <ParticlesBG /> */}
+        <Background />
         <BrowserRouter>
           <Routes>
             <Route element={<Frame />}>

@@ -36,10 +36,10 @@ const ParticlesBG = () => {
     const scrollStart = () => {
       particles.classList.remove("duration-1000");
       particles.classList.add("duration-100");
-      particles.classList.add("blur-sm");
+      particles.classList.add("blur-[1px]");
       particles.classList.remove("blur-none");
       setTimeout(() => {
-        setMoveSc(false);
+        // setMoveSc(false);
       }, 100);
     };
 
@@ -47,20 +47,20 @@ const ParticlesBG = () => {
       setTimeout(() => {
         particles.classList.remove("duration-1000");
         particles.classList.add("duration-100");
-        particles.classList.add("blur");
-        particles.classList.remove("blur-sm");
+        particles.classList.add("blur-[1px]");
+        // particles.classList.remove("blur-sm");
         setTimeout(() => {
-          particles.classList.add("blur-sm");
-          particles.classList.remove("blur");
+          // particles.classList.add("blur-sm");
+          particles.classList.remove("blur-[1px]");
 
           setTimeout(() => {
-            setMoveSc(true);
+            // setMoveSc(true);
             particles.classList.remove("duration-100");
             particles.classList.add("duration-1000");
-            particles.classList.remove("blur");
+            particles.classList.remove("blur-[1px]");
             // particles.classList.remove("blur-sm");
             particles.classList.add("blur-none");
-            particles.classList.remove("blur-sm");
+            // particles.classList.remove("blur-sm");
           }, 1000);
         }, 100);
       }, 500);
@@ -269,9 +269,9 @@ const ParticlesBG = () => {
         },
         detectRetina: false,
         // duration: 0,
-        fpsLimit: 120,
+        fpsLimit: 30,
         interactivity: {
-          detectsOn: "window",
+          detectsOn: "canvas",
           events: {
             onClick: {
               enable: false,
@@ -284,7 +284,7 @@ const ParticlesBG = () => {
             //   type: "circle",
             // },
             onHover: {
-              enable: true,
+              enable: false,
               mode: "grab",
               parallax: {
                 enable: false,
@@ -534,7 +534,7 @@ const ParticlesBG = () => {
                 value: 1,
               },
             },
-            enable: false,
+            enable: true,
             maxSpeed: 50,
             mode: "bounce",
             overlap: {
@@ -626,7 +626,7 @@ const ParticlesBG = () => {
             },
             random: false,
             size: false,
-            speed: 0.7,
+            speed: 0.5,
             spin: {
               acceleration: 0,
               enable: false,
@@ -642,17 +642,18 @@ const ParticlesBG = () => {
           },
           number: {
             density: {
-              enable: false,
-              width: 1920,
-              height: 1080,
+              enable: true,
+              area: 900,
+              // width: 1920,
+              // height: 1080,
             },
             limit: 0,
-            value: 200,
+            value: 100,
           },
           opacity: {
             random: {
               enable: false,
-              minimumValue: 0.1,
+              minimumValue: 0.5,
             },
             value: 0.5,
             animation: {
@@ -665,7 +666,7 @@ const ParticlesBG = () => {
               mode: "auto",
               startValue: "random",
               destroy: "none",
-              minimumValue: 0.05,
+              minimumValue: 0.5,
             },
           },
           reduceDuplicates: false,
@@ -685,7 +686,7 @@ const ParticlesBG = () => {
             close: true,
             fill: true,
             options: {},
-            type: "triangle",
+            type: "circle",
           },
           size: {
             random: {
@@ -820,7 +821,7 @@ const ParticlesBG = () => {
             animation: {
               count: 0,
               enable: false,
-              speed: 1,
+              speed: 2,
               decay: 0,
               delay: 0,
               sync: false,
@@ -842,7 +843,7 @@ const ParticlesBG = () => {
               value: "#ff00c3",
             },
             consent: false,
-            distance: 25,
+            distance: 100,
             enable: true,
             frequency: 1,
             opacity: 0.4,
@@ -857,7 +858,7 @@ const ParticlesBG = () => {
               enable: false,
               frequency: 1,
             },
-            width: 1,
+            width: 2,
             warp: false,
           },
           repulse: {
@@ -877,7 +878,7 @@ const ParticlesBG = () => {
         pauseOnOutsideViewport: false,
         smooth: false,
         style: {},
-        zLayers: 100,
+        // zLayers: 100,
         motion: {
           disable: false,
           reduce: {
@@ -896,7 +897,7 @@ const ParticlesBG = () => {
               opacity: 0,
             },
           },
-          enable: true,
+          enable: false,
           inline: {
             arrangement: "equidistant",
           },
