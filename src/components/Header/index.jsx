@@ -4,7 +4,6 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 import { PowerGlitch } from "powerglitch";
-import svgviewer from "./svgviewer.svg";
 
 const Header = () => {
   const location = useLocation();
