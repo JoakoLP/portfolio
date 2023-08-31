@@ -54,7 +54,7 @@ const OnLoadAnimation = () => {
       itemLoad.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
       itemLoad.className = "!opacity-100 relative transform transition-all duration-[500ms] inline !text-white ";
       setTimeout(() => {
-        itemLoad.className = "!opacity-100 relative transform transition-colors duration-[500ms] !text-black dark:!text-white ";
+        itemLoad.className = "!opacity-100 relative transform transition-colors duration-[500ms] text-purple-600 ";
       }, 500);
     };
 

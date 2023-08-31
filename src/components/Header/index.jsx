@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
+import { PowerGlitch } from "powerglitch";
 
 const Header = () => {
   const location = useLocation();
@@ -13,6 +14,8 @@ const Header = () => {
   const navigate = useNavigate();
 
   const [isShowing, setIsShowing] = useState(true);
+
+  const { startGlitch, stopGlitch } = PowerGlitch.glitch();
 
   const onChange = (path) => {
     setIsShowing(false);
@@ -41,17 +44,51 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      const element = document.querySelector(".glitch");
+      PowerGlitch.glitch(element, {
+        playMode: "always",
+        createContainers: true,
+        hideOverflow: false,
+        timing: {
+          duration: 2000,
+        },
+        glitchTimeSpan: {
+          start: 0.5,
+          end: 0.7,
+        },
+        shake: {
+          velocity: 15,
+          amplitudeX: 0.2,
+          amplitudeY: 0.2,
+        },
+        slice: {
+          count: 6,
+          velocity: 15,
+          minHeight: 0.02,
+          maxHeight: 0.15,
+          hueRotate: true,
+        },
+      });
+      stopGlitch();
+      setTimeout(() => {
+        startGlitch();
+      }, 2500);
+    }, 2500);
+  }, []);
+
   return (
     <>
       <header className="space-y-12 h-min w-min">
         {/* Logo*/}
-        <div className="flex items-center justify-center space-x-2">
+        <div className="flex items-center justify-center space-x-2 ">
           <div className="flex flex-col items-start text-purple-400a whitespace-nowrap ">
             <p className="text-2xl font-light h-min ">Joaquin Takara</p>
             <p className="leading-none">{t("subtitle")}</p>
           </div>
           {/* <img src="" alt="logo" className="h-10 aspect-square" /> */}
-          <p className="text-2xl font-['Oswald'] flex">
+          <p className="text-2xl font-['Oswald'] flex glitch text-purple-600">
             <span id="tHead" className="relative h-min">
               t
             </span>
