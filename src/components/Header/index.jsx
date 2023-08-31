@@ -4,6 +4,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 import { PowerGlitch } from "powerglitch";
+import svgviewer from "./svgviewer.svg";
 
 const Header = () => {
   const location = useLocation();
@@ -28,7 +29,7 @@ const Header = () => {
 
   const isSelected = (path, children) => {
     if (current === path) {
-      return <li className="italic font-bold text-purple-900 list-disc dark:text-purple-500">{children}</li>;
+      return <li className={`font-bold text-purple-900 dark:text-purple-600`}>{children}</li>;
     } else {
       return (
         <li className="font-semibold">
@@ -80,7 +81,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="space-y-12 h-min w-min">
+      <header className="flex justify-between w-full h-min ">
         {/* Logo*/}
         <div className="flex items-center justify-center space-x-2 ">
           <div className="flex flex-col items-start text-purple-400a whitespace-nowrap ">
@@ -100,7 +101,7 @@ const Header = () => {
             </span>
           </p>
         </div>
-        <ul className="flex flex-col items-start space-y-1 select-none">
+        <ul className="flex items-center justify-center select-none pr-9 space-x-9 whitespace-nowrap">
           {/* home button */}
           {isSelected("/", t("navHome"))}
           {/* button to projects */}
@@ -112,7 +113,7 @@ const Header = () => {
         </ul>
       </header>
 
-      <div className="flex justify-end w-full max-h-full p-2 overflow-hidden h-3/4">
+      <div className="absolute left-0 flex justify-center w-full max-h-full p-2 overflow-hidden top-32 h-3/4">
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
         <Transition
           id="transition"
