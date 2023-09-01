@@ -2,7 +2,7 @@ import React from "react";
 import { projects } from "../../../data/projects";
 import { useTranslation } from "react-i18next";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiTailwindcss } from "react-icons/si";
+import { SiExpress, SiMongodb, SiTailwindcss, SiCreatereactapp, SiNextdotjs } from "react-icons/si";
 import { AiFillGithub, AiOutlineLink, AiOutlineHtml5 } from "react-icons/ai";
 import { BiLogoJavascript } from "react-icons/bi";
 import { Tooltip } from "flowbite-react";
@@ -19,6 +19,8 @@ const Projects = () => {
       js: false,
       node: false,
       mongo: false,
+      CRA: false,
+      next: false,
     };
     project.technologies.forEach((tech) => {
       if (tech === "react") {
@@ -35,6 +37,10 @@ const Projects = () => {
         techOnProject.node = true;
       } else if (tech === "mongo") {
         techOnProject.mongo = true;
+      } else if (tech === "CRA") {
+        techOnProject.CRA = true;
+      } else if (tech === "next") {
+        techOnProject.next = true;
       }
     });
     return (
@@ -70,6 +76,27 @@ const Projects = () => {
             </div>
             <div className="absolute bottom-0 right-0 flex self-end space-x-2">
               {/* technologies */}
+              <div className={techOnProject.CRA ? "visible" : "hidden"}>
+                <Tooltip content="Create React App" trigger="hover" animation="duration-500" style="auto">
+                  <SiCreatereactapp className={techOnProject.CRA ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
+                </Tooltip>
+              </div>
+              <div className={techOnProject.next ? "visible" : "hidden"}>
+                <Tooltip content="Next.js" trigger="hover" animation="duration-500" style="auto">
+                  <SiNextdotjs className={techOnProject.next ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
+                </Tooltip>
+              </div>
+              <div className={techOnProject.express ? "visible" : "hidden"}>
+                <Tooltip content="Express.js" trigger="hover" animation="duration-500" style="auto">
+                  <SiExpress className={techOnProject.express ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
+                </Tooltip>
+              </div>
+              <div className={techOnProject.mongo ? "visible" : "hidden"}>
+                <Tooltip content="MongoDB" trigger="hover" animation="duration-500" style="auto">
+                  <SiMongodb className={techOnProject.mongo ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
+                </Tooltip>
+              </div>
+
               <div className={techOnProject.react ? "visible" : "hidden"}>
                 <Tooltip content="React" trigger="hover" animation="duration-500" style="auto">
                   <FaReact className={techOnProject.react ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
@@ -90,19 +117,9 @@ const Projects = () => {
                   <BiLogoJavascript className={techOnProject.js ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
                 </Tooltip>
               </div>
-              <div className={techOnProject.express ? "visible" : "hidden"}>
-                <Tooltip content="Express.js" trigger="hover" animation="duration-500" style="auto">
-                  <SiExpress className={techOnProject.express ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
-                </Tooltip>
-              </div>
               <div className={techOnProject.node ? "visible" : "hidden"}>
                 <Tooltip content="Node.js" trigger="hover" animation="duration-500" style="auto">
                   <FaNodeJs className={techOnProject.node ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
-                </Tooltip>
-              </div>
-              <div className={techOnProject.mongo ? "visible" : "hidden"}>
-                <Tooltip content="MongoDB" trigger="hover" animation="duration-500" style="auto">
-                  <SiMongodb className={techOnProject.mongo ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600" : "hidden"} size={22} />
                 </Tooltip>
               </div>
             </div>
