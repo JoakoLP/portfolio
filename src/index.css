@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: black;
+  /* -webkit-box-shadow: 0 0 0px 1000px #1b1b6c inset; */
+  /* background-color: #1b1b6c; */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+html.dark input {
+  &:-webkit-autofill {
+    /* box-shadow: 0 0 0 30px #1c1c1d inset; */
+    -webkit-text-fill-color: white;
+  }
+
+  &:-webkit-autofill:hover {
+    /* box-shadow: 0 0 0 30px #1c1c1d inset; */
+    -webkit-text-fill-color: white;
+  }
+
+  &:-webkit-autofill:focus {
+    /* box-shadow: 0 0 0 30px #1c1c1d inset; */
+    -webkit-text-fill-color: white;
+  }
+
+  &:-webkit-autofill:active {
+    /* box-shadow: 0 0 0 30px #1c1c1d inset; */
+    -webkit-text-fill-color: white;
+  }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 @layer base {

@@ -113,126 +113,6 @@ const ParticlesBG = () => {
   }, []);
 
   return (
-    // <Particles
-    //   id="tsparticles"
-    //   init={particlesInit}
-    //   loaded={particlesLoaded}
-    //   className="fixed z-0 w-full h-full p-8 transition-all duration-1000 blur-none"
-    //   options={{
-    //     background: {
-    //       color: theme === "dark" ? "#000000" : "#ffffff",
-    //       // color: "rgba(255,255,255,0)",
-    //       // {
-    //       // value: document.getElementsByTagName("html")[0].className === "dark" ? "#10021C" : "#99999",
-    //       // value: document.getElementsByTagName("html")[0].className === "dark" ? "#100010" : "#99999",
-    //       // value: "rgba(0,0,0,0)",
-
-    //       // },
-    //       // image: "url('./svgviewer.svg')",
-    //     },
-    //     backgroundMask: {
-    //       // cover: theme === "dark" ? "#000000" : "#ffffff",
-    //       // enable: true,
-    //     },
-    //     // backgroundMode: {
-    //     //   enable: true,
-    //     // },
-    //     polygon: {
-    //       draw: {
-    //         enable: true,
-    //         lineColor: "rgba(255,255,255,0.2)",
-    //         lineWidth: 0.3,
-    //       },
-    //       move: {
-    //         radius: 10,
-    //       },
-    //       inlineArrangement: "equidistant",
-    //       scale: 0.5,
-    //       type: "inline",
-    //       //url: {polygonmasklogo},
-    //       url: "https://cdn.matteobruni.it/images/particles/smalldeer.svg",
-    //     },
-    //     fullScreen: false,
-    //     fpsLimit: 30,
-    //     interactivity: {
-    //       events: {
-    //         onClick: {
-    //           enable: false,
-    //           mode: "push",
-    //         },
-    //         onHover: {
-    //           enable: true,
-    //           mode: "grab",
-    //         },
-    //         resize: true,
-    //       },
-    //       modes: {
-    //         push: {
-    //           quantity: 1,
-    //         },
-    //         grab: {
-    //           distance: 100,
-    //         },
-    //         repulse: {
-    //           distance: 200,
-    //           duration: 0.4,
-    //         },
-    //       },
-    //     },
-    //     particles: {
-    //       color: {
-    //         value: "#ef00ff",
-    //       },
-    //       life: {
-    //         duration: {
-    //           value: 100,
-    //         },
-    //       },
-    //       links: {
-    //         color: "#ff00c3",
-    //         distance: 150,
-    //         // distance: moveSc ? 150 : 50,
-    //         enable: true,
-    //         // enable: false,
-    //         // enable: moveSc ? true : false,
-    //         opacity: 0.25,
-    //         width: 1,
-    //       },
-    //       move: {
-    //         direction: "none",
-    //         enable: true,
-    //         outModes: {
-    //           default: "out",
-    //         },
-    //         random: true,
-    //         speed: 0.7,
-    //         // speed: moveSc ? 0.7 : 0.2,
-    //         straight: false,
-    //       },
-    //       number: {
-    //         density: {
-    //           enable: true,
-    //           area: 800,
-    //         },
-    //         value: 200,
-    //         // value: moveSc ? 200 : 100,
-    //       },
-    //       opacity: {
-    //         value: 0.5,
-    //         // value: moveSc ? 0.5 : 1,
-    //       },
-    //       shape: {
-    //         type: "triangle",
-    //       },
-    //       size: {
-    //         value: { min: 0.5, max: 3 },
-    //         // value: { min: moveSc ? 0.5 : 4, max: moveSc ? 3 : 7 },
-    //       },
-    //     },
-    //     detectRetina: true,
-    //   }}
-    // />
-
     <Particles
       id="tsparticles"
       init={particlesInit}
@@ -516,7 +396,7 @@ const ParticlesBG = () => {
           },
           collisions: {
             absorb: {
-              speed: 2,
+              speed: 1,
             },
             bounce: {
               horizontal: {
@@ -535,7 +415,7 @@ const ParticlesBG = () => {
               },
             },
             enable: true,
-            maxSpeed: 50,
+            maxSpeed: 0.5,
             mode: "bounce",
             overlap: {
               enable: true,
@@ -575,7 +455,6 @@ const ParticlesBG = () => {
             //   },
             // },
           },
-          groups: {},
           move: {
             angle: {
               offset: 0,
@@ -606,7 +485,7 @@ const ParticlesBG = () => {
               maxSpeed: 50,
             },
             path: {
-              clamp: true,
+              clamp: false,
               delay: {
                 random: {
                   enable: false,
@@ -643,12 +522,12 @@ const ParticlesBG = () => {
           number: {
             density: {
               enable: true,
-              area: 900,
+              area: 800,
               // width: 1920,
               // height: 1080,
             },
             limit: 0,
-            value: 100,
+            value: 90,
           },
           opacity: {
             random: {
@@ -843,7 +722,7 @@ const ParticlesBG = () => {
               value: "#ff00c3",
             },
             consent: false,
-            distance: 100,
+            distance: 150,
             enable: true,
             frequency: 1,
             opacity: 0.4,
@@ -870,7 +749,7 @@ const ParticlesBG = () => {
             enabled: false,
             distance: 1,
             duration: 1,
-            factor: 1,
+            // factor: 1,
             speed: 1,
           },
         },
@@ -883,38 +762,38 @@ const ParticlesBG = () => {
           disable: false,
           reduce: {
             factor: 4,
-            value: true,
+            value: false,
           },
         },
-        polygon: {
-          draw: {
-            enable: false,
-            stroke: {
-              color: {
-                value: "rgba(255,255,255,1)",
-              },
-              width: 0.5,
-              opacity: 0,
-            },
-          },
-          enable: false,
-          inline: {
-            arrangement: "equidistant",
-          },
-          move: {
-            radius: 5,
-            type: "path",
-          },
-          scale: 0.75,
-          type: "inline",
-          // url: "url('./svgviewer.svg')",
-          url: codesvg,
-          // url: "https://svgur.com/i/x5o.svg",
-          // url: "https://svgur.com/i/x3k.svg",
-          // url: "./codesvg.svg",
-          // url: "./src/components/frame/codesvg.svg",
-          // url: "https://particles.js.org/images/smalldeer.svg",
-        },
+        // polygon: {
+        //   draw: {
+        //     enable: false,
+        //     stroke: {
+        //       color: {
+        //         value: "rgba(255,255,255,1)",
+        //       },
+        //       width: 0.5,
+        //       opacity: 0,
+        //     },
+        //   },
+        //   enable: false,
+        //   inline: {
+        //     arrangement: "equidistant",
+        //   },
+        //   move: {
+        //     radius: 5,
+        //     type: "path",
+        //   },
+        //   scale: 0.75,
+        //   type: "inline",
+        //   // url: "url('./svgviewer.svg')",
+        //   url: codesvg,
+        //   // url: "https://svgur.com/i/x5o.svg",
+        //   // url: "https://svgur.com/i/x3k.svg",
+        //   // url: "./codesvg.svg",
+        //   // url: "./src/components/frame/codesvg.svg",
+        //   // url: "https://particles.js.org/images/smalldeer.svg",
+        // },
       }}
     />
   );

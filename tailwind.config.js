@@ -9,5 +9,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("flowbite/plugin"), require("tailwindcss-animated")],
+  plugins: [require("tailwindcss"), require("autoprefixer"), require("flowbite/plugin"), require("tailwindcss-animated")],
 };

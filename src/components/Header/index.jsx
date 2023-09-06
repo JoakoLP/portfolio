@@ -84,8 +84,8 @@ const Header = () => {
         {/* Logo*/}
         <div className="flex items-center justify-center space-x-2 ">
           <div className="flex flex-col items-start text-purple-400a whitespace-nowrap ">
-            <p className="text-2xl font-light h-min ">Joaquin Takara</p>
-            <p className="leading-none">{t("subtitle")}</p>
+            <p className="text-2xl dark:font-light h-min font-medium">Joaquin Takara</p>
+            <p className="leading-none dark:font-medium font-semibold">{t("subtitle")}</p>
           </div>
           {/* <img src="" alt="logo" className="h-10 aspect-square" /> */}
           <p className="text-2xl font-['Oswald'] flex glitch text-purple-600">
@@ -116,7 +116,7 @@ const Header = () => {
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
         <Transition
           id="transition"
-          className="w-3/4 h-full max-h-full p-3 overflow-hidden border border-opacity-50 bg-fuchsia-400 bg-opacity-10 dark:border border-fuchsia-950 dark:border-purple-700 dark:bg-opacity-20 dark:bg-purple-950"
+          className="w-3/4 h-full max-h-full p-3 overflow-hidden border border-opacity-50 bg-fuchsia-400 bg-opacity-10 dark:border border-fuchsia-700 dark::border-purple-700 dark:bg-opacity-20 dark:bg-purple-950"
           show={isShowing}
           appear={true}
           enter="transition ease-in-out duration-[500ms] delay-200 transform"
