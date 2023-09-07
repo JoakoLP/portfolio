@@ -15,10 +15,10 @@ const About = () => {
   };
 
   return (
-    <div className="h-full max-h-full overflow-hidden">
+    <div className="h-full max-h-full overflow-hidden relative">
+      <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navAbout")}</p>
       <div className="flex flex-col items-center justify-center h-full p-8 space-y-8">
         <div>
-          <p className="pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navAbout")}</p>
           <div className="flex items-center justify-center p-4 space-x-12">
             <div className="overflow-hidden bg-opacity-50 rounded-full bg-purple-950 w-min h-min min-w-fit">
               <div className="flex w-72 overflow-hidden skew-x-[deg] justify-center items-center -m-6">

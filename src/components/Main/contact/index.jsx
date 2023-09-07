@@ -20,11 +20,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-full">
-      <p className="pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navContact")}</p>
+    <div className="h-full relative">
+      <p className="absolute w-full top-0 pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navContact")}</p>
       <div className="flex flex-col w-full p-4 h-[93%] justify-center">
         <div className="flex w-full justify-evenly">
-          <div className="font-semibold space-y-2 h-full flex justify-center flex-col">
+          <div className="font-semibold space-y-4 h-full flex justify-center flex-col">
             <p>
               <span>Email: </span>
               <a href="mailto:joakotakara@gmail.com" className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600">
@@ -38,16 +38,16 @@ const Contact = () => {
               </a>
             </p>
             <div className="flex">
-              <p className="font-semibold">{`${t("social")}:`}</p>
-              <div className="flex items-center justify-center w-full">
-                <a href="https://github.com/JoakoLP" target="_blank">
-                  <Tooltip content={t("myGithub")} trigger="hover" animation="duration-500" style="auto">
-                    <AiFillGithub size={26} className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600"></AiFillGithub>
+              <p className="font-semibold whitespace-nowrap">{`${t("social")}:`}</p>
+              <div className="flex items-center space-x-2 justify-center w-full">
+                <a href="https://www.linkedin.com/in/joaquintakara/" target="_blank">
+                  <Tooltip content={t("myLinkedin")} placement="bottom-end" trigger="hover" animation="duration-500" style="auto">
+                    <AiFillLinkedin size={26} className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600"></AiFillLinkedin>
                   </Tooltip>
                 </a>
-                <a href="https://www.linkedin.com/in/joaquintakara/" target="_blank">
-                  <Tooltip content={t("myLinkedin")} trigger="hover" animation="duration-500" style="auto">
-                    <AiFillLinkedin size={26} className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600"></AiFillLinkedin>
+                <a href="https://github.com/JoakoLP" target="_blank">
+                  <Tooltip content={t("myGithub")} placement="bottom-start" trigger="hover" animation="duration-500" style="auto">
+                    <AiFillGithub size={26} className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600"></AiFillGithub>
                   </Tooltip>
                 </a>
               </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                 placeholder={t("contactMsg")}
                 className="rounded-sm focus:ring-fuchsia-600 w-full bg-transparent max-h-[50%] focus:bg-white focus:dark:bg-black bg-opacity-0 focus:bg-opacity-70 focus:dark:bg-opacity-70 transition-colors duration-300 placeholder:text-black placeholder:dark:text-white placeholder:!text-opacity-80 border-fuchsia-700 dark:border-purple-900"
               ></textarea>
-              <button type="submit" className="bg-fuchsia-700 dark:bg-purple-900 text-white bg-opacity-70 p-1.5 py-1 rounded-sm ">
+              <button type="submit" className="w-full bg-fuchsia-700 dark:bg-purple-900 text-white bg-opacity-70 p-1.5 rounded-sm ">
                 {t("contactSend")}
               </button>
             </form>

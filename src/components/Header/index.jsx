@@ -4,6 +4,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 import { PowerGlitch } from "powerglitch";
+// import framePNG from "../../assets/img/seccion3.png";
 
 const Header = () => {
   const location = useLocation();
@@ -102,9 +103,9 @@ const Header = () => {
         </div>
         <ul className="flex items-center justify-center select-none pr-9 space-x-9 whitespace-nowrap">
           {/* home button */}
-          {isSelected("/", t("navHome"))}
+          {/* {isSelected("/", t("navHome"))} */}
           {/* button to projects */}
-          {isSelected("/projects", t("navProjects"))}
+          {isSelected("/", t("navProjects"))}
           {/* about me */}
           {isSelected("/about", t("navAbout"))}
           {/* contact */}
@@ -112,22 +113,25 @@ const Header = () => {
         </ul>
       </header>
 
-      <div className="absolute left-0 flex justify-center w-full max-h-full p-2 overflow-hidden top-32 h-3/4">
+      <div className="absolute left-0 flex justify-center w-full max-h-full p-2 overflow-hidden top-32 h-3/4 ">
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
+        {/* <div className="relative w-full h-full"> */}
         <Transition
           id="transition"
-          className="w-3/4 h-full max-h-full p-3 overflow-hidden border border-opacity-50 bg-fuchsia-400 bg-opacity-10 dark:border border-fuchsia-700 dark::border-purple-700 dark:bg-opacity-20 dark:bg-purple-950"
+          className="w-3/4 h-full max-h-full p-3 overflow-hidden border border-opacity-50 bg-fuchsia-400 bg-opacity-10 dark:border border-fuchsia-700 dark:border-purple-700 dark:bg-opacity-10 dark:bg-purple-950"
           show={isShowing}
           appear={true}
           enter="transition ease-in-out duration-[500ms] delay-200 transform"
-          enterFrom="opacity-0 -translate-x-full"
-          enterTo="opacity-100 translate-x-0"
+          enterFrom="opacity-0 -translate-x-full blur-lg"
+          enterTo="opacity-100 translate-x-0 blur-none"
           leave="transition ease-in-out duration-[100ms]"
-          leaveFrom="opacity-100 translate-x-0"
-          leaveTo="opacity-0 translate-x-full"
+          leaveFrom="opacity-100 translate-x-0 blur-none"
+          leaveTo="opacity-0 translate-x-full blur-lg"
         >
+          {/* <img src={framePNG} alt="" className="absolute h-full" /> */}
           <Outlet />
         </Transition>
+        {/* </div> */}
         {/* </div> */}
       </div>
     </>
