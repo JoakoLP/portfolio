@@ -172,7 +172,7 @@ const ParticlesBG = () => {
                 smooth: 10,
               },
             },
-            resize: true,
+            resize: false,
           },
           modes: {
             trail: {

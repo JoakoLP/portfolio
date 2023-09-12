@@ -160,9 +160,9 @@ const Projects = () => {
   };
 
   return (
-    <div className="h-full max-h-full overflow-hidden relative">
-      <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navProjects")}</p>
-      <div className="mt-8 h-[95%] max-h-full space-y-2 overflow-auto" id="projectsCont">
+    <div className="relative h-full max-h-full overflow-hidden">
+      {/* <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navProjects")}</p> */}
+      <div className="h-full max-h-full space-y-2 overflow-auto" id="projectsCont">
         <div className="max-h-full">
           {projects.map((project) => {
             return renderProject(project);

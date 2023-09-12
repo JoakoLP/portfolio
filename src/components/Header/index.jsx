@@ -4,11 +4,61 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 import { PowerGlitch } from "powerglitch";
-// import framePNG from "../../assets/img/seccion3.png";
+import framePNG from "../../assets/img/seccion3.png";
 
 const Header = () => {
   const location = useLocation();
   const current = location.pathname;
+
+  const sectionTitle = () => {
+    let title = document.querySelector(".titleGl");
+    if (stopGlitch) {
+      console.log(stopGlitch);
+      stopGlitch(title);
+    }
+    setTimeout(() => {
+      title = document.querySelector(".titleGl");
+      console.log(title);
+      const { stopGlitch } = PowerGlitch.glitch(title, {
+        playMode: "always",
+        createContainers: true,
+        hideOverflow: false,
+        timing: {
+          duration: 2000,
+        },
+        glitchTimeSpan: {
+          start: 0.5,
+          end: 0.7,
+        },
+        shake: {
+          velocity: 15,
+          amplitudeX: 0.2,
+          amplitudeY: 0.2,
+        },
+        slice: {
+          count: 6,
+          velocity: 15,
+          minHeight: 0.02,
+          maxHeight: 0.15,
+          hueRotate: true,
+        },
+      });
+    }, 1000);
+    switch (current) {
+      case "/":
+        return t("navProjects");
+      // break;
+      case "/about":
+        return t("navAbout");
+      // break;
+
+      case "/contact":
+        return t("navContact");
+      // break;
+      default:
+      // break;
+    }
+  };
 
   const { i18n, t } = useTranslation();
 
@@ -72,9 +122,9 @@ const Header = () => {
           hueRotate: true,
         },
       });
-      stopGlitch();
+      // stopGlitch();
       setTimeout(() => {
-        startGlitch();
+        // startGlitch();
       }, 2500);
     }, 2500);
   }, []);
@@ -85,8 +135,8 @@ const Header = () => {
         {/* Logo*/}
         <div className="flex items-center justify-center space-x-2 ">
           <div className="flex flex-col items-start text-purple-400a whitespace-nowrap ">
-            <p className="text-2xl dark:font-light h-min font-medium">Joaquin Takara</p>
-            <p className="leading-none dark:font-medium font-semibold">{t("subtitle")}</p>
+            <p className="text-2xl font-medium dark:font-light h-min">Joaquin Takara</p>
+            <p className="font-semibold leading-none dark:font-medium">{t("subtitle")}</p>
           </div>
           {/* <img src="" alt="logo" className="h-10 aspect-square" /> */}
           <p className="text-2xl font-['Oswald'] flex glitch text-purple-600">
@@ -113,12 +163,13 @@ const Header = () => {
         </ul>
       </header>
 
-      <div className="absolute left-0 flex justify-center w-full max-h-full p-2 overflow-hidden top-32 h-3/4 ">
+      <div className="absolute left-0 flex justify-center w-full max-h-full p-2 overflow-hidden top-32">
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
         {/* <div className="relative w-full h-full"> */}
         <Transition
           id="transition"
-          className="w-3/4 h-full max-h-full p-3 overflow-hidden border border-opacity-50 bg-fuchsia-400 bg-opacity-10 dark:border border-fuchsia-700 dark:border-purple-700 dark:bg-opacity-10 dark:bg-purple-950"
+          // className="w-3/4 h-full max-h-full p-3 overflow-hidden border border-opacity-50 bg-fuchsia-400 bg-opacity-10 dark:border border-fuchsia-700 dark:border-purple-700 dark:bg-opacity-10 dark:bg-purple-950"
+          className="flex items-center justify-center w-[1200px] h-[700px] overflow-hidden p-3a "
           show={isShowing}
           appear={true}
           enter="transition ease-in-out duration-[500ms] delay-200 transform"
@@ -128,8 +179,16 @@ const Header = () => {
           leaveFrom="opacity-100 translate-x-0 blur-none"
           leaveTo="opacity-0 translate-x-full blur-lg"
         >
-          {/* <img src={framePNG} alt="" className="absolute h-full" /> */}
-          <Outlet />
+          <div className="absolute z-10 w-full max-h-full pointer-events-none">
+            <img src={framePNG} alt="" className="object-cover w-[1200px]  p-4a" />
+          </div>
+          <div className="absolute right-0 flex items-center h-16 top-4 w-[350px]">
+            <p className="text-xl font-semibold titleGl">{sectionTitle()}</p>
+          </div>
+          {/* 1080 x 568 */}
+          <div className="h-[568px] w-[1080px] mt-12 m-5 p-2 z-0 bg-fuchsia-400 bg-opacity-10 dark:bg-opacity-20 dark:bg-purple-950">
+            <Outlet />
+          </div>
         </Transition>
         {/* </div> */}
         {/* </div> */}

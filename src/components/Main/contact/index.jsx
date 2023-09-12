@@ -20,11 +20,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-full relative">
-      <p className="absolute w-full top-0 pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navContact")}</p>
+    <div className="h-full">
+      {/* <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navContact")}</p> */}
       <div className="flex flex-col w-full p-4 h-[93%] justify-center">
         <div className="flex w-full justify-evenly">
-          <div className="font-semibold space-y-4 h-full flex justify-center flex-col">
+          <div className="flex flex-col justify-center h-full space-y-4 font-semibold">
             <p>
               <span>Email: </span>
               <a href="mailto:joakotakara@gmail.com" className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600">
@@ -39,7 +39,7 @@ const Contact = () => {
             </p>
             <div className="flex">
               <p className="font-semibold whitespace-nowrap">{`${t("social")}:`}</p>
-              <div className="flex items-center space-x-2 justify-center w-full">
+              <div className="flex items-center justify-center w-full space-x-2">
                 <a href="https://www.linkedin.com/in/joaquintakara/" target="_blank">
                   <Tooltip content={t("myLinkedin")} placement="bottom-end" trigger="hover" animation="duration-500" style="auto">
                     <AiFillLinkedin size={26} className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600"></AiFillLinkedin>
@@ -55,7 +55,7 @@ const Contact = () => {
           </div>
           <div>
             <form action="" className="space-y-2" onSubmit={contactSubmit}>
-              <div className="w-full flex space-x-2">
+              <div className="flex w-full space-x-2">
                 <input
                   type="text"
                   name="name"
@@ -79,7 +79,7 @@ const Contact = () => {
                 placeholder={t("contactMsg")}
                 className="rounded-sm focus:ring-fuchsia-600 w-full bg-transparent max-h-[50%] focus:bg-white focus:dark:bg-black bg-opacity-0 focus:bg-opacity-70 focus:dark:bg-opacity-70 transition-colors duration-300 placeholder:text-black placeholder:dark:text-white placeholder:!text-opacity-80 border-fuchsia-700 dark:border-purple-900"
               ></textarea>
-              <button type="submit" className="w-full bg-fuchsia-700 dark:bg-purple-900 text-white bg-opacity-70 p-1.5 rounded-sm ">
+              <button type="submit" className="w-full bg-fuchsia-600 dark:bg-purple-900 text-white abg-opacity-70 p-1.5 rounded-sm ">
                 {t("contactSend")}
               </button>
             </form>

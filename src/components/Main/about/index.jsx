@@ -16,7 +16,7 @@ const About = () => {
 
   return (
     <div className="h-full max-h-full overflow-hidden relative">
-      <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navAbout")}</p>
+      {/* <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navAbout")}</p> */}
       <div className="flex flex-col items-center justify-center h-full p-8 space-y-8">
         <div>
           <div className="flex items-center justify-center p-4 space-x-12">
