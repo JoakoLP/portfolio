@@ -15,18 +15,18 @@ const About = () => {
   };
 
   return (
-    <div className="h-full max-h-full overflow-hidden relative">
+    <div className="relative h-full max-h-full overflow-hidden">
       {/* <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navAbout")}</p> */}
-      <div className="flex flex-col items-center justify-center h-full p-8 space-y-8">
+      <div className="flex flex-col items-center justify-center h-full max-h-full lg:space-y-2 xl:space-y-8 lg:p-4 xl:p-8">
         <div>
-          <div className="flex items-center justify-center p-4 space-x-12">
+          <div className="flex items-center justify-center p-4 lg:space-x-8 xl:space-x-12">
             <div className="overflow-hidden bg-opacity-50 rounded-full bg-purple-950 w-min h-min min-w-fit">
-              <div className="flex w-72 overflow-hidden skew-x-[deg] justify-center items-center -m-6">
+              <div className="flex lg:w-64 xl:w-72 overflow-hidden skew-x-[deg] justify-center items-center -m-6">
                 <img src={profPhoto} alt="" className="object-cover w-full -skew-x-[deg] aspect-square" />
                 {/* <div className={`bg-[url("https://i.imgur.com/hllpTZg.jpeg")]`}></div> */}
               </div>
             </div>
-            <div className="pb-3 pl-3 text-lg font-semibold text-black dark:text-white">
+            <div className="pb-3 pl-3 font-semibold text-black lg:text-base xl:text-lg dark:text-white">
               <p className="indent-2">{t("about1")}</p>
               <p className="indent-2">{t("about2")}</p>
             </div>
@@ -34,7 +34,7 @@ const About = () => {
         </div>
         <div className="flex flex-col w-full">
           <p className="w-full text-xl font-semibold">{t("mySkills")}</p>
-          <div className="flex p-4 space-x-2">
+          <div className="flex w-full p-4 space-x-2 overflow-auto" id="skillList">
             {skills.map((skill) => {
               return renderSkill(skill);
             })}

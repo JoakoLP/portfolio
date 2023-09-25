@@ -39,6 +39,28 @@ html.dark input {
   }
 }
 
+#skillList,
+#message {
+  &::-webkit-scrollbar {
+    height: 5px;
+    position: fixed;
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(33, 0, 48, 0.774);
+    border-radius: 5%;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(33, 0, 48);
+  }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 @layer base {

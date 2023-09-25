@@ -22,8 +22,8 @@ const Contact = () => {
   return (
     <div className="h-full">
       {/* <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navContact")}</p> */}
-      <div className="flex flex-col w-full p-4 h-[93%] justify-center">
-        <div className="flex w-full justify-evenly">
+      <div className="flex flex-col justify-center w-full h-full p-4">
+        <div className="flex w-full h-full justify-evenly">
           <div className="flex flex-col justify-center h-full space-y-4 font-semibold">
             <p>
               <span>Email: </span>
@@ -53,8 +53,8 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div>
-            <form action="" className="space-y-2" onSubmit={contactSubmit}>
+          <div className="max-h-full">
+            <form action="" className="flex flex-col justify-center h-full space-y-2" onSubmit={contactSubmit}>
               <div className="flex w-full space-x-2">
                 <input
                   type="text"
@@ -77,7 +77,7 @@ const Contact = () => {
                 cols="30"
                 rows="10"
                 placeholder={t("contactMsg")}
-                className="rounded-sm focus:ring-fuchsia-600 w-full bg-transparent max-h-[50%] focus:bg-white focus:dark:bg-black bg-opacity-0 focus:bg-opacity-70 focus:dark:bg-opacity-70 transition-colors duration-300 placeholder:text-black placeholder:dark:text-white placeholder:!text-opacity-80 border-fuchsia-700 dark:border-purple-900"
+                className="rounded-sm focus:ring-fuchsia-600 w-full bg-transparent lg:!h-[200px] xl:max-h-[50%] focus:bg-white focus:dark:bg-black bg-opacity-0 focus:bg-opacity-70 focus:dark:bg-opacity-70 transition-colors duration-300 placeholder:text-black placeholder:dark:text-white placeholder:!text-opacity-80 border-fuchsia-700 dark:border-purple-900"
               ></textarea>
               <button type="submit" className="w-full bg-fuchsia-700 dark:bg-purple-900 text-white bg-opacity-80 dark:bg-opacity-60 p-1.5 rounded-sm ">
                 {t("contactSend")}
