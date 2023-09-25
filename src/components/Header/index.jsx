@@ -165,33 +165,35 @@ const Header = () => {
         </ul>
       </header>
 
-      <div className="absolute left-0 flex justify-center w-full max-h-full p-2 overflow-hidden top-32">
+      <div className="absolute left-0 flex justify-center w-full max-h-full p-2 overflow-hidden lg:top-24 xl:top-32">
         {/* <div className="w-2/3 h-full max-h-full p-3 overflow-hidden animate-fade-down animate-once animate-duration-[750ms] animate-delay-300 animate-ease-in-out"> */}
         {/* <div className="relative w-full h-full"> */}
         <Transition
           id="transition"
           // className="w-3/4 h-full max-h-full p-3 overflow-hidden border border-opacity-50 bg-fuchsia-400 bg-opacity-10 dark:border border-fuchsia-700 dark:border-purple-700 dark:bg-opacity-10 dark:bg-purple-950"
-          className="flex items-center justify-center w-[1200px] h-[700px] overflow-hidden p-3a "
+          className="flex items-center justify-center lg:w-[800px] lg:h-[466px] xl:w-[1200px] xl:h-[700px] overflow-hidden"
           show={isShowing}
           appear={true}
           enter="transition ease-in-out duration-[500ms] delay-200 transform"
-          enterFrom="opacity-0 -translate-x-full blur-lg"
-          enterTo="opacity-100 translate-x-0 blur-none"
+          enterFrom="opacity-0 -translate-x-full"
+          enterTo="opacity-100 translate-x-0"
           leave="transition ease-in-out duration-[100ms]"
-          leaveFrom="opacity-100 translate-x-0 blur-none"
-          leaveTo="opacity-0 translate-x-full blur-lg"
+          leaveFrom="opacity-100 translate-x-0"
+          leaveTo="opacity-0 translate-x-full"
         >
           <div className="absolute z-10 w-full max-h-full pointer-events-none">
             {/* <img src={framePNG} alt="" className="object-cover w-[1200px]  p-4a" /> */}
-            <img src={sectionBlPNG} alt="" className="object-cover w-[1200px] hidden dark:block p-4a" />
-            <img src={sectionLgPNG} alt="" className="object-cover w-[1200px] visible dark:hidden p-4a" />
+            <img src={sectionBlPNG} alt="" className="hidden object-cover w-full h-full dark:block" />
+            <img src={sectionLgPNG} alt="" className="visible object-cover w-full h-full dark:hidden" />
           </div>
-          <div className="absolute right-0 flex items-center h-16 top-4 w-[350px]">
+          <div className="absolute right-0 flex items-center lg:h-8 lg:top-4 xl:h-16 xl:top-4 lg:w-[240px] xl:w-[350px]">
             <p className="z-10 text-xl font-semibold titleGl">{sectionTitle()}</p>
           </div>
           {/* 1080 x 568 */}
-          <div className="h-[568px] w-[1080px] mt-12 m-5 p-2 z-0 bg-fuchsia-400 bg-opacity-10 dark:bg-opacity-20 dark:bg-purple-950">
-            <Outlet />
+          <div className="h-full w-full lg:pt-[56px] lg:pb-[38px] lg:px-[44px] xl:pt-[86px] xl:pb-[58px] xl:px-[67px] z-0 ">
+            <div className="w-full h-full bg-opacity-10 bg-fuchsia-400 dark:bg-opacity-20 dark:bg-purple-950">
+              <Outlet />
+            </div>
           </div>
         </Transition>
         {/* </div> */}
