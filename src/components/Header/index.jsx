@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 import { PowerGlitch } from "powerglitch";
 import framePNG from "../../assets/img/seccion3.png";
+import sectionLgPNG from "../../assets/img/sectionlg.png";
+import sectionBlPNG from "../../assets/img/sectionbl.png";
 
 const Header = () => {
   const location = useLocation();
@@ -180,10 +182,12 @@ const Header = () => {
           leaveTo="opacity-0 translate-x-full blur-lg"
         >
           <div className="absolute z-10 w-full max-h-full pointer-events-none">
-            <img src={framePNG} alt="" className="object-cover w-[1200px]  p-4a" />
+            {/* <img src={framePNG} alt="" className="object-cover w-[1200px]  p-4a" /> */}
+            <img src={sectionBlPNG} alt="" className="object-cover w-[1200px] hidden dark:block p-4a" />
+            <img src={sectionLgPNG} alt="" className="object-cover w-[1200px] visible dark:hidden p-4a" />
           </div>
           <div className="absolute right-0 flex items-center h-16 top-4 w-[350px]">
-            <p className="text-xl font-semibold titleGl">{sectionTitle()}</p>
+            <p className="z-10 text-xl font-semibold titleGl">{sectionTitle()}</p>
           </div>
           {/* 1080 x 568 */}
           <div className="h-[568px] w-[1080px] mt-12 m-5 p-2 z-0 bg-fuchsia-400 bg-opacity-10 dark:bg-opacity-20 dark:bg-purple-950">

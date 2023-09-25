@@ -79,7 +79,7 @@ const Contact = () => {
                 placeholder={t("contactMsg")}
                 className="rounded-sm focus:ring-fuchsia-600 w-full bg-transparent max-h-[50%] focus:bg-white focus:dark:bg-black bg-opacity-0 focus:bg-opacity-70 focus:dark:bg-opacity-70 transition-colors duration-300 placeholder:text-black placeholder:dark:text-white placeholder:!text-opacity-80 border-fuchsia-700 dark:border-purple-900"
               ></textarea>
-              <button type="submit" className="w-full bg-fuchsia-600 dark:bg-purple-900 text-white abg-opacity-70 p-1.5 rounded-sm ">
+              <button type="submit" className="w-full bg-fuchsia-700 dark:bg-purple-900 text-white bg-opacity-80 dark:bg-opacity-60 p-1.5 rounded-sm ">
                 {t("contactSend")}
               </button>
             </form>
