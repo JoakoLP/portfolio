@@ -29,12 +29,10 @@ function App() {
         <Background />
         <BrowserRouter>
           <Routes>
-            <Route element={<Frame />}>
-              <Route path="/" element={<Header />}>
-                <Route index element={<MainComps.Projects />} />
-                <Route path="/about" element={<MainComps.About />}></Route>
-                <Route path="/contact" element={<MainComps.Contact />}></Route>
-              </Route>
+            <Route path="/" element={<Frame />}>
+              <Route index element={<MainComps.Projects />} />
+              <Route path="/about" element={<MainComps.About />}></Route>
+              <Route path="/contact" element={<MainComps.Contact />}></Route>
             </Route>
           </Routes>
         </BrowserRouter>
