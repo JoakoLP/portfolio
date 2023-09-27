@@ -14,10 +14,7 @@ const Projects = () => {
   const { i18n, t } = useTranslation();
   const [play, setPlay] = useState(true);
   const pausePlay = () => {
-    const carousel = document.getElementById("carouselProjects");
-    console.log({ play });
     setPlay(!play);
-    console.log({ play });
   };
   const renderProject = (project, index) => {
     let techOnProject = {
@@ -177,10 +174,10 @@ const Projects = () => {
       <div className="h-full max-h-full space-y-2 overflow-auto" id="projectsCont">
         <div className="h-full max-h-full">
           <Carousel
-            id="carouselProjects"
             className="group/carousel"
             loop
             autoplay={play}
+            autoplayDelay={7000}
             prevArrow={({ handlePrev }) => (
               <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-2/4 left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
                 <MdNavigateBefore size={22} className="text-purple-700" />
@@ -210,8 +207,8 @@ const Projects = () => {
           <div className="absolute bottom-4 left-4 " onClick={pausePlay}>
             <Tooltip content="Autoplay" trigger="hover" placement="left" animation="duration-500" style="auto">
               <div className="flex" onClick={pausePlay}>
-                <HiOutlinePlay size={24} className={`${play ? " text-purple-700" : ""} transition-all duration-200`} />
-                <HiOutlinePause size={24} className={`${play ? "" : " text-purple-700"} transition-all duration-200`} />
+                <HiOutlinePlay size={24} className={`${play ? " text-purple-700" : "text-purple-700/50"} transition-all duration-200`} />
+                <HiOutlinePause size={24} className={`${play ? "text-purple-700/50" : " text-purple-700"} transition-all duration-200`} />
               </div>
             </Tooltip>
           </div>
