@@ -6,11 +6,13 @@ import { SiExpress, SiMongodb, SiTailwindcss, SiCreatereactapp, SiNextdotjs, SiJ
 import { AiFillGithub, AiOutlineLink, AiOutlineHtml5 } from "react-icons/ai";
 import { BiLogoJavascript } from "react-icons/bi";
 import { Tooltip } from "flowbite-react";
+import { Carousel, IconButton } from "@material-tailwind/react";
+import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
 const Projects = () => {
   const { i18n, t } = useTranslation();
 
-  const renderProject = (project) => {
+  const renderProject = (project, index) => {
     let techOnProject = {
       react: false,
       tailwind: false,
@@ -43,26 +45,30 @@ const Projects = () => {
         techOnProject.next = true;
       }
     });
+    // console.log(index % 2);
     return (
       <>
-        <div id={project.id} className="max-h-full p-1 overflow-hidden border border-purple-700 rounded bg-slate-100 dark:border-gray-800 dark:bg-black group">
+        <div
+          id={project.id}
+          className={`h-full max-h-full p-6 overflow-hidden border-purple-700 dark:border-gray-800 group ${index % 2 == 0 ? "bg-white dark:bg-black" : "bg-violet-100 dark:bg-neutral-900"}`}
+        >
           {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
-          <div className="relative flex items-center space-x-2">
-            <div className="flex min-w-[420px] justify-center items-center h-fit">
+          <div className="relative flex items-center w-full h-full">
+            <div className="flex w-1/2 min-w-[420px] justify-center items-center h-fit">
               {/* media(first photo) */}
               <img
                 src={project.media[0]}
                 alt={t(project.name)}
-                className="h-[250px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 dark:lg:hover:shadow-none dark:lg:hover:outline dark:lg:hover:outline-1 dark:lg:hover:outline-purple-700  lg:hover:scale-105 transition-transform duration-250 ease-in-out"
+                className="max-w-[420px] w-max max-h-[420px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none  dark:outline-purple-700 transition-transform duration-250 ease-in-out"
               />
             </div>
             {/* {project.media.map((media) => {
               return <img src={media} alt="" className="w-96" />;
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
-            <div className="flex flex-col h-full">
-              <div className="absolute top-2">
+            <div className="flex flex-col justify-center w-1/2 h-full px-3">
+              <div className="">
                 <div className="flex items-center space-x-1 group/link">
                   <a href={project.url} target="_blank" className="text-lg font-semibold cursor-pointer lg:hover:text-purple-500 ">
                     {t(project.name)}
@@ -163,10 +169,49 @@ const Projects = () => {
     <div className="relative h-full max-h-full overflow-hidden">
       {/* <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navProjects")}</p> */}
       <div className="h-full max-h-full space-y-2 overflow-auto" id="projectsCont">
-        <div className="max-h-full">
-          {projects.map((project) => {
-            return renderProject(project);
-          })}
+        <div className="h-full max-h-full">
+          <Carousel
+            className="group/carousel"
+            loop
+            autoplay
+            prevArrow={({ handlePrev }) => (
+              <IconButton
+                variant="text"
+                color="purple"
+                size="sm"
+                onClick={handlePrev}
+                className="!absolute top-2/4 left-1 agroup-hover/carousel:opacity-100 aopacity-0 transition-opacity duration-150 -translate-y-2/4 rounded-full "
+              >
+                <MdNavigateBefore size={22} className="text-purple-700" />
+              </IconButton>
+            )}
+            nextArrow={({ handleNext }) => (
+              <IconButton
+                variant="text"
+                color="purple"
+                size="sm"
+                onClick={handleNext}
+                className="!absolute top-2/4 right-1 agroup-hover/carousel:opacity-100 aopacity-0 transition-opacity duration-150 -translate-y-2/4 rounded-full "
+              >
+                <MdNavigateNext size={22} className="text-purple-700" />
+              </IconButton>
+            )}
+            navigation={({ setActiveIndex, activeIndex, length }) => (
+              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 aopacity-0 bottom-4 left-2/4 -translate-x-2/4 agroup-hover/carousel:opacity-100">
+                {new Array(length).fill("").map((_, i) => (
+                  <span
+                    key={i}
+                    className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-purple-700" : "w-4 bg-purple-700/50"}`}
+                    onClick={() => setActiveIndex(i)}
+                  />
+                ))}
+              </div>
+            )}
+          >
+            {projects.map((project, index) => {
+              return renderProject(project, index);
+            })}
+          </Carousel>
         </div>
       </div>
     </div>

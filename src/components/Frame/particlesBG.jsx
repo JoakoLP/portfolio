@@ -107,7 +107,7 @@ const ParticlesBG = () => {
       setTheme(document.getElementsByTagName("html")[0].className);
     }, 100);
     setTimeout(() => {
-      detectScroll();
+      // detectScroll();
     }, 2000);
     // console.log(document.getElementById("tsparticles"));
   }, []);
