@@ -93,9 +93,9 @@ const Frame = () => {
               <img src={sectionLgPNG} alt="" className="visible object-cover w-full h-full dark:hidden" />
             </div>
             <div className="absolute right-0 flex items-center lg:h-8 lg:top-4 xl:h-16 xl:top-4 lg:w-[240px] xl:w-[350px]">
-              <p className="z-10 text-xl font-semibold titleGl">{sectionTitle()}</p>
+              <p className="z-10 text-xl font-semibold select-none titleGl">{sectionTitle()}</p>
             </div>
-            <div className="h-full w-full lg:pt-[56px] lg:pb-[38px] lg:px-[44px] xl:pt-[86px] xl:pb-[58px] xl:px-[67px] z-0 ">
+            <div className="h-full w-full lg:pt-[53px] lg:pb-[35px] lg:px-[42px] xl:pt-[81px] xl:pb-[53px] xl:px-[62px] z-0 ">
               <div className="w-full h-full bg-opacity-10 bg-fuchsia-400 dark:bg-opacity-20 dark:bg-purple-950">
                 <Outlet />
               </div>

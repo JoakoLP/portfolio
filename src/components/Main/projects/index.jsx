@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { projects } from "../../../data/projects";
 import { useTranslation } from "react-i18next";
 import { FaNodeJs, FaReact } from "react-icons/fa";
@@ -8,10 +8,17 @@ import { BiLogoJavascript } from "react-icons/bi";
 import { Tooltip } from "flowbite-react";
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
+import { HiOutlinePlay, HiOutlinePause } from "react-icons/hi2";
 
 const Projects = () => {
   const { i18n, t } = useTranslation();
-
+  const [play, setPlay] = useState(true);
+  const pausePlay = () => {
+    const carousel = document.getElementById("carouselProjects");
+    console.log({ play });
+    setPlay(!play);
+    console.log({ play });
+  };
   const renderProject = (project, index) => {
     let techOnProject = {
       react: false,
@@ -45,6 +52,7 @@ const Projects = () => {
         techOnProject.next = true;
       }
     });
+
     // console.log(index % 2);
     return (
       <>
@@ -55,26 +63,24 @@ const Projects = () => {
           {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
           <div className="relative flex items-center w-full h-full">
-            <div className="flex w-1/2 min-w-[420px] justify-center items-center h-fit">
+            <div className="flex items-center justify-center w-1/2 xl:w-5/12 h-fit">
               {/* media(first photo) */}
               <img
                 src={project.media[0]}
                 alt={t(project.name)}
-                className="max-w-[420px] w-max max-h-[420px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none  dark:outline-purple-700 transition-transform duration-250 ease-in-out"
+                className="max-w-[300px] xl:max-w-[420px] w-max max-h-[300px] xl:max-h-[420px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none  dark:outline-purple-700 transition-transform duration-250 ease-in-out"
               />
             </div>
             {/* {project.media.map((media) => {
               return <img src={media} alt="" className="w-96" />;
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
-            <div className="flex flex-col justify-center w-1/2 h-full px-3">
+            <div className="flex flex-col justify-center w-1/2 h-full px-3 xl:w-7/12">
               <div className="">
-                <div className="flex items-center space-x-1 group/link">
-                  <a href={project.url} target="_blank" className="text-lg font-semibold cursor-pointer lg:hover:text-purple-500 ">
-                    {t(project.name)}
-                  </a>
-                  {project.url ? <AiOutlineLink className="hidden text-purple-500 group-hover/link:inline" /> : null}
-                </div>
+                <a className="flex items-center space-x-1 group/link w-min" href={project.url} target="_blank">
+                  <span className="text-lg font-semibold cursor-pointer lg:group-hover/link:text-purple-500 whitespace-nowrap">{t(project.name)}</span>
+                  {project.url ? <AiOutlineLink className="invisible text-purple-500 lg:group-hover/link:visible" /> : null}
+                </a>
                 <p className={project.subTitle ? "visible italic text-sm" : "hidden"}>{t(project.subTitle)}</p>
               </div>
               {/* description */}
@@ -171,33 +177,22 @@ const Projects = () => {
       <div className="h-full max-h-full space-y-2 overflow-auto" id="projectsCont">
         <div className="h-full max-h-full">
           <Carousel
+            id="carouselProjects"
             className="group/carousel"
             loop
-            autoplay
+            autoplay={play}
             prevArrow={({ handlePrev }) => (
-              <IconButton
-                variant="text"
-                color="purple"
-                size="sm"
-                onClick={handlePrev}
-                className="!absolute top-2/4 left-1 agroup-hover/carousel:opacity-100 aopacity-0 transition-opacity duration-150 -translate-y-2/4 rounded-full "
-              >
+              <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-2/4 left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
                 <MdNavigateBefore size={22} className="text-purple-700" />
               </IconButton>
             )}
             nextArrow={({ handleNext }) => (
-              <IconButton
-                variant="text"
-                color="purple"
-                size="sm"
-                onClick={handleNext}
-                className="!absolute top-2/4 right-1 agroup-hover/carousel:opacity-100 aopacity-0 transition-opacity duration-150 -translate-y-2/4 rounded-full "
-              >
+              <IconButton variant="text" color="purple" size="sm" onClick={handleNext} className="!absolute top-2/4 right-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
                 <MdNavigateNext size={22} className="text-purple-700" />
               </IconButton>
             )}
             navigation={({ setActiveIndex, activeIndex, length }) => (
-              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 aopacity-0 bottom-4 left-2/4 -translate-x-2/4 agroup-hover/carousel:opacity-100">
+              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 bottom-4 left-2/4 -translate-x-2/4">
                 {new Array(length).fill("").map((_, i) => (
                   <span
                     key={i}
@@ -212,6 +207,14 @@ const Projects = () => {
               return renderProject(project, index);
             })}
           </Carousel>
+          <div className="absolute bottom-4 left-4 " onClick={pausePlay}>
+            <Tooltip content="Autoplay" trigger="hover" placement="left" animation="duration-500" style="auto">
+              <div className="flex" onClick={pausePlay}>
+                <HiOutlinePlay size={24} className={`${play ? " text-purple-700" : ""} transition-all duration-200`} />
+                <HiOutlinePause size={24} className={`${play ? "" : " text-purple-700"} transition-all duration-200`} />
+              </div>
+            </Tooltip>
+          </div>
         </div>
       </div>
     </div>
