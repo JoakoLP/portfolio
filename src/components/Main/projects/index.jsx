@@ -59,8 +59,8 @@ const Projects = () => {
         >
           {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
-          <div className="relative flex items-center w-full h-full">
-            <div className="flex items-center justify-center w-1/2 xl:w-5/12 h-fit">
+          <div className="relative flex flex-col items-center justify-center w-full h-full space-y-4 lg:space-y-0 lg:flex-row">
+            <div className="flex items-center justify-center lg:w-1/2 xl:w-5/12 h-fit">
               {/* media(first photo) */}
               <img
                 src={project.media[0]}
@@ -72,7 +72,7 @@ const Projects = () => {
               return <img src={media} alt="" className="w-96" />;
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
-            <div className="flex flex-col justify-center w-1/2 h-full px-3 xl:w-7/12">
+            <div className="flex flex-col justify-center px-3 lg:w-1/2 lg:h-full xl:w-7/12">
               <div className="">
                 <a className="flex items-center space-x-1 group/link w-min" href={project.url} target="_blank">
                   <span className="text-lg font-semibold cursor-pointer lg:group-hover/link:text-purple-500 whitespace-nowrap">{t(project.name)}</span>
