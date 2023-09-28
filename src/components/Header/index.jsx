@@ -77,7 +77,7 @@ const Header = ({ setIsShowing }) => {
 
   return (
     <>
-      <header className="flex justify-between w-full h-min ">
+      <header className="flex justify-center w-full md:left-2/4 md:pl-6 md:pr-12 md:-translate-x-2/4 md:absolute md:top-0 md:justify-between h-min ">
         {/* Logo*/}
         <div className="flex items-center justify-center space-x-2 ">
           <div className="flex flex-col items-start text-purple-400a whitespace-nowrap ">
@@ -97,16 +97,18 @@ const Header = ({ setIsShowing }) => {
             </span>
           </p>
         </div>
-        <ul className="flex items-center justify-center select-none pr-9 space-x-9 whitespace-nowrap">
-          {/* home button */}
-          {/* {isSelected("/", t("navHome"))} */}
-          {/* button to projects */}
-          {isSelected("/", t("navProjects"))}
-          {/* about me */}
-          {isSelected("/about", t("navAbout"))}
-          {/* contact */}
-          {isSelected("/contact", t("navContact"))}
-        </ul>
+        {window.innerWidth >= 768 ? (
+          <ul className="flex items-center justify-center select-none space-x-9 whitespace-nowrap">
+            {/* home button */}
+            {/* {isSelected("/", t("navHome"))} */}
+            {/* button to projects */}
+            {isSelected("/", t("navProjects"))}
+            {/* about me */}
+            {isSelected("/about", t("navAbout"))}
+            {/* contact */}
+            {isSelected("/contact", t("navContact"))}
+          </ul>
+        ) : null}
       </header>
     </>
   );

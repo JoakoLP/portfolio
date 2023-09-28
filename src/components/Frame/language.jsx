@@ -25,7 +25,7 @@ const Language = () => {
     }
   };
   return (
-    <div className="absolute top-0 right-8 ">
+    <div className="absolute bottom-1 right-1 md:top-0 md:right-8 ">
       <div className="flex items-center h-8 w-min">
         {/* language selector (es/en) */}
         <button className="z-10 flex w-14 justify-center items-center p-0.5 space-x-1a" onClick={onChangeLang}>

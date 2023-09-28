@@ -59,7 +59,7 @@ const Theme = () => {
 
   return (
     <>
-      <div className="absolute left-0 z-10 flex justify-center w-8 p-0.5 bottom-8 ">
+      <div className="absolute rotate-90 md:rotate-0 left-3 md:left-0 z-10 flex justify-center w-8 p-0.5 -bottom-1.5 md:bottom-8 ">
         <Switch
           checked={enabled}
           onChange={onChangeTheme}
@@ -68,7 +68,7 @@ const Theme = () => {
           } relative inline-flex h-11 w-6 p-0.5 lg:bg-opacity-80 lg:hover:bg-opacity-100 items-center justify-center rounded-full transition-colors focus:outline-none aring-2 aring-purple-500 aring-offset-2 aring-offset-purple-700`}
         >
           <span className={`${currentTheme === "dark" ? "-translate-y-2.5" : "translate-y-2.5"} flex justify-center items-center h-5 aspect-square transform rounded-full transition-transform`}>
-            {currentTheme === "dark" ? <MoonIcon className="w-10 text-purple-600 aspect-square" /> : <SunIcon className="w-10 text-white aspect-square" />}
+            {currentTheme === "dark" ? <MoonIcon className="w-10 text-purple-600 -rotate-90 md:rotate-0 aspect-square" /> : <SunIcon className="w-10 text-white aspect-square" />}
           </span>
         </Switch>
       </div>

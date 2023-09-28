@@ -72,39 +72,43 @@ const Frame = () => {
   const { startGlitch, stopGlitch } = PowerGlitch.glitch();
 
   return (
-    <div className="absolute top-0 left-0 w-screen h-screen p-8 ">
+    <div className="relative top-0 left-0 flex w-full min-w-full min-h-full md:p-8">
       <Language />
       <Theme />
-      <div className="flex flex-col justify-between w-full h-full p-6 border border-fuchsia-700 dark:border-purple-900">
-        <Header setIsShowing={setIsShowing} />
-        <div className="absolute left-0 flex justify-center w-full max-h-full px-10 min-h-fit aoverflow-hidden lg:p-2 top-28 lg:top-32">
-          <Transition
-            id="transition"
-            className="flex items-center justify-center h-[1062px] w-[600px] min-h-fit max-h-full lg:w-[800px] lg:h-[466px] xl:w-[1200px] xl:h-[700px] aoverflow-hidden"
-            show={isShowing}
-            appear={true}
-            enter="transition ease-in-out duration-[500ms] delay-200 transform"
-            enterFrom="opacity-0 -translate-x-full"
-            enterTo="opacity-100 translate-x-0"
-            leave="transition ease-in-out duration-[100ms]"
-            leaveFrom="opacity-100 translate-x-0"
-            leaveTo="opacity-0 translate-x-full"
-          >
-            <div className="absolute z-10 w-full pointer-events-none lg:max-h-full lg:w-full">
-              <img src={sectionBlPNG} alt="" className="hidden object-cover w-full h-full lg:dark:block" />
-              <img src={sectionBlMbPNG} alt="" className="hidden object-cover h-full lg:!hidden dark:block" />
-              <img src={sectionLgPNG} alt="" className="hidden object-cover w-full h-full lg:block dark:hidden" />
-              <img src={sectionLgMbPNG} alt="" className="visible object-cover h-full lg:!hidden dark:hidden" />
-            </div>
-            <div className="absolute w-[57px] h-[230px] justify-center lg:justify-start left-1 lg:left-auto top-24 pt-2 lg:pt-0 lg:right-0 flex orientation-upright vertical-writing-lr lg:horizontal-writing-tb items-center lg:h-8 lg:top-4 xl:h-16 xl:top-4 lg:w-[240px] xl:w-[350px]">
-              <p className="z-10 font-semibold tracking-[-0.15rem] lg:tracking-normal select-none text-md lg:text-xl titleGl">{sectionTitle()}</p>
-            </div>
-            <div className="h-full w-full py-[55px] pl-[61px] pr-[36px] lg:pt-[53px] lg:pb-[35px] lg:px-[42px] xl:pt-[81px] xl:pb-[53px] xl:px-[62px] z-0 ">
-              <div className="w-full h-full bg-opacity-10 bg-fuchsia-400 dark:bg-opacity-20 dark:bg-purple-950">
-                <Outlet />
+      <div className="relative w-full h-full min-h-full py-6 border border-fuchsia-700 dark:border-purple-900">
+        <div className="relative flex flex-col items-center w-full h-full justify-evenly md:items-start">
+          <Header setIsShowing={setIsShowing} />
+          <div className="flex justify-center w-full md:pt-10 min-h-fit lg:p-2 top-28 lg:top-32">
+            <Transition
+              id="transition"
+              className="flex items-center justify-center w-[395px] h-[700px] md:h-[1062px] md:w-[600px] min-h-fit max-h-full lg:w-[800px] lg:h-[466px] xl:w-[1200px] xl:h-[700px] overflow-hidden"
+              show={isShowing}
+              appear={true}
+              enter="transition ease-in-out duration-[500ms] delay-200 transform"
+              enterFrom="opacity-0 -translate-x-full"
+              enterTo="opacity-100 translate-x-0"
+              leave="transition ease-in-out duration-[100ms]"
+              leaveFrom="opacity-100 translate-x-0"
+              leaveTo="opacity-0 translate-x-full"
+            >
+              <div className="absolute z-10 w-full pointer-events-none lg:max-h-full lg:w-full">
+                <img src={sectionBlPNG} alt="" className="hidden object-cover w-full h-full lg:dark:block" />
+                <img src={sectionBlMbPNG} alt="" className="hidden object-cover h-full lg:!hidden dark:block" />
+                <img src={sectionLgPNG} alt="" className="hidden object-cover w-full h-full lg:block dark:hidden" />
+                <img src={sectionLgMbPNG} alt="" className="visible object-cover h-full lg:!hidden dark:hidden" />
               </div>
-            </div>
-          </Transition>
+              <div className="absolute md:w-[57px] pt-1 md:h-[230px] w-[36px] h-[155px] justify-center lg:justify-start left-1 lg:left-auto top-16 md:top-24 md:pt-2 lg:pt-0 lg:right-0 flex orientation-upright vertical-writing-lr lg:horizontal-writing-tb items-center lg:h-8 lg:top-4 xl:h-16 xl:top-4 lg:w-[240px] xl:w-[350px]">
+                <p className="z-10 font-semibold tracking-[-0.12rem] md:tracking-[-0.15rem] whitespace-nowrap lg:tracking-normal select-none text-xs md:text-base lg:text-xl titleGl">
+                  {sectionTitle()}
+                </p>
+              </div>
+              <div className="h-full w-full py-[36px] pl-[41px] pr-[24px] md:py-[55px] md:pl-[61px] md:pr-[36px] lg:pt-[53px] lg:pb-[35px] lg:px-[42px] xl:pt-[81px] xl:pb-[53px] xl:px-[62px] z-0 ">
+                <div className="w-full h-full bg-opacity-10 bg-fuchsia-400 dark:bg-opacity-20 dark:bg-purple-950">
+                  <Outlet />
+                </div>
+              </div>
+            </Transition>
+          </div>
         </div>
       </div>
     </div>

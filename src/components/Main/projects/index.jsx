@@ -55,7 +55,7 @@ const Projects = () => {
       <>
         <div
           id={project.id}
-          className={`h-full max-h-full p-6 overflow-hidden border-purple-700 dark:border-gray-800 group ${index % 2 == 0 ? "bg-white dark:bg-black" : "bg-violet-100 dark:bg-neutral-900"}`}
+          className={`h-full max-h-full p-4 md:p-6 overflow-hidden border-purple-700 dark:border-gray-800 group ${index % 2 == 0 ? "bg-white dark:bg-black" : "bg-violet-100 dark:bg-neutral-900"}`}
         >
           {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
@@ -179,17 +179,23 @@ const Projects = () => {
             autoplay={play}
             autoplayDelay={7000}
             prevArrow={({ handlePrev }) => (
-              <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-2/4 left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
+              <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-2/4 left-0.5 md:left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
                 <MdNavigateBefore size={22} className="text-purple-700" />
               </IconButton>
             )}
             nextArrow={({ handleNext }) => (
-              <IconButton variant="text" color="purple" size="sm" onClick={handleNext} className="!absolute top-2/4 right-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
+              <IconButton
+                variant="text"
+                color="purple"
+                size="sm"
+                onClick={handleNext}
+                className="!absolute top-2/4 right-0.5 md:right-1 transition-opacity duration-150 -translate-y-2/4 rounded-full "
+              >
                 <MdNavigateNext size={22} className="text-purple-700" />
               </IconButton>
             )}
             navigation={({ setActiveIndex, activeIndex, length }) => (
-              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 bottom-4 left-2/4 -translate-x-2/4">
+              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 bottom-1.5 md:bottom-4 left-2/4 -translate-x-2/4">
                 {new Array(length).fill("").map((_, i) => (
                   <span
                     key={i}
@@ -204,7 +210,7 @@ const Projects = () => {
               return renderProject(project, index);
             })}
           </Carousel>
-          <div className="absolute bottom-4 left-4 " onClick={pausePlay}>
+          <div className="absolute bottom-1.5 left-1.5 md:bottom-4 md:left-4 " onClick={pausePlay}>
             <Tooltip content="Autoplay" trigger="hover" placement="left" animation="duration-500" style="auto">
               <div className="flex" onClick={pausePlay}>
                 <HiOutlinePlay size={24} className={`${play ? " text-purple-700" : "text-purple-700/50"} transition-all duration-200`} />

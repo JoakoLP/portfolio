@@ -22,22 +22,20 @@ function App() {
     }
   };
   return (
-    <div className="relative min-h-screen transition-colors text-black dark:bg-black dark:text-white duration-400 font-['Roboto_Condensed']">
-      <div className="">
-        {/* {renderBG()} */}
-        {/* <ParticlesBG /> */}
-        <Background />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Frame />}>
-              <Route index element={<MainComps.Projects />} />
-              <Route path="/about" element={<MainComps.About />}></Route>
-              <Route path="/contact" element={<MainComps.Contact />}></Route>
-            </Route>
-          </Routes>
-        </BrowserRouter>
-        <OnLoadAnimation />
-      </div>
+    <div className="min-h-screen flex transition-colors text-black dark:bg-black dark:text-white duration-400 font-['Roboto_Condensed']">
+      {/* {renderBG()} */}
+      {/* <ParticlesBG /> */}
+      <Background />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Frame />}>
+            <Route index element={<MainComps.Projects />} />
+            <Route path="/about" element={<MainComps.About />}></Route>
+            <Route path="/contact" element={<MainComps.Contact />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <OnLoadAnimation />
     </div>
   );
 }

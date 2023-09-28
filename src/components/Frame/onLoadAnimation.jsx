@@ -9,9 +9,6 @@ const OnLoadAnimation = () => {
     const loadCont = document.getElementById("loadCont");
     loadCont.className = `flex items-center justify-center pb-10 space-x-1 font-['Oswald'] transition-opacity duration-1000 opacity-100 select-none`;
     setTimeout(() => {
-      // console.log(tLoad, kLoad, rLoad);
-      // console.log(tHead, kHead, rHead);
-
       const singleMove = (itemLoad, itemHead) => {
         // get Y px to move
         // const HeadOffTop = itemHead.offsetTop;
@@ -64,6 +61,9 @@ const OnLoadAnimation = () => {
             const tHead = document.getElementById("tHead");
             const kHead = document.getElementById("kHead");
             const rHead = document.getElementById("rHead");
+
+            // console.log(tLoad, kLoad, rLoad);
+            // console.log(tHead, kHead, rHead);
 
             singleMove(tLoad, tHead);
             singleMove(kLoad, kHead);
