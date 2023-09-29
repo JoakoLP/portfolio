@@ -15,7 +15,7 @@ const NavMobile = ({ setIsShowing }) => {
         }}
       >
         <div
-          className={`fixed transition-all duration-500 flex justify-center items-center ${
+          className={`fixed top-0 transition-all duration-500 flex justify-center items-center ${
             nav ? "visible h-[14%]" : "opacity-0 invisible h-0"
           } p-4 border-b border-fuchsia-700 bg-fuchsia-100 dark:bg-purple-950/95 w-full z-40`}
         >
@@ -31,14 +31,14 @@ const NavMobile = ({ setIsShowing }) => {
             }}
           >
             <div
-              className={`w-6 h-1 bg-fuchsia-700  rounded-sm transition-all duration-300 ${
-                nav ? "translate-y-[200%] -rotate-45 bg-fuchsia-700 dark:bg-purple-600" : "bg-fuchsia-500 dark:bg-purple-800 "
-              }`}
+              className={`w-6  rounded-sm transition-all duration-200 ${nav ? "h-0.5 translate-y-[400%] -rotate-45 bg-fuchsia-700 dark:bg-purple-500" : "h-1 bg-fuchsia-500 dark:bg-purple-600 "}`}
             ></div>
             <div
-              className={`w-6 h-1 bg-fuchsia-700 rounded-sm transition-all duration-300 ${nav ? "translate-y-full rotate-45 bg-fuchsia-700 dark:bg-purple-600" : "bg-fuchsia-500 dark:bg-purple-800"}`}
+              className={`w-6 rounded-sm transition-all duration-200 ${nav ? "h-0.5 translate-y-[300%] rotate-45 bg-fuchsia-700 dark:bg-purple-500" : "h-1 bg-fuchsia-500 dark:bg-purple-600"}`}
             ></div>
-            <div className={`w-6 h-1 bg-fuchsia-700 rounded-sm transition-all duration-300 ${nav ? "-rotate-45 bg-fuchsia-700 dark:bg-purple-600" : "bg-fuchsia-500 dark:bg-purple-800"}`}></div>
+            <div
+              className={`w-6 rounded-sm transition-all duration-200 ${nav ? "h-0.5 translate-y-[200%] -rotate-45 bg-fuchsia-700 dark:bg-purple-500" : "h-1 bg-fuchsia-500 dark:bg-purple-600"}`}
+            ></div>
           </div>
         </div>
       </div>
