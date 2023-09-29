@@ -72,7 +72,7 @@ const Projects = () => {
               return <img src={media} alt="" className="w-96" />;
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
-            <div className="flex flex-col pt-1 pb-6 md:justify-center px-3 md:pt-0 md:pb-0 h-[55%] lg:w-1/2 lg:h-full xl:w-7/12">
+            <div className="flex flex-col pt-1 pb-7 md:justify-center px-3 md:pt-0 md:pb-0 h-[55%] lg:w-1/2 lg:h-full xl:w-7/12">
               <div className="">
                 <a className="flex items-center space-x-1 group/link w-min" href={project.url} target="_blank">
                   <span className="text-lg font-semibold cursor-pointer lg:group-hover/link:text-purple-500 whitespace-nowrap">{t(project.name)}</span>
@@ -83,7 +83,7 @@ const Projects = () => {
               {/* description */}
               <p className="text-start indent-1">{t(project.desc)}</p>
             </div>
-            <div className="absolute bottom-0 right-0 flex self-end space-x-2 ">
+            <div className="absolute right-0 flex self-end space-x-2 md:bottom-0 bottom-1 ">
               {/* technologies */}
 
               <div className={techOnProject.CRA ? "visible" : "hidden"}>
@@ -272,7 +272,7 @@ const Projects = () => {
               </IconButton>
             )}
             navigation={({ setActiveIndex, activeIndex, length }) => (
-              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 bottom-1.5 md:bottom-4 left-2/4 -translate-x-2/4">
+              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 bottom-2 md:bottom-4 left-2/4 -translate-x-2/4">
                 {new Array(length).fill("").map((_, i) => (
                   <span
                     key={i}
