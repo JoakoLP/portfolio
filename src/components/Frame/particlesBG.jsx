@@ -124,7 +124,7 @@ const ParticlesBG = () => {
           color: {
             // value: "#000000",
 
-            value: theme === "dark" ? "#000000" : "#ffffff",
+            value: theme === "dark" ? "#000000" : "transparent",
           },
           image: "",
           position: "50% 50%",

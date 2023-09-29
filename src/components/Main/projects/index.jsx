@@ -61,7 +61,7 @@ const Projects = () => {
       <>
         <div
           id={project.id}
-          className={`h-full max-h-full p-4 md:p-6 overflow-hidden border-purple-700 dark:border-gray-800 group ${index % 2 == 0 ? "bg-white dark:bg-black" : "bg-violet-100 dark:bg-neutral-900"}`}
+          className={`h-full max-h-full p-4 md:p-6 overflow-hidden border-purple-700 dark:border-gray-800 group ${index % 2 == 0 ? "bg-white dark:bg-black" : "bg-fuchsia-100 dark:bg-neutral-900"}`}
         >
           {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
