@@ -39,8 +39,8 @@ const Frame = () => {
         },
         shake: {
           velocity: 15,
-          amplitudeX: 0.2,
-          amplitudeY: 0.2,
+          amplitudeX: window.innerWidth >= 768 ? 0.2 : 0.1,
+          amplitudeY: window.innerWidth >= 768 ? 0.2 : 0.1,
         },
         slice: {
           count: 6,
@@ -81,10 +81,10 @@ const Frame = () => {
           <Theme />
         </>
       ) : null}
-      <div className="relative w-full h-full min-h-full py-6 border border-fuchsia-700 dark:border-purple-900">
+      <div className="relative w-full h-full min-h-full py-6 border-2 md:border border-fuchsia-600 dark:border-purple-800">
         <div className="relative flex flex-col items-center w-full h-full justify-evenly md:items-start">
           <Header setIsShowing={setIsShowing} />
-          <div className="flex justify-center w-full md:pt-10 min-h-fit lg:p-2 top-28 lg:top-32">
+          <div className="flex items-center justify-center w-full h-full md:pt-10 min-h-fit lg:p-2 top-28 lg:top-32">
             <Transition
               id="transition"
               className="flex items-center justify-center w-[395px] h-[700px] md:h-[1062px] md:w-[600px] min-h-fit max-h-full lg:w-[800px] lg:h-[466px] xl:w-[1200px] xl:h-[700px] overflow-hidden"
@@ -109,7 +109,7 @@ const Frame = () => {
                 </p>
               </div>
               <div className="h-full w-full py-[36px] pl-[41px] pr-[24px] md:py-[55px] md:pl-[61px] md:pr-[36px] lg:pt-[53px] lg:pb-[35px] lg:px-[42px] xl:pt-[81px] xl:pb-[53px] xl:px-[62px] z-0 ">
-                <div className="w-full h-full bg-opacity-10 bg-fuchsia-400 dark:bg-opacity-20 dark:bg-purple-950">
+                <div className="w-full h-full bg-white/50 dark:bg-purple-950/20">
                   <Outlet />
                 </div>
               </div>
