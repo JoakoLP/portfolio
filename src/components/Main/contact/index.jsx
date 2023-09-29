@@ -27,13 +27,13 @@ const Contact = () => {
           <div className="flex flex-col items-start justify-center font-semibold lg:h-full lg:space-y-4">
             <p className="w-min whitespace-nowrap">
               <span>Email: </span>
-              <a href="mailto:joakotakara@gmail.com" className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600">
+              <a href="mailto:joakotakara@gmail.com" className="lg:hover:text-fuchsia-700 lg:hover:dark:text-purple-600">
                 joakotakara@gmail.com
               </a>
             </p>
             <p className="w-min whitespace-nowrap">
               <span>{t("contactPhone")}: </span>
-              <a href="tel:5492215018488" className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600">
+              <a href="tel:5492215018488" className="lg:hover:text-fuchsia-700 lg:hover:dark:text-purple-600">
                 +54 9221 501-8488
               </a>
             </p>
@@ -41,13 +41,33 @@ const Contact = () => {
               <p className="font-semibold whitespace-nowrap">{`${t("social")}:`}</p>
               <div className="flex items-center justify-center w-full space-x-2">
                 <a href="https://www.linkedin.com/in/joaquintakara/" target="_blank">
-                  <Tooltip content={t("myLinkedin")} placement="bottom-end" trigger="hover" animation="duration-500" style="auto">
-                    <AiFillLinkedin size={26} className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600"></AiFillLinkedin>
+                  <Tooltip
+                    content={t("myLinkedin")}
+                    placement="bottom"
+                    trigger="hover"
+                    animation="duration-500"
+                    style="auto"
+                    theme={{
+                      arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
+                      style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
+                    }}
+                  >
+                    <AiFillLinkedin size={26} className="lg:hover:text-fuchsia-700 lg:hover:dark:text-purple-600"></AiFillLinkedin>
                   </Tooltip>
                 </a>
                 <a href="https://github.com/JoakoLP" target="_blank">
-                  <Tooltip content={t("myGithub")} placement="bottom-start" trigger="hover" animation="duration-500" style="auto">
-                    <AiFillGithub size={26} className="lg:hover:text-fuchsia-500 lg:hover:dark:text-purple-600"></AiFillGithub>
+                  <Tooltip
+                    content={t("myGithub")}
+                    placement="bottom"
+                    trigger="hover"
+                    animation="duration-500"
+                    style="auto"
+                    theme={{
+                      arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
+                      style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
+                    }}
+                  >
+                    <AiFillGithub size={26} className="lg:hover:text-fuchsia-700 lg:hover:dark:text-purple-600"></AiFillGithub>
                   </Tooltip>
                 </a>
               </div>
