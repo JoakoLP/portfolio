@@ -12,7 +12,7 @@ import { HiOutlinePlay, HiOutlinePause } from "react-icons/hi2";
 
 const Projects = () => {
   const { i18n, t } = useTranslation();
-  const [play, setPlay] = useState(true);
+  const [play, setPlay] = useState(window.innerWidth >= 768 ? true : false);
   const pausePlay = () => {
     setPlay(!play);
   };
@@ -176,9 +176,9 @@ const Projects = () => {
           <Carousel
             className="group/carousel"
             loop
-            autoplay={window.innerWidth >= 768 ? play : false}
+            autoplay={play}
             autoplayDelay={7000}
-            transition={window.innerWidth >= 768 ? { type: "tween", duration: 0.5 } : { type: "spring", duration: 0.5 }}
+            transition={window.innerWidth >= 768 ? { duration: 0.5 } : { duration: 0.15 }}
             prevArrow={({ handlePrev }) => (
               <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-2/4 left-0.5 md:left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
                 <MdNavigateBefore size={22} className="text-purple-700" />
