@@ -97,10 +97,7 @@ const Projects = () => {
                     style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                   }}
                 >
-                  <SiCreatereactapp
-                    className={techOnProject.CRA ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-400 transition-colors duration-150" : "hidden"}
-                    size={22}
-                  />
+                  <SiCreatereactapp className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-400 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.next ? "visible" : "hidden"}>
@@ -115,11 +112,7 @@ const Projects = () => {
                   }}
                 >
                   <SiNextdotjs
-                    className={
-                      techOnProject.next
-                        ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-black bg-white outline outline-1 outline-white rounded-full transition-colors duration-150"
-                        : "hidden"
-                    }
+                    className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-black bg-white outline outline-1 outline-white rounded-full transition-colors duration-150"}
                     size={22}
                   />
                 </Tooltip>
@@ -137,9 +130,7 @@ const Projects = () => {
                 >
                   <SiExpress
                     className={
-                      techOnProject.express
-                        ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-white text-black outline outline-1 outline-black lg:hover:outline-purple-600 transition-colors duration-150"
-                        : "hidden"
+                      "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-white text-black outline outline-1 outline-black lg:hover:outline-purple-600 transition-colors duration-150"
                     }
                     size={22}
                   />
@@ -156,7 +147,7 @@ const Projects = () => {
                     style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                   }}
                 >
-                  <SiMongodb className={techOnProject.mongo ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150" : "hidden"} size={22} />
+                  <SiMongodb className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
 
@@ -171,7 +162,7 @@ const Projects = () => {
                     style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                   }}
                 >
-                  <FaReact className={techOnProject.react ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-400 transition-colors duration-150" : "hidden"} size={22} />
+                  <FaReact className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-400 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.tailwind ? "visible" : "hidden"}>
@@ -185,10 +176,7 @@ const Projects = () => {
                     style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                   }}
                 >
-                  <SiTailwindcss
-                    className={techOnProject.tailwind ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-500 transition-colors duration-150" : "hidden"}
-                    size={22}
-                  />
+                  <SiTailwindcss className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-500 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.html ? "visible" : "hidden"}>
@@ -202,7 +190,7 @@ const Projects = () => {
                     style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                   }}
                 >
-                  <AiOutlineHtml5 className={techOnProject.html ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150" : "hidden"} size={22} />
+                  <AiOutlineHtml5 className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.js ? "visible" : "hidden"}>
@@ -216,10 +204,7 @@ const Projects = () => {
                     style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                   }}
                 >
-                  <SiJavascript
-                    className={techOnProject.js ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-black text-yellow-300 transition-colors duration-150" : "hidden"}
-                    size={22}
-                  />
+                  <SiJavascript className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-black text-yellow-300 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.node ? "visible" : "hidden"}>
@@ -233,7 +218,7 @@ const Projects = () => {
                     style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                   }}
                 >
-                  <FaNodeJs className={techOnProject.node ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150" : "hidden"} size={22} />
+                  <FaNodeJs className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
             </div>
@@ -249,7 +234,7 @@ const Projects = () => {
                   style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
                 }}
               >
-                <AiFillGithub className={project?.github ? "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150" : "hidden"} size={22} />
+                <AiFillGithub className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150"} size={22} />
               </Tooltip>
             </a>
           </div>
