@@ -31,6 +31,7 @@ const Frame = () => {
         hideOverflow: false,
         timing: {
           duration: 2000,
+          easing: "ease-out",
         },
         glitchTimeSpan: {
           start: 0.5,
@@ -46,7 +47,7 @@ const Frame = () => {
           velocity: 15,
           minHeight: 0.02,
           maxHeight: 0.15,
-          hueRotate: true,
+          hueRotate: false,
         },
       });
     }, 1000);

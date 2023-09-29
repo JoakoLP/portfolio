@@ -18,6 +18,7 @@ const Header = ({ setIsShowing }) => {
         hideOverflow: false,
         timing: {
           duration: 2000,
+          easing: "ease-out",
         },
         glitchTimeSpan: {
           start: 0.5,
@@ -26,14 +27,14 @@ const Header = ({ setIsShowing }) => {
         shake: {
           velocity: 15,
           amplitudeX: 0.2,
-          amplitudeY: 0.2,
+          amplitudeY: 0.1,
         },
         slice: {
           count: 6,
           velocity: 15,
           minHeight: 0.02,
           maxHeight: 0.15,
-          hueRotate: true,
+          hueRotate: false,
         },
       });
       // stopGlitch();
