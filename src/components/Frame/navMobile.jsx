@@ -8,7 +8,12 @@ const NavMobile = ({ setIsShowing }) => {
 
   if (window.innerWidth < 768) {
     return (
-      <>
+      <div
+        className={`${nav ? " w-full h-full" : "w-0 h-0"} fixed`}
+        onClick={() => {
+          setNav(!nav);
+        }}
+      >
         <div
           className={`fixed transition-all duration-500 flex justify-center items-center ${
             nav ? "visible h-[14%]" : "opacity-0 invisible h-0"
@@ -36,7 +41,7 @@ const NavMobile = ({ setIsShowing }) => {
             <div className={`w-6 h-1 bg-fuchsia-700 rounded-sm transition-all duration-300 ${nav ? "-rotate-45 bg-fuchsia-700 dark:bg-purple-600" : "bg-fuchsia-500 dark:bg-purple-800"}`}></div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 };

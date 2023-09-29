@@ -176,8 +176,9 @@ const Projects = () => {
           <Carousel
             className="group/carousel"
             loop
-            autoplay={play}
+            autoplay={window.innerWidth >= 768 ? play : false}
             autoplayDelay={7000}
+            transition={window.innerWidth >= 768 ? { type: "tween", duration: 0.5 } : { type: "spring", duration: 0.5 }}
             prevArrow={({ handlePrev }) => (
               <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-2/4 left-0.5 md:left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
                 <MdNavigateBefore size={22} className="text-purple-700" />
