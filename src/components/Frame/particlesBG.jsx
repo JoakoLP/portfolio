@@ -149,7 +149,7 @@ const ParticlesBG = () => {
         },
         detectRetina: false,
         // duration: 0,
-        fpsLimit: 30,
+        fpsLimit: window.innerWidth >= 768 ? 30 : 15,
         interactivity: {
           detectsOn: "canvas",
           events: {
@@ -522,7 +522,7 @@ const ParticlesBG = () => {
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: window.innerWidth >= 768 ? 800 : 1200,
               // width: 1920,
               // height: 1080,
             },
@@ -722,7 +722,7 @@ const ParticlesBG = () => {
               value: "#ff00c3",
             },
             consent: false,
-            distance: 150,
+            distance: window.innerWidth >= 768 ? 150 : 125,
             enable: true,
             frequency: 1,
             opacity: 0.4,
