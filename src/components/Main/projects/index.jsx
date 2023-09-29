@@ -16,6 +16,12 @@ const Projects = () => {
   const pausePlay = () => {
     setPlay(!play);
   };
+
+  const tooltipStyle = {
+    arrow: { style: { auto: "border-2 bg-white dark:bg-black border-fuchsia-700 dark:border-purple-800" } },
+    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white  py-1 px-2 rounded" },
+  };
+
   const renderProject = (project, index) => {
     let techOnProject = {
       react: false,
@@ -87,30 +93,12 @@ const Projects = () => {
               {/* technologies */}
 
               <div className={techOnProject.CRA ? "visible" : "hidden"}>
-                <Tooltip
-                  content="Create React App"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="Create React App" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <SiCreatereactapp className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-400 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.next ? "visible" : "hidden"}>
-                <Tooltip
-                  content="Next.js"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="Next.js" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <SiNextdotjs
                     className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-black bg-white outline outline-1 outline-white rounded-full transition-colors duration-150"}
                     size={22}
@@ -118,16 +106,7 @@ const Projects = () => {
                 </Tooltip>
               </div>
               <div className={techOnProject.express ? "visible" : "hidden"}>
-                <Tooltip
-                  content="Express.js"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="Express.js" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <SiExpress
                     className={
                       "visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-white text-black outline outline-1 outline-black lg:hover:outline-purple-600 transition-colors duration-150"
@@ -137,103 +116,40 @@ const Projects = () => {
                 </Tooltip>
               </div>
               <div className={techOnProject.mongo ? "visible" : "hidden"}>
-                <Tooltip
-                  content="MongoDB"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="MongoDB" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <SiMongodb className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
 
               <div className={techOnProject.react ? "visible" : "hidden"}>
-                <Tooltip
-                  content="React"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="React" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <FaReact className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-400 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.tailwind ? "visible" : "hidden"}>
-                <Tooltip
-                  content="TailwindCSS"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="TailwindCSS" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <SiTailwindcss className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-cyan-500 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.html ? "visible" : "hidden"}>
-                <Tooltip
-                  content="HTML"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="HTML" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <AiOutlineHtml5 className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.js ? "visible" : "hidden"}>
-                <Tooltip
-                  content="JavaScript"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="JavaScript" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <SiJavascript className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-black text-yellow-300 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
               <div className={techOnProject.node ? "visible" : "hidden"}>
-                <Tooltip
-                  content="Node.js"
-                  trigger="hover"
-                  animation="duration-500"
-                  style="auto"
-                  theme={{
-                    arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                    style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                  }}
-                >
+                <Tooltip content="Node.js" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                   <FaNodeJs className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150"} size={22} />
                 </Tooltip>
               </div>
             </div>
 
             <a className={project?.github ? "visible absolute top-0 right-0" : "hidden"} href={project?.github} target="_blank">
-              <Tooltip
-                content="GitHub"
-                trigger="hover"
-                animation="duration-500"
-                style="auto"
-                theme={{
-                  arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                  style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-                }}
-              >
+              <Tooltip content="GitHub" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
                 <AiFillGithub className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150"} size={22} />
               </Tooltip>
             </a>
@@ -288,17 +204,7 @@ const Projects = () => {
             })}
           </Carousel>
           <div className="absolute bottom-1.5 left-1.5 md:bottom-4 md:left-4 " onClick={pausePlay}>
-            <Tooltip
-              content="Autoplay"
-              trigger="hover"
-              placement="left"
-              animation="duration-500"
-              style="auto"
-              theme={{
-                arrow: { style: { auto: "bg-fuchsia-700 dark:bg-purple-800" } },
-                style: { auto: "border border-fuchsia-700 bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white py-1.5 px-2.5" },
-              }}
-            >
+            <Tooltip content="Autoplay" trigger="hover" placement="left" animation="duration-500" style="auto" theme={tooltipStyle}>
               <div className="flex" onClick={pausePlay}>
                 <HiOutlinePlay size={24} className={`${play ? " text-purple-700" : "text-purple-700/50"} transition-all duration-200`} />
                 <HiOutlinePause size={24} className={`${play ? "text-purple-700/50" : " text-purple-700"} transition-all duration-200`} />
