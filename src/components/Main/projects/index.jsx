@@ -59,20 +59,20 @@ const Projects = () => {
         >
           {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
           {/* title */}
-          <div className="relative flex flex-col items-center justify-center w-full h-full space-y-4 lg:space-y-0 lg:flex-row">
-            <div className="flex items-center justify-center lg:w-1/2 xl:w-5/12 h-fit">
+          <div className="relative flex flex-col items-center justify-center w-full h-full lg:space-y-0 lg:flex-row">
+            <div className="flex items-center justify-center h-[45%] w-full lg:w-1/2 xl:w-5/12 md:h-fit">
               {/* media(first photo) */}
               <img
                 src={project.media[0]}
                 alt={t(project.name)}
-                className="max-w-[300px] xl:max-w-[420px] w-max max-h-[300px] xl:max-h-[420px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none  dark:outline-purple-700 transition-transform duration-250 ease-in-out"
+                className="max-w-full xl:max-w-[420px] w-max max-h-full xl:max-h-[420px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none  dark:outline-purple-700 transition-transform duration-250 ease-in-out"
               />
             </div>
             {/* {project.media.map((media) => {
               return <img src={media} alt="" className="w-96" />;
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
-            <div className="flex flex-col justify-center px-3 lg:w-1/2 lg:h-full xl:w-7/12">
+            <div className="flex flex-col pt-1 pb-6 md:justify-center px-3 md:pt-0 md:pb-0 h-[55%] lg:w-1/2 lg:h-full xl:w-7/12">
               <div className="">
                 <a className="flex items-center space-x-1 group/link w-min" href={project.url} target="_blank">
                   <span className="text-lg font-semibold cursor-pointer lg:group-hover/link:text-purple-500 whitespace-nowrap">{t(project.name)}</span>
@@ -83,8 +83,9 @@ const Projects = () => {
               {/* description */}
               <p className="text-start indent-1">{t(project.desc)}</p>
             </div>
-            <div className="absolute bottom-0 right-0 flex self-end space-x-2">
+            <div className="absolute bottom-0 right-0 flex self-end space-x-2 ">
               {/* technologies */}
+
               <div className={techOnProject.CRA ? "visible" : "hidden"}>
                 <Tooltip content="Create React App" trigger="hover" animation="duration-500" style="auto">
                   <SiCreatereactapp
@@ -180,8 +181,8 @@ const Projects = () => {
             autoplayDelay={7000}
             transition={window.innerWidth >= 768 ? { duration: 0.5 } : { duration: 0.15 }}
             prevArrow={({ handlePrev }) => (
-              <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-2/4 left-0.5 md:left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
-                <MdNavigateBefore size={22} className="text-purple-700" />
+              <IconButton variant="text" color="purple" size="sm" onClick={handlePrev} className="!absolute top-1/2 left-0.5 md:left-1 transition-opacity duration-150 -translate-y-2/4 rounded-full ">
+                <MdNavigateBefore size={30} className="text-purple-700" />
               </IconButton>
             )}
             nextArrow={({ handleNext }) => (
@@ -190,9 +191,9 @@ const Projects = () => {
                 color="purple"
                 size="sm"
                 onClick={handleNext}
-                className="!absolute top-2/4 right-0.5 md:right-1 transition-opacity duration-150 -translate-y-2/4 rounded-full "
+                className="!absolute top-1/2 right-0.5 md:right-1 transition-opacity duration-150 -translate-y-1/2 rounded-full "
               >
-                <MdNavigateNext size={22} className="text-purple-700" />
+                <MdNavigateNext size={30} className="text-purple-700" />
               </IconButton>
             )}
             navigation={({ setActiveIndex, activeIndex, length }) => (
