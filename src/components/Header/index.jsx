@@ -1,49 +1,15 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { PowerGlitch } from "powerglitch";
 import NavBar from "./navbar";
 
 const Header = ({ setIsShowing }) => {
-  // const location = useLocation();
-  // const current = location.pathname;
-
   const { i18n, t } = useTranslation();
-
-  // const navigate = useNavigate();
 
   const { startGlitch, stopGlitch } = PowerGlitch.glitch();
 
-  // const onChange = (path) => {
-  //   setIsShowing(false);
-  //   setTimeout(() => {
-  //     navigate(path);
-  //     setIsShowing(true);
-  //   }, 300);
-  // };
-
-  document.title = t("title");
-
-  // const isSelected = (path, children) => {
-  //   if (current === path) {
-  //     return <li className={`font-bold text-purple-900 dark:text-purple-600`}>{children}</li>;
-  //   } else {
-  //     return (
-  //       <li className="font-semibold">
-  //         <button
-  //           onClick={() => {
-  //             onChange(path);
-  //           }}
-  //         >
-  //           {children}
-  //         </button>
-  //       </li>
-  //     );
-  //   }
-  // };
-
   useEffect(() => {
+    document.title = t("title");
     setTimeout(() => {
       const element = document.querySelector(".glitch");
       PowerGlitch.glitch(element, {
@@ -75,7 +41,7 @@ const Header = ({ setIsShowing }) => {
         // startGlitch();
       }, 2500);
     }, 2500);
-  }, []);
+  }, [i18n.language]);
 
   return (
     <>
