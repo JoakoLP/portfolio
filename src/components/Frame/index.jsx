@@ -10,6 +10,7 @@ import sectionLgMbPNG from "../../assets/img/sectionlgmb.png";
 import sectionBlPNG from "../../assets/img/sectionbl.png";
 import sectionBlMbPNG from "../../assets/img/sectionblmb.png";
 import { useTranslation } from "react-i18next";
+import NavMobile from "./navMobile";
 
 const Frame = () => {
   const location = useLocation();
@@ -73,8 +74,12 @@ const Frame = () => {
 
   return (
     <div className="relative top-0 left-0 flex w-full min-w-full min-h-full md:p-8">
-      <Language />
-      <Theme />
+      {window.innerWidth >= 768 ? (
+        <>
+          <Language />
+          <Theme />
+        </>
+      ) : null}
       <div className="relative w-full h-full min-h-full py-6 border border-fuchsia-700 dark:border-purple-900">
         <div className="relative flex flex-col items-center w-full h-full justify-evenly md:items-start">
           <Header setIsShowing={setIsShowing} />
@@ -111,6 +116,7 @@ const Frame = () => {
           </div>
         </div>
       </div>
+      <NavMobile setIsShowing={setIsShowing} />
     </div>
   );
 };

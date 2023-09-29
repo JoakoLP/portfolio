@@ -59,7 +59,7 @@ const Theme = () => {
 
   return (
     <>
-      <div className="absolute rotate-90 md:rotate-0 left-3 md:left-0 z-10 flex justify-center w-8 p-0.5 -bottom-1.5 md:bottom-8 ">
+      <div className="absolute rotate-90 md:rotate-0 left-3 md:left-0 z-10 flex justify-center w-8 md:p-0.5 bottom-0 md:bottom-8 ">
         <Switch
           checked={enabled}
           onChange={onChangeTheme}
