@@ -722,7 +722,7 @@ const ParticlesBG = () => {
               value: "#ff00c3",
             },
             consent: false,
-            distance: window.innerWidth >= 768 ? 150 : 125,
+            distance: window.innerWidth >= 768 ? 150 : 75,
             enable: true,
             frequency: 1,
             opacity: 0.4,
