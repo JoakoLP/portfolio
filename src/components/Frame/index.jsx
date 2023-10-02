@@ -11,6 +11,7 @@ import sectionBlPNG from "../../assets/img/sectionbl.png";
 import sectionBlMbPNG from "../../assets/img/sectionblmb.png";
 import { useTranslation } from "react-i18next";
 import NavMobile from "./navMobile";
+import ToastNotif from "./toastNotif";
 
 const Frame = () => {
   const location = useLocation();
@@ -66,6 +67,7 @@ const Frame = () => {
       // break;
     }
   };
+  const [toast, setToast] = useState(false);
 
   const { i18n, t } = useTranslation();
 
@@ -75,6 +77,7 @@ const Frame = () => {
 
   return (
     <div className="relative top-0 left-0 flex w-full min-w-full min-h-full md:p-8">
+      <ToastNotif toast={toast} setToast={setToast} />
       {window.innerWidth >= 768 ? (
         <>
           <Language />
@@ -110,7 +113,7 @@ const Frame = () => {
               </div>
               <div className="h-full w-full py-[36px] pl-[41px] pr-[24px] md:py-[55px] md:pl-[61px] md:pr-[36px] lg:pt-[53px] lg:pb-[35px] lg:px-[42px] xl:pt-[81px] xl:pb-[53px] xl:px-[62px] z-0 ">
                 <div className="w-full h-full bg-white/50 dark:bg-purple-950/20">
-                  <Outlet />
+                  <Outlet context={[toast, setToast]} />
                 </div>
               </div>
             </Transition>

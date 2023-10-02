@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb, SiTailwindcss, SiCreatereactapp, SiNextdotjs, SiJavascript } from "react-icons/si";
 import { AiFillGithub, AiOutlineLink, AiOutlineHtml5 } from "react-icons/ai";
-import { BiLogoJavascript } from "react-icons/bi";
 import { Tooltip } from "flowbite-react";
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";

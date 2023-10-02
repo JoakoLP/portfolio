@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { Tooltip } from "flowbite-react";
 import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
+import { useOutletContext } from "react-router-dom";
 
 const Contact = () => {
   const { i18n, t } = useTranslation();
+
+  const [toast, setToast] = useOutletContext();
+
+  const form = useRef();
+
   const contactSubmit = (e) => {
     e.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const msg = document.getElementById("message").value;
 
-    const contactObject = {
-      name,
-      email,
-      msg,
-    };
-    console.log(contactObject);
+    emailjs.sendForm("service_w2b95vv", "template_hfg0a9r", form.current, "zhtPpE1oTypTYeCiv").then(
+      (result) => {
+        console.log(result.text);
+        setToast(true);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
@@ -74,18 +81,18 @@ const Contact = () => {
             </div>
           </div>
           <div className="max-h-full">
-            <form action="" className="flex flex-col justify-center h-full space-y-2" onSubmit={contactSubmit}>
+            <form action="" ref={form} className="flex flex-col justify-center h-full space-y-2" onSubmit={contactSubmit}>
               <div className="flex w-full space-x-2">
                 <input
                   type="text"
-                  name="name"
+                  name="user_name"
                   id="name"
                   placeholder={t("contactName")}
                   className="rounded-sm w-1/2 focus:ring-fuchsia-600 bg-transparent focus:bg-white focus:dark:bg-black bg-opacity-0 focus:dark:bg-opacity-70 transition-colors duration-300 placeholder:text-black placeholder:dark:text-white placeholder:!text-opacity-80 border-fuchsia-700 dark:border-purple-900"
                 />
                 <input
                   type="email"
-                  name="email"
+                  name="user_email"
                   id="email"
                   placeholder="Email"
                   className="rounded-sm w-1/2 focus:ring-fuchsia-600 bg-transparent focus:bg-white focus:dark:bg-black bg-opacity-0 focus:bg-opacity-70 focus:dark:bg-opacity-70 transition-colors duration-300 placeholder:text-black placeholder:dark:text-white placeholder:!text-opacity-80 border-fuchsia-700 dark:border-purple-900"

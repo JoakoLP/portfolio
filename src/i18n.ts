@@ -33,6 +33,7 @@ i18n.use(initReactI18next).init({
         contactName: "Name",
         contactMsg: "Message",
         contactSend: "Send",
+        contactConfirm: "Message sended.",
         contactPhone: "Phone",
         // front end project numen
         "pr-numenTitleFE": "Gaming Store - Numen Project",
@@ -70,6 +71,7 @@ i18n.use(initReactI18next).init({
         contactName: "Nombre",
         contactMsg: "Mensaje",
         contactSend: "Enviar",
+        contactConfirm: "Mensaje enviado.",
         contactPhone: "Celular",
         // front end project numen
         "pr-numenTitleFE": "Gaming Store - Proyecto Numen",
