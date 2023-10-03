@@ -34,6 +34,7 @@ i18n.use(initReactI18next).init({
         contactMsg: "Message",
         contactSend: "Send",
         contactConfirm: "Message sended.",
+        contactError: "Couldn't send, check the fields.",
         contactPhone: "Phone",
         // front end project numen
         "pr-numenTitleFE": "Gaming Store - Numen Project",
@@ -72,6 +73,7 @@ i18n.use(initReactI18next).init({
         contactMsg: "Mensaje",
         contactSend: "Enviar",
         contactConfirm: "Mensaje enviado.",
+        contactError: "No se ha podido enviar, revisa los campos.",
         contactPhone: "Celular",
         // front end project numen
         "pr-numenTitleFE": "Gaming Store - Proyecto Numen",

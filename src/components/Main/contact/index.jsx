@@ -15,20 +15,37 @@ const Contact = () => {
   const contactSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_w2b95vv", "template_hfg0a9r", form.current, "zhtPpE1oTypTYeCiv").then(
-      (result) => {
-        console.log(result.text);
-        setToast(true);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    console.log(toast);
+    if (toast.status) {
+      setToast({ status: false });
+    }
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    switch (1) {
+      case (name.length > 0) & (email.length > 0) & (message.length > 0):
+        emailjs.sendForm("service_w2b95vv", "template_hfg0a9r", form.current, "zhtPpE1oTypTYeCiv").then(
+          (result) => {
+            console.log(result.text);
+            setToast({ type: "submit", status: true });
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+        // setToast({ type: "submit", status: true });
+        break;
+
+      default:
+        setToast({ type: "error", status: true });
+        break;
+    }
   };
 
   return (
     <div className="h-full">
-      {/* <p className="absolute top-0 w-full pb-3 pl-3 text-lg font-semibold text-black dark:text-white">{t("navContact")}</p> */}
       <div className="flex flex-col justify-center w-full h-full p-4">
         <div className="flex flex-col items-center w-full h-full space-y-4 lg:flex-row justify-evenly lg:space-y-0">
           <div className="flex flex-col items-start justify-center font-semibold lg:h-full lg:space-y-4">

@@ -67,7 +67,7 @@ const Frame = () => {
       // break;
     }
   };
-  const [toast, setToast] = useState(false);
+  const [toast, setToast] = useState({ status: false });
 
   const { i18n, t } = useTranslation();
 
