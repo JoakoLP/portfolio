@@ -20,16 +20,19 @@ const Contact = () => {
       setToast({ status: false });
     }
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    let name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
 
     switch (1) {
-      case (name.length > 0) & (email.length > 0) & (message.length > 0):
+      case (name.value.length > 0) & (email.value.length > 0) & (message.value.length > 0):
         emailjs.sendForm("service_w2b95vv", "template_hfg0a9r", form.current, "zhtPpE1oTypTYeCiv").then(
           (result) => {
             console.log(result.text);
             setToast({ type: "submit", status: true });
+            name.value = "";
+            email.value = "";
+            message.value = "";
           },
           (error) => {
             console.log(error.text);
