@@ -49,7 +49,7 @@ i18n.use(initReactI18next).init({
         "pr-fullstackTitle": "FullStack E-Commerce",
         "pr-fullstackSubTitle": "FullStack E-Commerce connected to MongoDB via server. ",
         "pr-fullstackDesc":
-          "Unlike the one previously created for the course, this one has a better search engine, user accounts and an administration panel where you can create categories, subcategories or view the list of users. In addition, you can add or edit products by assigning tags for a better search.",
+          "Has a better search engine, user accounts and an administration panel where you can create categories, subcategories or view the list of users. In addition, you can add or edit products by assigning tags for a better search.",
       },
     },
     es: {
@@ -93,7 +93,7 @@ i18n.use(initReactI18next).init({
         "pr-fullstackTitle": "E-Commerce FullStack",
         "pr-fullstackSubTitle": "E-Commerce FullStack conectado a MongoDB mediante el servidor.",
         "pr-fullstackDesc":
-          "A diferencia del creado anteriormente para el curso, este cuenta con un mejor motor de búsqueda, cuentas de usuario y panel de administración donde se pueden crear categorías, subcategorías o ver el listado de usuarios. Además, se puede agregar o editar productos asignandole etiquetas para una mejor busqueda.",
+          "Cuenta con un mejor motor de búsqueda, cuentas de usuario y panel de administración donde se pueden crear categorías, subcategorías o ver el listado de usuarios. Además, se puede agregar o editar productos asignandole etiquetas para una mejor busqueda.",
       },
     },
   },
