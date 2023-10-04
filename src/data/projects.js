@@ -27,7 +27,7 @@ export const projects = [
     media: [""],
     desc: "pr-fullstackDesc",
     technologies: ["react", "tailwind", "js", "node", "express", "mongo", "CRA"],
-    url: "https://proyecto-numen-nine.vercel.app/",
+    url: "https://e-commerce.joaquintakara.com/",
     // github: "https://github.com/JoakoLP/proyecto-numen",
   },
   {
