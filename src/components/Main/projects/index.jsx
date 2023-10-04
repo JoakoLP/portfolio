@@ -81,7 +81,7 @@ const Projects = () => {
               <div className="">
                 <a className="flex items-center space-x-1 group/link w-min" href={project.url} target="_blank">
                   <span className="text-lg font-semibold cursor-pointer lg:group-hover/link:text-purple-500 whitespace-nowrap">{t(project.name)}</span>
-                  {project.url ? <AiOutlineLink className="invisible text-purple-500 lg:group-hover/link:visible" /> : null}
+                  {project.url ? <AiOutlineLink className="text-white lg:group-hover/link:text-purple-500" /> : null}
                 </a>
                 <p className={project.subTitle ? "visible italic text-sm" : "hidden"}>{t(project.subTitle)}</p>
               </div>
