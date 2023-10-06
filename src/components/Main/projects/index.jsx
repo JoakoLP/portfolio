@@ -78,11 +78,16 @@ const Projects = () => {
               // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
             })} */}
             <div className="flex flex-col pt-1 pb-7 md:justify-center px-3 md:pt-0 md:pb-0 h-[55%] lg:w-1/2 lg:h-full xl:w-7/12">
-              <div className="">
-                <a className="flex items-center space-x-1 group/link w-min" href={project.url} target="_blank">
-                  <span className="text-lg font-semibold cursor-pointer lg:group-hover/link:text-purple-500 whitespace-nowrap">{t(project.name)}</span>
-                  {project.url ? <AiOutlineLink className="text-white lg:group-hover/link:text-purple-500" /> : null}
-                </a>
+              <div>
+                <div className="pb-1">
+                  <span className="text-xl font-semibold lg:group-hover/link:text-purple-500 whitespace-nowrap">{t(project.name)}</span>
+                  {project.url ? (
+                    <a className="flex items-center justify-center space-x-1 apl-1 group/link w-min" href={project.url} target="_blank">
+                      <AiOutlineLink className="text-white lg:group-hover/link:text-purple-500" size={12} />
+                      <span className="text-xs atext-purple-400 lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
+                    </a>
+                  ) : null}
+                </div>
                 <p className={project.subTitle ? "visible italic text-sm" : "hidden"}>{t(project.subTitle)}</p>
               </div>
               {/* description */}
