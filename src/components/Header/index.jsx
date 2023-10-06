@@ -13,7 +13,7 @@ const Header = ({ setIsShowing }) => {
   const { startGlitch, stopGlitch } = PowerGlitch.glitch();
 
   useEffect(() => {
-    document.title = t("title");
+    // document.title = "Joaquin Takara - Portfolio";
     setTimeout(() => {
       const element = document.querySelector(".glitch");
       PowerGlitch.glitch(element, {

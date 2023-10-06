@@ -109,7 +109,7 @@ const OnLoadAnimation = () => {
                 a
               </span>
             </p>
-            <p className="font-thin">{t("portfolio")}</p>
+            <p className="font-thin">Portfolio</p>
           </div>
         </div>
       ) : (
