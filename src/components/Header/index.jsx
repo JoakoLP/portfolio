@@ -75,16 +75,7 @@ const Header = ({ setIsShowing }) => {
     <>
       <header className="flex justify-center w-full select-none md:left-2/4 md:pl-6 md:pr-12 md:-translate-x-2/4 md:absolute md:top-0 md:justify-between h-min ">
         {/* Logo*/}
-        <a
-          id="title"
-          // onClick={() => {
-          //   {
-          //     current == "/about" ? onChange("/about") : null;
-          //   }
-          // }}
-
-          className="flex items-center justify-center space-x-2 cursor-pointer "
-        >
+        <a id="title" className="flex items-center justify-center space-x-2 cursor-pointer ">
           <div className="flex flex-col items-start text-purple-400a whitespace-nowrap ">
             <p className="text-2xl font-medium dark:font-light h-min">Joaquin Takara</p>
             <p className="font-semibold leading-none dark:font-medium">{t("subtitle")}</p>
