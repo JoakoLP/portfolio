@@ -22,8 +22,8 @@ const About = () => {
         <div>
           <div className="flex flex-col items-center justify-center p-2 md:p-4 lg:flex-row lg:space-x-8 xl:space-x-12">
             <div className="overflow-hidden bg-opacity-50 rounded-full bg-purple-950 w-min h-min min-w-fit">
-              <div className="flex w-36 md:w-52 lg:w-64 xl:w-72 overflow-hidden skew-x-[deg] justify-center items-center -m-4 md:-m-6">
-                <img src={window.innerWidth >= 768 ? profPhoto : profPhotoMobile} alt="" className="object-cover w-full -skew-x-[deg] aspect-square" />
+              <div className="flex items-center justify-center -m-4 overflow-hidden w-36 md:w-52 lg:w-64 xl:w-72 md:-m-6">
+                <img src={window.innerWidth >= 768 ? profPhoto : profPhotoMobile} alt="" className="object-cover w-full pt-4 aspect-square" />
                 {/* <div className={`bg-[url("https://i.imgur.com/hllpTZg.jpeg")]`}></div> */}
               </div>
             </div>

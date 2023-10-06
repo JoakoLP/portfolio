@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { PowerGlitch } from "powerglitch";
 import NavBar from "./navbar";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = ({ setIsShowing }) => {
   const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const current = location.pathname;
 
   const { startGlitch, stopGlitch } = PowerGlitch.glitch();
 
@@ -44,11 +48,43 @@ const Header = ({ setIsShowing }) => {
     }, 2500);
   }, [i18n.language]);
 
+  useEffect(() => {
+    const title = document.getElementById("title");
+    if (current !== "/about") {
+      console.log(true);
+      title.onclick = () => {
+        onChange("/about");
+      };
+      title.classList.add("cursor-pointer");
+    } else {
+      console.log(false);
+      title.onclick = null;
+      title.classList.remove("cursor-pointer");
+    }
+  }, [current]);
+
+  const onChange = (path) => {
+    setIsShowing(false);
+    setTimeout(() => {
+      navigate(path);
+      setIsShowing(true);
+    }, 300);
+  };
+
   return (
     <>
-      <header className="flex justify-center w-full md:left-2/4 md:pl-6 md:pr-12 md:-translate-x-2/4 md:absolute md:top-0 md:justify-between h-min ">
+      <header className="flex justify-center w-full select-none md:left-2/4 md:pl-6 md:pr-12 md:-translate-x-2/4 md:absolute md:top-0 md:justify-between h-min ">
         {/* Logo*/}
-        <div className="flex items-center justify-center space-x-2 ">
+        <a
+          id="title"
+          // onClick={() => {
+          //   {
+          //     current == "/about" ? onChange("/about") : null;
+          //   }
+          // }}
+
+          className="flex items-center justify-center space-x-2 cursor-pointer "
+        >
           <div className="flex flex-col items-start text-purple-400a whitespace-nowrap ">
             <p className="text-2xl font-medium dark:font-light h-min">Joaquin Takara</p>
             <p className="font-semibold leading-none dark:font-medium">{t("subtitle")}</p>
@@ -65,7 +101,7 @@ const Header = ({ setIsShowing }) => {
               r
             </span>
           </p>
-        </div>
+        </a>
         {window.innerWidth >= 768 ? <NavBar setIsShowing={setIsShowing} /> : null}
       </header>
     </>
