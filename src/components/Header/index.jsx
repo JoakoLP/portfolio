@@ -51,13 +51,11 @@ const Header = ({ setIsShowing }) => {
   useEffect(() => {
     const title = document.getElementById("title");
     if (current !== "/about") {
-      console.log(true);
       title.onclick = () => {
         onChange("/about");
       };
       title.classList.add("cursor-pointer");
     } else {
-      console.log(false);
       title.onclick = null;
       title.classList.remove("cursor-pointer");
     }
