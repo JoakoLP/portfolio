@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import profPhoto from "../../../assets/img/profile.png";
+import profPhoto from "../../../assets/img/profilex1024.png";
+import profPhotoMobile from "../../../assets/img/profilex512.png";
 
 const About = () => {
   const { i18n, t } = useTranslation();
@@ -22,7 +23,7 @@ const About = () => {
           <div className="flex flex-col items-center justify-center p-2 md:p-4 lg:flex-row lg:space-x-8 xl:space-x-12">
             <div className="overflow-hidden bg-opacity-50 rounded-full bg-purple-950 w-min h-min min-w-fit">
               <div className="flex w-36 md:w-52 lg:w-64 xl:w-72 overflow-hidden skew-x-[deg] justify-center items-center -m-4 md:-m-6">
-                <img src={profPhoto} alt="" className="object-cover w-full -skew-x-[deg] aspect-square" />
+                <img src={window.innerWidth >= 768 ? profPhoto : profPhotoMobile} alt="" className="object-cover w-full -skew-x-[deg] aspect-square" />
                 {/* <div className={`bg-[url("https://i.imgur.com/hllpTZg.jpeg")]`}></div> */}
               </div>
             </div>
