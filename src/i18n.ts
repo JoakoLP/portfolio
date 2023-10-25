@@ -34,6 +34,7 @@ i18n.use(initReactI18next).init({
         contactConfirm: "Message sended.",
         contactError: "Couldn't send, check the fields.",
         contactPhone: "Phone",
+        projectFeatures: "Features",
         // front end project numen
         "pr-numenTitleFE": "Gaming Store - Numen Project",
         "pr-numenSubTitleFE": "Front-End group project made during the course in Academia Numen.",
@@ -48,6 +49,11 @@ i18n.use(initReactI18next).init({
         "pr-fullstackSubTitle": "FullStack E-Commerce connected to MongoDB via server. ",
         "pr-fullstackDesc":
           "Has a better search engine, user accounts and an administration panel where you can create categories, subcategories or view the list of users. In addition, you can add or edit products by assigning tags for a better search.",
+        "pr-fullstackSpecs-Accounts": "User accounts: register and login.",
+        "pr-fullstackSpecs-Cart": "Shopping cart.",
+        "pr-fullstackSpecs-Search": "Search engine with category filter.",
+        "pr-fullstackSpecs-Admin": "Admin panel: Add products, product list, product edit, user list, add and edit categories and subcategories.",
+        "pr-fullstackSpecs-Categ": "Categorization: Categories y subcategories.",
       },
     },
     es: {
@@ -76,6 +82,7 @@ i18n.use(initReactI18next).init({
         contactConfirm: "Mensaje enviado.",
         contactError: "No se ha podido enviar, revisa los campos.",
         contactPhone: "Celular",
+        projectFeatures: "Características",
         // front end project numen
         "pr-numenTitleFE": "Gaming Store - Proyecto Numen",
         "pr-numenSubTitleFE": "Proyecto grupal Front-End realizado en el curso de Academia Numen.",
@@ -90,6 +97,11 @@ i18n.use(initReactI18next).init({
         "pr-fullstackSubTitle": "E-Commerce FullStack conectado a MongoDB mediante el servidor.",
         "pr-fullstackDesc":
           "Cuenta con un mejor motor de búsqueda, cuentas de usuario y panel de administración donde se pueden crear categorías, subcategorías o ver el listado de usuarios. Además, se puede agregar o editar productos asignandole etiquetas para una mejor busqueda.",
+        "pr-fullstackSpecs-Accounts": "Cuentas de usuario: registro y inicio de sesión.",
+        "pr-fullstackSpecs-Cart": "Carrito de compras.",
+        "pr-fullstackSpecs-Search": "Motor de búsqueda con filtro de categorías.",
+        "pr-fullstackSpecs-Admin": "Panel de administración: Agregar productos, listado de productos, editar productos, listado de usuarios, crear y editar categorías y subcategorías.",
+        "pr-fullstackSpecs-Categ": "Categorización: Categorías y subcategorías.",
       },
     },
   },

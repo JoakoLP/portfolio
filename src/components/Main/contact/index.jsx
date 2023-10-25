@@ -15,7 +15,7 @@ const Contact = () => {
   const contactSubmit = (e) => {
     e.preventDefault();
 
-    console.log(toast);
+    // console.log(toast);
     if (toast.status) {
       setToast({ status: false });
     }

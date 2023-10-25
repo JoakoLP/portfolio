@@ -66,12 +66,11 @@ const ParticlesBG = () => {
       }, 500);
     };
 
-    console.log(projectsCont);
+    // console.log(projectsCont);
     if (projectsCont) {
       projectsCont.addEventListener("scroll", (event) => {
         // scrollStart();
-
-        console.log("scroll");
+        // console.log("scroll");
       });
 
       projectsCont.addEventListener("scrollend", () => {
@@ -84,7 +83,6 @@ const ParticlesBG = () => {
         //   setTimeout(() => {
         //     particles.classList.add("blur-sm");
         //     particles.classList.remove("blur");
-
         //     setTimeout(() => {
         //       setMoveSc(true);
         //       particles.classList.remove("duration-100");
@@ -96,7 +94,7 @@ const ParticlesBG = () => {
         //     }, 500);
         //   }, 200);
         // }, 200);
-        console.log("scrollend");
+        // console.log("scrollend");
       });
     }
   };

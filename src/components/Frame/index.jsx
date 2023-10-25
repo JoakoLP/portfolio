@@ -87,7 +87,7 @@ const Frame = () => {
       <div className="relative w-full h-full min-h-full py-6 border-2 md:border border-fuchsia-600 dark:border-purple-800">
         <div className="relative flex flex-col items-center w-full h-full justify-evenly md:items-start">
           <Header setIsShowing={setIsShowing} />
-          <div className="flex items-center justify-center w-full h-full md:pt-10 min-h-fit lg:p-2 top-28 lg:top-32">
+          <div className="flex items-center justify-center w-full h-full md:pt-10 min-h-fit lg:p-2">
             <Transition
               id="transition"
               className="flex items-center justify-center w-[395px] h-[700px] md:h-[1062px] md:w-[600px] min-h-fit max-h-full lg:w-[800px] lg:h-[466px] xl:w-[1200px] xl:h-[700px] overflow-hidden"
