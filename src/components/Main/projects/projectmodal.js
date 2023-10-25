@@ -54,13 +54,13 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
   };
 
   return (
-    <Dialog open={open} handler={handleOpen} className=" a!-translate-y-1/3 dark:bg-slate-950">
+    <Dialog open={open} handler={handleOpen} className="dark:bg-slate-950">
       <DialogHeader>
         <div className="flex items-center justify-between w-full text-black dark:text-white">
-          <div>
+          <div className="w-full">
             <p>{t(project?.name)}</p>
             {project?.url ? (
-              <a className="flex items-center justify-center w-full space-x-1 apl-1 group/link" href={project.url} target="_blank">
+              <a className="flex items-center justify-center w-[95%] space-x-1 group/link" href={project.url} target="_blank">
                 <AiOutlineLink className="text-black dark:text-white lg:group-hover/link:text-purple-500" size={12} />
                 <span className="w-full text-sm font-normal truncate lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
               </a>
@@ -98,8 +98,6 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
             </div>
           )}
         >
-          {/* <img src={project?.media[0]} /> */}
-          {/* <img src="https://icons.getbootstrap.com/assets/img/icons-hero.png" /> */}
           {renderAssets(project)}
         </Carousel>
 
@@ -107,7 +105,7 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
 
         {project?.specs ? (
           <div>
-            <p className="font-semibold pt-1a">{t("projectFeatures")}:</p>
+            <p className="font-semibold">{t("projectFeatures")}:</p>
             <ul className="text-sm list-disc list-inside">
               {project?.specs.map((spec) => {
                 // console.log(spec);
@@ -133,7 +131,7 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
                 <AiOutlineClose size={20} />
               </IconButton>
             </DialogHeader>
-            <DialogBody className="max-h-[90%] flex justify-center items-center">
+            <DialogBody className="max-h-[90%] h-full flex justify-center items-center">
               <img src={imgSelected} className="max-h-full" />
             </DialogBody>
           </>
