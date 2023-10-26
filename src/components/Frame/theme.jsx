@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { Switch } from "@headlessui/react";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 const Theme = () => {
   const [currentTheme, setCurrentTheme] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -63,12 +63,14 @@ const Theme = () => {
         <Switch
           checked={enabled}
           onChange={onChangeTheme}
-          className={`${
-            currentTheme === "dark" ? "bg-gray-200" : "bg-purple-600"
-          } relative inline-flex h-11 w-6 p-0.5 lg:bg-opacity-80 lg:hover:bg-opacity-100 items-center justify-center rounded-full transition-colors focus:outline-none aring-2 aring-purple-500 aring-offset-2 aring-offset-purple-700`}
+          className={`relative inline-flex h-11 w-6 p-0.5 bg-fuchsia-500/30 dark:bg-purple-600/30 alg:bg-opacity-80 alg:hover:bg-opacity-100 items-center justify-center rounded-full transition-colors border border-fuchsia-600 dark:border-purple-600 md:dark:border-purple-800`}
         >
-          <span className={`${currentTheme === "dark" ? "-translate-y-2.5" : "translate-y-2.5"} flex justify-center items-center h-5 aspect-square transform rounded-full transition-transform`}>
-            {currentTheme === "dark" ? <MoonIcon className="w-10 text-purple-600 -rotate-90 md:rotate-0 aspect-square" /> : <SunIcon className="w-10 text-white aspect-square" />}
+          <span
+            className={`${
+              currentTheme === "dark" ? "-translate-y-2.5" : "translate-y-2.5"
+            } bg-fuchsia-600 dark:bg-purple-600 flex justify-center items-center h-5 aspect-square transform rounded-full transition-transform`}
+          >
+            {currentTheme === "dark" ? <BiMoon className="w-10 text-white -rotate-90 md:rotate-0 aspect-square" /> : <BiSun className="w-10 text-white aspect-square" />}
           </span>
         </Switch>
       </div>

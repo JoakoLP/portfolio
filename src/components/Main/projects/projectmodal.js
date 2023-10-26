@@ -57,16 +57,16 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
     <Dialog open={open} handler={handleOpen} className="dark:bg-slate-950">
       <DialogHeader>
         <div className="flex items-center justify-between w-full text-black dark:text-white">
-          <div className="w-full">
-            <p>{t(project?.name)}</p>
+          <div className="w-[86%]">
+            <p className="text-base md:text-2xl">{t(project?.name)}</p>
             {project?.url ? (
               <a className="flex items-center justify-center w-[95%] space-x-1 group/link" href={project.url} target="_blank">
                 <AiOutlineLink className="text-black dark:text-white lg:group-hover/link:text-purple-500" size={12} />
-                <span className="w-full text-sm font-normal truncate lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
+                <span className="w-full text-xs font-normal truncate md:text-sm lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
               </a>
             ) : null}
           </div>
-          <IconButton onClick={handleOpen}>
+          <IconButton onClick={handleOpen} className="dark:bg-gray-800">
             <AiOutlineClose size={20} />
           </IconButton>
         </div>
@@ -127,7 +127,7 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
         {imgSelected ? (
           <>
             <DialogHeader className="flex justify-end">
-              <IconButton className="" onClick={handleImg}>
+              <IconButton onClick={handleImg} className="dark:bg-gray-700">
                 <AiOutlineClose size={20} />
               </IconButton>
             </DialogHeader>

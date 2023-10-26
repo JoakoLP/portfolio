@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import { Tooltip } from "flowbite-react";
 import ProjectTech from "./projectTech";
+import { BsHandIndex } from "react-icons/bs";
 
 const RenderProject = ({ project, index, handleOpen, tooltipStyle, setPlay }) => {
   const { i18n, t } = useTranslation();
@@ -16,22 +17,25 @@ const RenderProject = ({ project, index, handleOpen, tooltipStyle, setPlay }) =>
         {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
         {/* title */}
         <div className="relative flex flex-col items-center justify-center w-full h-full lg:space-y-0 lg:flex-row">
-          <div className="flex items-center justify-center h-[45%] w-full lg:w-1/2 xl:w-5/12 md:h-fit">
-            {/* media(first photo) */}
-            <img
-              src={project.thumbnail}
-              alt={t(project.name)}
-              onClick={() => {
-                handleOpen(project);
-                setPlay(false);
-              }}
-              className="max-w-full cursor-pointer xl:max-w-[420px] w-max max-h-full xl:max-h-[420px] m-2.5 rounded lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none  dark:outline-purple-700 transition-transform duration-250 ease-in-out"
-            />
+          <div className="flex relativea items-center justify-center h-[45%] w-full lg:w-1/2 xl:w-5/12 md:h-fit">
+            <div className="relative object-contain max-w-full max-h-full overflow-hidden transition-transform xl:max-w-[420px] xl:max-h-[420px] ease-in-out rounded w-fit h-fit lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none dark:outline-purple-700 duration-250">
+              <img
+                src={project.thumbnail}
+                alt={t(project.name)}
+                onClick={() => {
+                  handleOpen(project);
+                  setPlay(false);
+                }}
+                className="w-full h-full"
+              />
+              <div className="absolute h-8 pointer-events-none aspect-square bottom-2 left-2">
+                <div className="absolute h-8 aspect-square animate-duration-[2000ms] animate-ping p-1.5 overflow-visible rounded-full dark:bg-purple-500/70 bg-fuchsia-500/70"></div>
+                <div className="relative animate-pulse inline-flex p-1.5 overflow-visible rounded-full dark:bg-purple-500/70 bg-fuchsia-500/70">
+                  <BsHandIndex size={20} className="text-white" />
+                </div>
+              </div>
+            </div>
           </div>
-          {/* {project.media.map((media) => {
-            return <img src={media} alt="" className="w-96" />;
-            // <img src="https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67" alt="" />;
-          })} */}
           <div className="flex max-w-full flex-col pt-1 pb-7 md:justify-center px-3 md:pt-0 md:pb-0 h-[55%] lg:w-1/2 lg:h-full xl:w-7/12">
             <div>
               <div className="w-full pb-1 truncate">
