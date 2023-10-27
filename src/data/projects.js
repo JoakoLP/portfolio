@@ -12,7 +12,7 @@ export const projects = [
     desc: "pr-fullstackDesc",
     technologies: ["react", "tailwind", "js", "node", "express", "mongo", "CRA"],
     url: "https://e-commerce.joaquintakara.com/",
-    // github: "https://github.com/JoakoLP/proyecto-numen",
+    github: "https://github.com/JoakoLP/e-commerce",
   },
   {
     id: "project-numen-front",
