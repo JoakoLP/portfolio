@@ -8,7 +8,7 @@ export const projects = [
     subTitle: "pr-fullstackSubTitle",
     thumbnail: eCommerce.thumbnail,
     media: eCommerce.assets,
-    specs: ["pr-fullstackSpecs-Accounts", "pr-fullstackSpecs-Cart", "pr-fullstackSpecs-Search", "pr-fullstackSpecs-Admin", "pr-fullstackSpecs-Categ"],
+    specs: ["pr-fullstackSpecs-Accounts", "pr-fullstackSpecs-Cart", "pr-fullstackSpecs-Search", "pr-fullstackSpecs-Admin", "pr-fullstackSpecs-Categ", "pr-fullstackSpecs-Assets"],
     desc: "pr-fullstackDesc",
     technologies: ["react", "tailwind", "js", "node", "express", "mongo", "CRA"],
     url: "https://e-commerce.joaquintakara.com/",

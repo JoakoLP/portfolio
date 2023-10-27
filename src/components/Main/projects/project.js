@@ -41,9 +41,9 @@ const RenderProject = ({ project, index, handleOpen, tooltipStyle, setPlay }) =>
               <div className="w-full pb-1 truncate">
                 <span className="w-full text-xl font-semibold whitespace-nowrap">{t(project.name)}</span>
                 {project.url ? (
-                  <a className="flex items-center justify-center w-full space-x-1 apl-1 group/link" href={project.url} target="_blank">
+                  <a className="flex items-center justify-center space-x-1 w-min group/link" href={project.url} target="_blank">
                     <AiOutlineLink className="text-black dark:text-white lg:group-hover/link:text-purple-500" size={12} />
-                    <span className="w-full text-xs truncate lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
+                    <span className="text-sm truncate w-min lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
                   </a>
                 ) : null}
               </div>

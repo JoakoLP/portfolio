@@ -61,12 +61,12 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
             <p className="text-base md:text-2xl">{t(project?.name)}</p>
             {project?.url ? (
               <a className="flex items-center justify-center w-[95%] space-x-1 group/link" href={project.url} target="_blank">
-                <AiOutlineLink className="text-black dark:text-white lg:group-hover/link:text-purple-500" size={12} />
-                <span className="w-full text-xs font-normal truncate md:text-sm lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
+                <AiOutlineLink className="text-black dark:text-white lg:group-hover/link:text-purple-500" size={18} />
+                <span className="w-full text-sm font-normal truncate md:text-base lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
               </a>
             ) : null}
           </div>
-          <IconButton onClick={handleOpen} className="dark:bg-gray-800">
+          <IconButton onClick={handleOpen} className="dark:bg-gray-700">
             <AiOutlineClose size={20} />
           </IconButton>
         </div>
@@ -126,12 +126,12 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
       <Dialog open={imgModal} handler={handleImg} size="xxl" className="dark:bg-slate-950 !max-h-screen">
         {imgSelected ? (
           <>
-            <DialogHeader className="flex justify-end">
-              <IconButton onClick={handleImg} className="dark:bg-gray-700">
-                <AiOutlineClose size={20} />
-              </IconButton>
-            </DialogHeader>
-            <DialogBody className="max-h-[90%] h-full flex justify-center items-center">
+            <DialogBody className="relative flex items-center justify-center h-full max-h-full p-12 ">
+              <div className="absolute top-3 right-3">
+                <IconButton onClick={handleImg} className="dark:bg-gray-500">
+                  <AiOutlineClose size={20} />
+                </IconButton>
+              </div>
               <img src={imgSelected} className="max-h-full" />
             </DialogBody>
           </>

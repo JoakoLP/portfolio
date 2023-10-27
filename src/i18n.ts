@@ -54,6 +54,7 @@ i18n.use(initReactI18next).init({
         "pr-fullstackSpecs-Search": "Search engine with category filter.",
         "pr-fullstackSpecs-Admin": "Admin panel: Add products, product list, product edit, user list, add and edit categories and subcategories.",
         "pr-fullstackSpecs-Categ": "Categorization: Categories y subcategories.",
+        "pr-fullstackSpecs-Assets": "Cloudinary: Users and products images storaged in the cloud.",
       },
     },
     es: {
@@ -102,6 +103,7 @@ i18n.use(initReactI18next).init({
         "pr-fullstackSpecs-Search": "Motor de búsqueda con filtro de categorías.",
         "pr-fullstackSpecs-Admin": "Panel de administración: Agregar productos, listado de productos, editar productos, listado de usuarios, crear y editar categorías y subcategorías.",
         "pr-fullstackSpecs-Categ": "Categorización: Categorías y subcategorías.",
+        "pr-fullstackSpecs-Assets": "Cloudinary: Imágenes de usuarios y productos almacenados en la nube.",
       },
     },
   },
