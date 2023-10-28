@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import profPhoto from "../../../assets/img/profilex1024.png";
 import profPhotoMobile from "../../../assets/img/profilex512.png";
+import { Button } from "@material-tailwind/react";
 
 const About = () => {
   const { i18n, t } = useTranslation();
@@ -41,6 +42,12 @@ const About = () => {
             })}
           </div>
         </div>
+
+        <Button className="box-content flex p-0 normal-case rounded bg-fuchsia-700/60 dark:bg-purple-950/60">
+          <a className="px-4 py-2" href={t("curriculumLink")} target="_blank">
+            {t("curriculum")}
+          </a>
+        </Button>
       </div>
     </div>
   );
