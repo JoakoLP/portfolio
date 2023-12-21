@@ -1,3 +1,4 @@
+// E-Commerce
 import thumbnail from "../assets/img/projects/e-commerce/e-commerce-thumbnail.png";
 import video from "../assets/video/projects/e-commerce/E-Commerce.mp4";
 import img1 from "../assets/img/projects/e-commerce/e-commerce-notlogged-home-desktop.png";

@@ -1,6 +1,6 @@
 import { Tooltip } from "flowbite-react";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiTailwindcss, SiCreatereactapp, SiNextdotjs, SiJavascript } from "react-icons/si";
+import { SiExpress, SiMongodb, SiTailwindcss, SiCreatereactapp, SiNextdotjs, SiJavascript, SiPython } from "react-icons/si";
 import { AiOutlineHtml5 } from "react-icons/ai";
 
 const ProjectTech = ({ project, tooltipStyle }) => {
@@ -23,6 +23,7 @@ const ProjectTech = ({ project, tooltipStyle }) => {
     mongo: false,
     CRA: false,
     next: false,
+    python: false,
   };
 
   const disableTech = () => {
@@ -36,6 +37,7 @@ const ProjectTech = ({ project, tooltipStyle }) => {
       mongo: false,
       CRA: false,
       next: false,
+      python: false,
     };
   };
 
@@ -59,6 +61,8 @@ const ProjectTech = ({ project, tooltipStyle }) => {
         techOnProject.CRA = true;
       } else if (tech === "next") {
         techOnProject.next = true;
+      } else if (tech === "python") {
+        techOnProject.python = true;
       }
     });
   };
@@ -82,6 +86,8 @@ const ProjectTech = ({ project, tooltipStyle }) => {
       techOnProject.CRA = true;
     } else if (tech === "next") {
       techOnProject.next = true;
+    } else if (tech === "python") {
+      techOnProject.python = true;
     }
   });
 
@@ -146,6 +152,11 @@ const ProjectTech = ({ project, tooltipStyle }) => {
       <div className={techOnProject.node ? "visible" : "hidden"}>
         <Tooltip content="Node.js" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
           <FaNodeJs className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150"} size={22} />
+        </Tooltip>
+      </div>
+      <div className={techOnProject.python ? "visible" : "hidden"}>
+        <Tooltip content="Python" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
+          <SiPython className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-blue-500 bg-yellow-300 p-0.5 rounded-full transition-colors duration-150"} size={26} />
         </Tooltip>
       </div>
     </>

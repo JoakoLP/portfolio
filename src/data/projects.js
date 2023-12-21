@@ -1,5 +1,6 @@
 // collection of projects with: name, photo/video/gif, description, technologies, url, git.
 import eCommerce from "./e-commerce";
+import calculatorPy from "./calculator-py";
 
 export const projects = [
   {
@@ -13,6 +14,18 @@ export const projects = [
     technologies: ["react", "tailwind", "js", "node", "express", "mongo", "CRA"],
     url: "https://e-commerce.joaquintakara.com/",
     github: "https://github.com/JoakoLP/e-commerce",
+  },
+  {
+    id: "calculator-py",
+    name: "pr-calculatorPy",
+    subTitle: "pr-calculatorPySubtitle",
+    thumbnail: calculatorPy.thumbnail,
+    media: calculatorPy.assets,
+    specs: ["pr-calculatorPySpecs-Operations", "pr-calculatorPySpecs-Errors", "pr-calculatorPySpecs-Exponent", "pr-calculatorPySpecs-Write"],
+    desc: "pr-CalculatorDesc",
+    technologies: ["python"],
+    url: "https://github.com/JoakoLP/Calculator-APP/",
+    github: "https://github.com/JoakoLP/Calculator-APP",
   },
   {
     id: "project-numen-front",
