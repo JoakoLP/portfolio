@@ -7,7 +7,7 @@ import { Button } from "@material-tailwind/react";
 const About = () => {
   const { i18n, t } = useTranslation();
   // console.log(profPhoto);
-  const skills = ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "GIT", "GitHub", "Node.js", "Express", "MongoDB"];
+  const skills = ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "GIT", "GitHub", "Node.js", "Express", "MongoDB", "Python"];
   const renderSkill = (skill) => {
     return (
       <div className="p-1 px-1.5 max-w-full bg-fuchsia-700 dark:bg-purple-900 bg-opacity-60 dark:bg-opacity-60 rounded-sm">
