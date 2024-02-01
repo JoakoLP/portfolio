@@ -1,6 +1,8 @@
 // collection of projects with: name, photo/video/gif, description, technologies, url, git.
 import eCommerce from "./e-commerce";
 import calculatorPy from "./calculator-py";
+import bugsite from "./bugsite";
+import frontNumen from "./front-numen";
 
 export const projects = [
   {
@@ -14,6 +16,18 @@ export const projects = [
     technologies: ["react", "tailwind", "js", "node", "express", "mongo", "CRA"],
     url: "https://e-commerce.joaquintakara.com/",
     github: "https://github.com/JoakoLP/e-commerce",
+  },
+  {
+    id: "bugsite",
+    name: "pr-bugsite",
+    subTitle: "pr-bugsiteSubtitle",
+    thumbnail: bugsite.thumbnail,
+    media: bugsite.assets,
+    specs: ["pr-bugsiteSpecs-MySQL", "pr-bugsiteSpecs-TypeScript"],
+    desc: "pr-bugsiteDesc",
+    technologies: ["next", "mysql", "ts", "tailwind", "node"],
+    url: "https://github.com/JoakoLP/BugSite/",
+    github: "https://github.com/JoakoLP/BugSite/",
   },
   {
     id: "calculator-py",
@@ -31,8 +45,8 @@ export const projects = [
     id: "project-numen-front",
     name: "pr-numenTitleFE",
     subTitle: "pr-numenSubTitleFE",
-    thumbnail: "https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67",
-    media: ["https://camo.githubusercontent.com/ebcbf7ea5902c6226b623a6ff57320de772520238390d273cdcc2fd019035050/68747470733a2f2f692e696d6775722e636f6d2f59424f55644b4a2e706e67"],
+    thumbnail: frontNumen.thumbnail,
+    media: frontNumen.assets,
     desc: "pr-numenDescFE",
     technologies: ["react", "tailwind", "js", "node", "CRA"],
     url: "https://proyecto-numen-nine.vercel.app/",

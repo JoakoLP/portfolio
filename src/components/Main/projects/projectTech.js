@@ -1,19 +1,11 @@
 import { Tooltip } from "flowbite-react";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiTailwindcss, SiCreatereactapp, SiNextdotjs, SiJavascript, SiPython } from "react-icons/si";
+import { SiExpress, SiMongodb, SiTailwindcss, SiCreatereactapp, SiNextdotjs, SiJavascript, SiPython, SiTypescript } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 import { AiOutlineHtml5 } from "react-icons/ai";
 
 const ProjectTech = ({ project, tooltipStyle }) => {
   let techOnProject = {
-    // react: undefined,
-    // tailwind: undefined,
-    // html: undefined,
-    // express: undefined,
-    // js: undefined,
-    // node: undefined,
-    // mongo: undefined,
-    // CRA: undefined,
-    // next: undefined,
     react: false,
     tailwind: false,
     html: false,
@@ -26,46 +18,46 @@ const ProjectTech = ({ project, tooltipStyle }) => {
     python: false,
   };
 
-  const disableTech = () => {
-    techOnProject = {
-      react: false,
-      tailwind: false,
-      html: false,
-      express: false,
-      js: false,
-      node: false,
-      mongo: false,
-      CRA: false,
-      next: false,
-      python: false,
-    };
-  };
+  // const disableTech = () => {
+  //   techOnProject = {
+  //     react: false,
+  //     tailwind: false,
+  //     html: false,
+  //     express: false,
+  //     js: false,
+  //     node: false,
+  //     mongo: false,
+  //     CRA: false,
+  //     next: false,
+  //     python: false,
+  //   };
+  // };
 
-  const checkTechnologies = () => {
-    project?.technologies.forEach((tech) => {
-      if (tech === "react") {
-        techOnProject.react = true;
-      } else if (tech === "tailwind") {
-        techOnProject.tailwind = true;
-      } else if (tech === "html") {
-        techOnProject.html = true;
-      } else if (tech === "express") {
-        techOnProject.express = true;
-      } else if (tech === "js") {
-        techOnProject.js = true;
-      } else if (tech === "node") {
-        techOnProject.node = true;
-      } else if (tech === "mongo") {
-        techOnProject.mongo = true;
-      } else if (tech === "CRA") {
-        techOnProject.CRA = true;
-      } else if (tech === "next") {
-        techOnProject.next = true;
-      } else if (tech === "python") {
-        techOnProject.python = true;
-      }
-    });
-  };
+  // const checkTechnologies = () => {
+  //   project?.technologies.forEach((tech) => {
+  //     if (tech === "react") {
+  //       techOnProject.react = true;
+  //     } else if (tech === "tailwind") {
+  //       techOnProject.tailwind = true;
+  //     } else if (tech === "html") {
+  //       techOnProject.html = true;
+  //     } else if (tech === "express") {
+  //       techOnProject.express = true;
+  //     } else if (tech === "js") {
+  //       techOnProject.js = true;
+  //     } else if (tech === "node") {
+  //       techOnProject.node = true;
+  //     } else if (tech === "mongo") {
+  //       techOnProject.mongo = true;
+  //     } else if (tech === "CRA") {
+  //       techOnProject.CRA = true;
+  //     } else if (tech === "next") {
+  //       techOnProject.next = true;
+  //     } else if (tech === "python") {
+  //       techOnProject.python = true;
+  //     }
+  //   });
+  // };
 
   project.technologies.forEach((tech) => {
     if (tech === "react") {
@@ -78,10 +70,14 @@ const ProjectTech = ({ project, tooltipStyle }) => {
       techOnProject.express = true;
     } else if (tech === "js") {
       techOnProject.js = true;
+    } else if (tech === "ts") {
+      techOnProject.ts = true;
     } else if (tech === "node") {
       techOnProject.node = true;
     } else if (tech === "mongo") {
       techOnProject.mongo = true;
+    } else if (tech === "mysql") {
+      techOnProject.mysql = true;
     } else if (tech === "CRA") {
       techOnProject.CRA = true;
     } else if (tech === "next") {
@@ -123,6 +119,11 @@ const ProjectTech = ({ project, tooltipStyle }) => {
           />
         </Tooltip>
       </div>
+      <div className={techOnProject.mysql ? "visible" : "hidden"}>
+        <Tooltip content="MySQL" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
+          <GrMysql className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-white rounded-md p-0.5 text-blue-500 transition-colors duration-150"} size={28} />
+        </Tooltip>
+      </div>
       <div className={techOnProject.mongo ? "visible" : "hidden"}>
         <Tooltip content="MongoDB" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
           <SiMongodb className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 text-green-500 transition-colors duration-150"} size={22} />
@@ -147,6 +148,11 @@ const ProjectTech = ({ project, tooltipStyle }) => {
       <div className={techOnProject.js ? "visible" : "hidden"}>
         <Tooltip content="JavaScript" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
           <SiJavascript className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-black text-yellow-300 transition-colors duration-150"} size={22} />
+        </Tooltip>
+      </div>
+      <div className={techOnProject.ts ? "visible" : "hidden"}>
+        <Tooltip content="TypeScript" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
+          <SiTypescript className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 bg-white text-blue-600 rounded-sm transition-colors duration-150"} size={22} />
         </Tooltip>
       </div>
       <div className={techOnProject.node ? "visible" : "hidden"}>

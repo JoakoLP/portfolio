@@ -52,7 +52,7 @@ const RenderProject = ({ project, index, handleOpen, tooltipStyle, setPlay }) =>
             {/* description */}
             <p className="text-start indent-1">{t(project.desc)}</p>
           </div>
-          <div className="absolute right-0 flex self-end space-x-2 md:bottom-0 bottom-1 ">
+          <div className="absolute right-0 flex items-center self-end space-x-2 md:bottom-0 bottom-1 ">
             {/* technologies */}
             <ProjectTech project={project} tooltipStyle={tooltipStyle} />
           </div>

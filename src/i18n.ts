@@ -65,6 +65,12 @@ i18n.use(initReactI18next).init({
         "pr-calculatorPySpecs-Errors": "It has procedures to avoid some possible calculation errors.",
         "pr-calculatorPySpecs-Exponent": "It allows powers of more than one digit, with representation in superscript characters.",
         "pr-calculatorPySpecs-Write": "Allows manual writing of formulas in the entry.",
+        // Bugsite
+        "pr-bugsite": "BugSite",
+        "pr-bugsiteSubtitle": "Issue tracker App",
+        "pr-bugsiteDesc": "Issue tracker App with MySQL made in Next.js",
+        "pr-bugsiteSpecs-MySQL": "Uses MySQL.",
+        "pr-bugsiteSpecs-TypeScript": "Uses TypeScript",
       },
     },
     es: {
@@ -124,6 +130,12 @@ i18n.use(initReactI18next).init({
         "pr-calculatorPySpecs-Errors": "Tiene procedimientos para evitar algunos posibles errores de cálculo.",
         "pr-calculatorPySpecs-Exponent": "Permite potencias de mas de un dígito, con representación en carácteres superíndices.",
         "pr-calculatorPySpecs-Write": "Permite escritura manual de fórmulas en la entrada.",
+        // Bugsite
+        "pr-bugsite": "BugSite",
+        "pr-bugsiteSubtitle": "Aplicación para seguimiento de errores.",
+        "pr-bugsiteDesc": "Aplicación para seguimiento de errores con MySQL hecho en Next.js",
+        "pr-bugsiteSpecs-MySQL": "Usa MySQL.",
+        "pr-bugsiteSpecs-TypeScript": "Usa TypeScript",
       },
     },
   },

@@ -117,7 +117,7 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
       </DialogBody>
       <DialogFooter className="">
         <div className="flex justify-end w-full pt-4 border-t">
-          <div className="flex space-x-2">
+          <div className="flex items-center space-x-2">
             <ProjectTech project={project} tooltipStyle={tooltipStyle} />
           </div>
         </div>
