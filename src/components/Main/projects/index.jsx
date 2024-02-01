@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { projects } from "../../../data/projects";
 import { Tooltip } from "flowbite-react";
 import { Carousel, IconButton } from "@material-tailwind/react";
@@ -23,16 +23,30 @@ const Projects = () => {
   const [project, setProject] = useState();
 
   const handleOpen = (project) => {
-    // console.log("specs", project?.specs);
     setOpen(!open);
     if (project) {
       setProject(project);
     } else {
       setProject();
     }
-
-    // console.log(project);
   };
+
+  let actIndex;
+
+  useEffect(() => {
+    const carousel = document.getElementById("carousel").children;
+    const projLength = carousel.length - 3;
+    const urlId = new URLSearchParams(window.location.search).get("project");
+
+    for (let i = 0; i < projLength; i++) {
+      // console.log(i);
+      const element = document.getElementById("carousel").children[i].children[0].id;
+      if (element === urlId) {
+        actIndex(i);
+        setPlay(false);
+      }
+    }
+  }, []);
 
   return (
     <div className="relative h-full max-h-full overflow-hidden">
@@ -40,6 +54,7 @@ const Projects = () => {
       <div className="h-full max-h-full space-y-2 overflow-auto" id="projectsCont">
         <div className="h-full max-h-full">
           <Carousel
+            id="carousel"
             className=""
             loop
             autoplay={play}
@@ -61,17 +76,22 @@ const Projects = () => {
                 <MdNavigateNext size={30} className="text-purple-700" />
               </IconButton>
             )}
-            navigation={({ setActiveIndex, activeIndex, length }) => (
-              <div className="absolute z-50 flex gap-2 transition-opacity duration-150 bottom-2 md:bottom-4 left-2/4 -translate-x-2/4">
-                {new Array(length).fill("").map((_, i) => (
-                  <span
-                    key={i}
-                    className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-purple-700" : "w-4 bg-purple-700/50"}`}
-                    onClick={() => setActiveIndex(i)}
-                  />
-                ))}
-              </div>
-            )}
+            navigation={({ setActiveIndex, activeIndex, length }) => {
+              actIndex = setActiveIndex.bind();
+
+              return (
+                <div className="absolute z-50 flex gap-2 transition-opacity duration-150 bottom-2 md:bottom-4 left-2/4 -translate-x-2/4">
+                  {new Array(length).fill("").map((_, i) => (
+                    <span
+                      key={i}
+                      className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-purple-700" : "w-4 bg-purple-700/50"}`}
+                      // onClick={() => setActiveIndex(i)}
+                      onClick={() => setActiveIndex(i)}
+                    />
+                  ))}
+                </div>
+              );
+            }}
           >
             {projects.map((project, index) => {
               return <RenderProject project={project} index={index} handleOpen={handleOpen} tooltipStyle={tooltipStyle} setPlay={setPlay} />;
