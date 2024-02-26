@@ -15,7 +15,7 @@ const Projects = () => {
 
   const tooltipStyle = {
     arrow: { style: { auto: "border-2 bg-white dark:bg-black border-fuchsia-700 dark:border-purple-800" } },
-    style: { auto: "border border-fuchsia-700 select-none bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white  py-1 px-2 rounded" },
+    style: { auto: "border border-fuchsia-700 whitespace-nowrap select-none bg-white text-gray-900 dark:border-nonea dark:bg-black dark:border-purple-800 dark:text-white  py-1 px-2 rounded" },
   };
 
   const [open, setOpen] = useState(false);

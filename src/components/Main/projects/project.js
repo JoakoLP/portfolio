@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
+import { RiShareFill } from "react-icons/ri";
 import { Tooltip } from "flowbite-react";
 import ProjectTech from "./projectTech";
 import { BsHandIndex } from "react-icons/bs";
@@ -57,11 +58,26 @@ const RenderProject = ({ project, index, handleOpen, tooltipStyle, setPlay }) =>
             <ProjectTech project={project} tooltipStyle={tooltipStyle} />
           </div>
 
-          <a className={project?.github ? "visible absolute top-0 right-0" : "hidden"} href={project?.github} target="_blank">
-            <Tooltip content="GitHub" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
-              <AiFillGithub className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150"} size={22} />
-            </Tooltip>
-          </a>
+          <div className={project?.github ? "visible absolute top-0 right-0 flex space-x-1.5" : "hidden"}>
+            <button
+              className="group"
+              onClick={() => {
+                navigator.clipboard.writeText(`https://www.joaquintakara.com/?project=${project.id}`);
+              }}
+            >
+              <Tooltip content={t("share")} trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
+                <RiShareFill
+                  className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 relative transition-colors duration-150 animate-duration-75 animate-delay-200 active:animate-wiggle-more "}
+                  size={22}
+                />
+              </Tooltip>
+            </button>
+            <a className={project?.github ? "visible " : "hidden"} href={project?.github} target="_blank">
+              <Tooltip content="GitHub" trigger="hover" animation="duration-500" style="auto" theme={tooltipStyle}>
+                <AiFillGithub className={"visible lg:hover:text-purple-700 lg:hover:dark:text-purple-600 transition-colors duration-150"} size={22} />
+              </Tooltip>
+            </a>
+          </div>
         </div>
         {/* <hr className="sticky top-0 z-10 -mx-1 border-purple-900 group-last-of-type:hidden" /> */}
       </div>
