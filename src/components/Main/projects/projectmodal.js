@@ -60,10 +60,12 @@ const ProjectModal = ({ open, handleOpen, project, tooltipStyle }) => {
           <div className="w-[86%]">
             <p className="text-base md:text-2xl">{t(project?.name)}</p>
             {project?.url ? (
-              <a className="flex items-center justify-center w-[95%] space-x-1 group/link" href={project.url} target="_blank">
-                <AiOutlineLink className="text-black dark:text-white lg:group-hover/link:text-purple-500" size={18} />
-                <span className="w-full text-sm font-normal truncate md:text-base lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
-              </a>
+              <div className="flex items-center justify-start w-[95%]">
+                <a className="flex items-center justify-center space-x-1 w-min group/link" href={project.url} target="_blank">
+                  <AiOutlineLink className="text-black dark:text-white lg:group-hover/link:text-purple-500" size={18} />
+                  <span className="w-full text-sm font-normal truncate md:text-base lg:group-hover/link:text-purple-500 whitespace-nowrap">{project.url}</span>
+                </a>
+              </div>
             ) : null}
           </div>
           <IconButton onClick={handleOpen} className="dark:bg-gray-700">
