@@ -19,7 +19,7 @@ const RenderProject = ({ project, index, handleOpen, tooltipStyle, setPlay }) =>
         {/* title */}
         <div className="relative flex flex-col items-center justify-center w-full h-full lg:space-y-0 lg:flex-row">
           <div className="flex relativea items-center justify-center h-[45%] w-full lg:w-1/2 xl:w-5/12 md:h-fit">
-            <div className="relative cursor-pointer object-contain max-w-full max-h-full overflow-hidden transition-transform xl:max-w-[420px] xl:max-h-[420px] ease-in-out rounded w-fit h-fit lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none dark:outline-purple-700 duration-250">
+            <div className="relative cursor-pointer object-contain max-w-full max-h-full overflow-hidden transition-all xl:max-w-[420px] xl:max-h-[420px] ease-in-out lg:hover:rounded-sm w-fit h-fit lg:hover:shadow-md lg:hover:shadow-slate-400 outline outline-1 lg:hover:outline-2 outline-fuchsia-700 dark:lg:hover:shadow-none dark:outline-purple-700 duration-250">
               <img
                 src={project.thumbnail}
                 alt={t(project.name)}
