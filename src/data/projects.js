@@ -59,7 +59,7 @@ export const projects = [
     thumbnail: "https://raw.githubusercontent.com/JoakoLP/proyecto-backend/master/proyectoBackEnd.jpg",
     media: ["https://raw.githubusercontent.com/JoakoLP/proyecto-backend/master/proyectoBackEnd.jpg"],
     desc: "pr-numenDescBE",
-    technologies: ["express", "node", "js"],
+    technologies: ["express", "node", "js", "mongo"],
     url: "https://github.com/JoakoLP/proyecto-backend#readme",
     github: "https://github.com/JoakoLP/proyecto-backend",
   },
