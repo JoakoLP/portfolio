@@ -42,7 +42,7 @@ const About = () => {
           </div>
         </div>
 
-        <Button className="box-content flex p-0 normal-case rounded bg-fuchsia-700/60 dark:bg-purple-950/60">
+        <Button className="box-content flex p-0 normal-case rounded bg-fuchsia-700/60 dark:bg-purple-950/80">
           <a className="px-4 py-2" href={t("curriculumLink")} target="_blank">
             {t("curriculum")}
           </a>

@@ -112,7 +112,7 @@ const Frame = () => {
                 </p>
               </div>
               <div className="h-full w-full py-[36px] pl-[41px] pr-[24px] md:py-[55px] md:pl-[61px] md:pr-[36px] lg:pt-[53px] lg:pb-[35px] lg:px-[42px] xl:pt-[81px] xl:pb-[53px] xl:px-[62px] z-0 ">
-                <div className="w-full h-full bg-white/50 dark:bg-purple-950/20">
+                <div className="w-full h-full bg-white/80 dark:bg-neutral-950/30">
                   <Outlet context={[toast, setToast]} />
                 </div>
               </div>

@@ -100,8 +100,8 @@ const Projects = () => {
           <div className="absolute bottom-1.5 left-1.5 md:bottom-4 md:left-4 " onClick={pausePlay}>
             <Tooltip content="Autoplay" trigger="hover" placement="left" animation="duration-500" style="auto" theme={tooltipStyle}>
               <div className="flex" onClick={pausePlay}>
-                <HiOutlinePlay size={24} className={`${play ? " text-purple-700" : "text-purple-700/50"} transition-all duration-200`} />
-                <HiOutlinePause size={24} className={`${play ? "text-purple-700/50" : " text-purple-700"} transition-all duration-200`} />
+                <HiOutlinePlay size={24} className={`${play ? " text-purple-700" : "text-purple-700/40 stroke-2"} transition-all duration-200`} />
+                <HiOutlinePause size={24} className={`${play ? "text-purple-700/40" : " text-purple-700 stroke-2"} transition-all duration-200`} />
               </div>
             </Tooltip>
           </div>

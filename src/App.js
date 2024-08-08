@@ -10,7 +10,7 @@ import Background from "./components/Frame/background";
 
 function App() {
   return (
-    <div className="min-h-screen overflow-hidden flex transition-colors text-black dark:bg-black bg-fuchsia-100/70 dark:text-white duration-400 font-['Roboto_Condensed']">
+    <div className="min-h-screen overflow-hidden flex transition-colors text-black dark:bg-black bg-gray-300/30 dark:text-white duration-400 font-['Roboto_Condensed']">
       <Background />
       <BrowserRouter>
         <Routes>

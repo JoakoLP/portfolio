@@ -13,7 +13,7 @@ const RenderProject = ({ project, index, handleOpen, tooltipStyle, setPlay }) =>
     <>
       <div
         id={project.id}
-        className={`h-full max-h-full p-4 md:p-6 overflow-hidden border-purple-700 dark:border-gray-800 ${index % 2 == 0 ? "bg-white dark:bg-black" : "bg-fuchsia-100 dark:bg-neutral-950"}`}
+        className={`h-full max-h-full p-4 md:p-6 overflow-hidden border-purple-700 dark:border-gray-800 ${index % 2 == 0 ? "bg-white dark:bg-black" : "bg-neutral-50 dark:bg-neutral-950"}`}
       >
         {/* <hr className="sticky top-0 z-10 -mx-1 border-gray-800 border-1 h-min group-first-of-type:hidden [:nth-of-type(2)_&]:-top-[1px]" /> */}
         {/* title */}
