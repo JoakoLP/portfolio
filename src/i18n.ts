@@ -12,7 +12,8 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         subtitle: "Web Developer",
-        about1: "My name is Joaquin Takara, I'm a Full Stack Developer. My current goal is to enter a company in the IT world to continue evolving my knowledge in the software development field.",
+        about1:
+          "My name is Joaquin Takara, I'm a Full Stack Developer and Information Systems Engineering student. My current goal is to enter a company in the IT world to continue evolving my knowledge in the software development field.",
         about2:
           "I am willing to bring my skills and knowledge to contribute to the development and success of a company. I hope to be able to work on various projects to continue learning and improving in my career as a developer.",
         // navHome: "Home",
@@ -78,7 +79,7 @@ i18n.use(initReactI18next).init({
       translation: {
         subtitle: "Desarrollador Web",
         about1:
-          "Mi nombre es Joaquin Takara, soy desarrollador Full Stack. Mi objetivo actual es ingresar a una empresa del mundo IT para seguir profundizando mis conocimientos en el campo del desarrollo de software.",
+          "Mi nombre es Joaquin Takara, soy desarrollador Full Stack y estudiante de Ingeniería en Sistemas de Información. Mi objetivo actual es ingresar a una empresa del mundo IT para seguir profundizando mis conocimientos en el campo del desarrollo de software.",
         about2:
           "Estoy dispuesto a aportar mis habilidades y conocimientos para contribuir al desarrollo y éxito de una empresa. Espero poder trabajar en diversos proyectos para seguir aprendiendo y mejorando en mi carrera como desarrollador.",
         // navHome: "Principal",
