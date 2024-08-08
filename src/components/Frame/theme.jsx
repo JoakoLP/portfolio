@@ -3,10 +3,12 @@ import { Switch } from "@headlessui/react";
 import { BiMoon, BiSun } from "react-icons/bi";
 
 const Theme = () => {
-  const [currentTheme, setCurrentTheme] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const [currentTheme, setCurrentTheme] = useState("dark"); // dark by default
+
   useEffect(() => {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+      // dark by default
       document.documentElement.classList.add("dark");
       setCurrentTheme("dark");
     } else {
@@ -15,6 +17,7 @@ const Theme = () => {
       setCurrentTheme("light");
     }
   }, [window.matchMedia("(prefers-color-scheme: dark)")]);
+
   // Whenever the user explicitly chooses light mode
   // localStorage.theme = "light";
 
